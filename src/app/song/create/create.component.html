@@ -1,0 +1,15 @@
+<h1>Create Song</h1>
+
+<form [formGroup]="formCreateSong" *ngIf="formCreateSong" (ngSubmit)="create()">
+  <input placeholder="song_name" formControlName="song_name"><br>
+  <input placeholder="description" formControlName="description" ><br>
+  <input placeholder="file_mp3" formControlName="file_mp3" ><br>
+  <input placeholder="song_avatar" formControlName='song_avatar'><br>
+  <input placeholder="author" formControlName="author"><br>
+  <input placeholder="posted" formControlName="posted"><br>
+  <input placeholder="album" formControlName="album"><br>
+  <input placeholder="song_music_genre" formControlName="song_music_genre"><br>
+  <button type="submit">Create</button>
+</form>
+
+
