@@ -1,0 +1,29 @@
+<div class="container mt-3">
+  <h2>Stacked form</h2>
+  <form [formGroup]="formRegister" (ngSubmit)="register()">
+    <div class="mb-3 mt-3">
+      <label>Username:</label>
+      <input type="text" placeholder="Username" formControlName="username">
+    </div>
+    <div class="mb-3">
+      <label>Password:</label>
+      <input type="text" placeholder="Password" formControlName="password">
+    </div>
+    <div class="mb-3">
+      <label>Re-Password:</label>
+      <input type="text" placeholder="Re-password" formControlName="rePassword" (change)="checkPassword()">
+      <span id="checkPassword"></span>
+    </div>
+    <div class="mb-3">
+      <label>Phone Number:</label>
+      <input type="text" placeholder="Phone number" formControlName="phone_number">
+    </div>
+    <input type="text" hidden formControlName="id">
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
