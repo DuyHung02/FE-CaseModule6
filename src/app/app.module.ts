@@ -3,13 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './home/header/header.component';
-import {FooterComponent} from "./home/footer/footer.component";
-import { BodyComponent } from './home/body/body.component';
-import { NewSongComponent } from './home/body/new-song/new-song.component';
-import { ChartsComponent } from './home/body/charts/charts.component';
-import { NavbarComponent } from './home/navbar/navbar.component';
-import { SingerComponent } from './home/body/singer/singer.component';
+import { HeaderComponent } from './header/header.component';
+import {FooterComponent} from "./footer/footer.component";
+import {BodyComponent} from "./home/body/body.component";
+import {NewSongComponent} from "./home/body/new-song/new-song.component";
+import {NavbarComponent} from "./navbar/navbar.component";
+import {ChartsComponent} from "./home/body/charts/charts.component";
+import {PlayListComponent} from "./home/body/play-list/play-list.component";
+import {SingerComponent} from "./home/body/singer/singer.component";
+import {UserProfileComponent} from "./profile/user-profile/user-profile.component";
+
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { SingerComponent } from './home/body/singer/singer.component';
     NewSongComponent,
     ChartsComponent,
     NavbarComponent,
-    SingerComponent
+    SingerComponent,
+    PlayListComponent,
+    UserProfileComponent
 
   ],
   imports: [
