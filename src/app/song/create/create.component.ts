@@ -3,6 +3,8 @@ import {Song} from "../../models/Song";
 import {FormControl, FormGroup} from "@angular/forms";
 import {SongService} from "../../service/SongService";
 import {Router} from "@angular/router";
+import {SingerSongService} from "../../service/SingerSongService";
+import {SingerSongId} from "../../models/dto/SingerSongId";
 
 @Component({
   selector: 'app-create',
@@ -10,16 +12,16 @@ import {Router} from "@angular/router";
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit{
-  id: any;
+  song_id: any;
   song: Song | undefined;
   formCreateSong !: FormGroup;
+  singerSongId: SingerSongId|undefined;
 
-  constructor(private songService: SongService, private router: Router) {
+  constructor(private singerSongService: SingerSongService,private songService: SongService, private router: Router) {
   }
 
   ngOnInit(): void {
     this.formCreateSong = new FormGroup({
-      // song_id: new FormControl(this.song?.id),
       song_name: new FormControl(this.song?.song_name),
       description: new FormControl(this.song?.description),
       file_mp3: new FormControl(this.song?.file_mp3),
@@ -28,17 +30,13 @@ export class CreateComponent implements OnInit{
       posted: new FormControl(this.song?.posted),
       album: new FormControl(this.song?.album),
       song_music_genre: new FormControl(this.song?.song_music_genre),
-      // category: new FormGroup({
-      //   id_category: new FormControl()
-      // }),
-
     })
   }
 
   create() {
-    console.log(this.formCreateSong.value);
     this.songService.createSong(this.formCreateSong.value).subscribe((data) => {
-      // this.router.navigate(["/show"]);
+      this.song=data;
+      this.router.navigate(["createSingerSong/"+this.song?.id]);
     })
   }
 

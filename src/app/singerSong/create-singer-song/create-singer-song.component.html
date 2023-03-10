@@ -1,0 +1,8 @@
+<h1>Thêm ca sĩ vào bài hát</h1>
+
+<form [formGroup]="formCreateSingerSong" *ngIf="formCreateSingerSong" (ngSubmit)="create()">
+  <input placeholder="singer_id" formControlName="singer_id"><br>
+  <input placeholder="song_id" formControlName="song_id"  ><br>
+  <button type="submit" >Create Singer</button>
+</form>
+
