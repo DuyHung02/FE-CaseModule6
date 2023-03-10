@@ -7,13 +7,15 @@ import { HeaderComponent } from './home/header/header.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { ShowPlaylistComponent } from './show-playlist/show-playlist.component';
+import { CreatPlaylistComponent } from './creat-playlist/creat-playlist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
 
-    ShowPlaylistComponent
+    ShowPlaylistComponent,
+      CreatPlaylistComponent
   ],
   imports: [
     BrowserModule,

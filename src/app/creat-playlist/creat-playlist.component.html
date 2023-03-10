@@ -1,0 +1,13 @@
+<h1>Create Playlist</h1>
+
+<form [formGroup]="formCreatPlayList" (ngSubmit)="creat()">
+  <input placeholder="name" formControlName="name"><br>
+  <input placeholder="category" formControlName="category" ><br>
+  <input placeholder="description" formControlName="description" ><br>
+  <input placeholder="quantity" formControlName='quantity'><br>
+  <input placeholder="musician" formControlName="musician"><br>
+  <input placeholder="created_at" formControlName="created_at"><br>
+  <input placeholder="updated_at" formControlName="updated_at"><br>
+  <button type="submit" >Create Playlist</button>
+
+</form>
