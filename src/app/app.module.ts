@@ -16,6 +16,7 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AddTokenInterceptor} from "./service/token/add-token.interceptor";
 import { environment } from '../environments/environment';
+import { ChangePasswordComponent } from './account/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { environment } from '../environments/environment';
     LoginComponent,
     ProfileComponent,
     ProfileEditComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
