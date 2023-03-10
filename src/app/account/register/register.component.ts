@@ -18,14 +18,14 @@ export class RegisterComponent {
     username: new FormControl(""),
     password: new FormControl(""),
     rePassword: new FormControl(""),
+    full_name: new FormControl(""),
     phone_number: new FormControl(""),
+    gender: new FormControl(""),
   })
 
   checkPassword() {
     let pass = this.formRegister.value.password
     let repass = this.formRegister.value.rePassword
-    console.log(pass)
-    console.log(repass)
     if (pass == repass) {
       $("#checkPassword").text("✅")
       return true;

@@ -8,7 +8,7 @@ export class AccountToken {
   gmail?: String
   address?: string
   phone_number?: string
-  avatar?: string
+  avatar?: string | any
   roles? : any
   token?: string
 }

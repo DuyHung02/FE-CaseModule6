@@ -9,7 +9,13 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { HomeIndexComponent } from './home/home-index/home-index/home-index.component';
 import { LoginComponent } from './account/login/login.component';
+import { ProfileComponent } from './account/profile/profile.component';
+import { ProfileEditComponent } from './account/profile-edit/profile-edit.component';
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
 import {AddTokenInterceptor} from "./service/token/add-token.interceptor";
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -17,13 +23,18 @@ import {AddTokenInterceptor} from "./service/token/add-token.interceptor";
     HeaderComponent,
     RegisterComponent,
     HomeIndexComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    ProfileEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

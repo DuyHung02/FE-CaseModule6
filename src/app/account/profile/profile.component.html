@@ -1,0 +1,8 @@
+<h3>{{account?.full_name}}</h3>
+<h3>{{account?.gender}}</h3>
+<h3>{{account?.address}}</h3>
+<h3>{{account?.gmail}}</h3>
+<h3>{{account?.phone_number}}</h3>
+<!--<img src="{{account?.avatar}}" width="200" height="250">-->
+<img [src]="showAvatar" width="200" height="250">
+<button routerLink="/profile/{{account?.id}}">Edit</button>
