@@ -1,0 +1,10 @@
+<div class="container mt-3">
+  <h2>Check account</h2>
+  <form [formGroup]="formCheckAccount" (ngSubmit)="checkAccount()">
+    <div class="mb-3 mt-3">
+      <label>Old Password:</label>
+      <input type="text" placeholder="old password" formControlName="password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

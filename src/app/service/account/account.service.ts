@@ -23,10 +23,6 @@ export class AccountService {
     return this.http.post<AccountToken>('http://localhost:8080/login', user)
   }
 
-  // editProfile(account: AccountToken, newAvatar : String | null) : Observable<AccountToken> {
-  //   return this.http.post<AccountToken>('http://localhost:8080/account/profile/' + newAvatar, account)
-  // }
-
   editProfile(account: AccountToken): Observable<AccountToken> {
     return this.http.post<AccountToken>('http://localhost:8080/account/profile', account)
   }
@@ -36,7 +32,19 @@ export class AccountService {
       avatar: avatar,
       id: id
     }
-    return this.http.post<any>('http://localhost:8080/account/profile/avatar', newAvatar)
+    return this.http.post<any>('http://localhost:8080/account/save/avatar', newAvatar)
+  }
+
+  getPassword(id: number | null): Observable<any>{
+    return this.http.get<any>('http://localhost:8080/account/password/' + id)
+  }
+
+  savePassword(password: any, id: number) : Observable<any> {
+    let newPassword = {
+      password : password,
+      id: id
+    }
+    return this.http.post<any>('http://localhost:8080/account/save/password', newPassword)
   }
 
 }

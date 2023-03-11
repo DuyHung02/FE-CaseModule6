@@ -17,6 +17,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {AddTokenInterceptor} from "./service/token/add-token.interceptor";
 import { environment } from '../environments/environment';
 import { ChangePasswordComponent } from './account/change-password/change-password.component';
+import { CheckAccountComponent } from './account/check-account/check-account.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ChangePasswordComponent } from './account/change-password/change-passwo
     ProfileComponent,
     ProfileEditComponent,
     ChangePasswordComponent,
+    CheckAccountComponent,
   ],
   imports: [
     BrowserModule,

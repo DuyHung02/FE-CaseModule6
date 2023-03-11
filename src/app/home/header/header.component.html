@@ -24,9 +24,6 @@
       <div *ngIf="account != null">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Link</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link">Hello {{account?.full_name}}</a>
           </li>
           <li class="nav-item">
@@ -34,6 +31,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/profile">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/password/{{account?.id}}">Re Password</a>
           </li>
         </ul>
       </div>
