@@ -1,0 +1,25 @@
+
+<div>
+  <div>
+    <form [formGroup]="formLogin" (ngSubmit)="login()" class="login">
+      <h2 style="text-align: center; color: #ffffff">Login</h2><br>
+      <div class="login-field">
+        <i class="fa fa-envelope login-icon"></i>
+        <input type="text" class="login-input" placeholder="Username" formControlName="username">
+      </div>
+      <div class="login-field">
+        <i class="fa fa-lock login-icon"></i>
+        <input type="password" class="login-input" placeholder="Password" formControlName="password">
+      </div>
+      <a href="#" class="login-forgot-password">Forgot password?</a>
+      <button class="login-submit" type="submit">Login</button>
+      <br>
+      <hr style="color: white">
+      <button class="login-google">Login with google</button>
+    </form>
+  </div>
+
+  <div>
+    <img src="https://i.pinimg.com/originals/4f/0a/96/4f0a962300ed883b1403de6fbfeaa461.gif" width="100%" height="100%">
+  </div>
+</div>

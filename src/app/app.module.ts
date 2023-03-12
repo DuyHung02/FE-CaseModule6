@@ -10,6 +10,27 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
 import { FindSingerNameComponent } from './singer/find-singer-name/find-singer-name.component';
+import { RegisterComponent } from './account/register/register.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './account/login/login.component';
+import { ProfileComponent } from './account/profile/profile.component';
+import { ProfileEditComponent } from './account/profile-edit/profile-edit.component';
+import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import {AngularFireModule} from "@angular/fire/compat";
+import {AddTokenInterceptor} from "./service/token/add-token.interceptor";
+import { environment } from '../environments/environment';
+import { ChangePasswordComponent } from './account/change-password/change-password.component';
+import { CheckAccountComponent } from './account/check-account/check-account.component';
+import { HeaderComponent } from './header/header.component';
+import {FooterComponent} from "./footer/footer.component";
+import {BodyComponent} from "./home/body/body.component";
+import {NewSongComponent} from "./home/body/new-song/new-song.component";
+import {NavbarComponent} from "./navbar/navbar.component";
+import {ChartsComponent} from "./home/body/charts/charts.component";
+import {PlayListComponent} from "./home/body/play-list/play-list.component";
+import {SingerComponent} from "./home/body/singer/singer.component";
 
 @NgModule({
   declarations: [
@@ -18,15 +39,34 @@ import { FindSingerNameComponent } from './singer/find-singer-name/find-singer-n
     CreateComponent,
     CreateSingerComponent,
     CreateSingerSongComponent,
-    FindSingerNameComponent
+    RegisterComponent,
+    LoginComponent,
+    ProfileComponent,
+    ProfileEditComponent,
+    ChangePasswordComponent,
+    CheckAccountComponent,
+    FooterComponent,
+    BodyComponent,
+    NewSongComponent,
+    ChartsComponent,
+    NavbarComponent,
+    SingerComponent,
+    PlayListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AddTokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
