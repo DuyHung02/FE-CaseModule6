@@ -35,8 +35,8 @@ export class AccountService {
     return this.http.post<any>('http://localhost:8080/account/save/avatar', newAvatar)
   }
 
-  getPassword(id: number | null): Observable<any>{
-    return this.http.get<any>('http://localhost:8080/account/password/' + id)
+  getPassword(id: number | null): Observable<String>{
+    return this.http.get<String>(`http://localhost:8080/account/${id}`)
   }
 
   savePassword(password: any, id: number) : Observable<any> {

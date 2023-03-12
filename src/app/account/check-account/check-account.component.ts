@@ -16,7 +16,11 @@ export class CheckAccountComponent implements OnInit{
   id: any
   account!: any
   password!: String
-  password2!: any
+  password2!: String
+
+  formCheckAccount: FormGroup = new FormGroup({
+    password: new FormControl("")
+  })
 
   ngOnInit(): void {
     // this.id = this.route.snapshot.paramMap.get('id')
@@ -24,27 +28,22 @@ export class CheckAccountComponent implements OnInit{
     this.account = JSON.parse(localStorage.getItem('accountToken'))
     this.id = this.account.id
     console.log(this.id)
-    // console.log(this.password2)
-    this.accountService.getPassword(1).subscribe(data => {
-      this.password2 = data + ""
-      // console.log(this.password2)
-      // console.log(data)
-    }, error => {
-      // console.log(this.password2)
+    this.accountService.getPassword(this.id).subscribe(data => {
+      this.account = data
+      this.password2 = this.account.password
     })
   }
 
-  formCheckAccount: FormGroup = new FormGroup({
-    password: new FormControl("")
-  })
-
   checkAccount() {
-    this.password = this.formCheckAccount.value
+    this.password = this.formCheckAccount.value.password
+    console.log(this.formCheckAccount.value.password)
     if (this.password == this.password2) {
-      this.router.navigate(['/changePassword'])
+      this.router.navigate(['/password'])
     } else {
+      console.log("password1  input")
+      console.log(this.password)
+      console.log("password2  trả về")
       console.log(this.password2)
-      alert("wrong password")
     }
   }
 
