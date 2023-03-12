@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
+import { FindSingerNameComponent } from './singer/find-singer-name/find-singer-name.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { CreateSingerSongComponent } from './singerSong/create-singer-song/creat
     HeaderComponent,
     CreateComponent,
     CreateSingerComponent,
-    CreateSingerSongComponent
+    CreateSingerSongComponent,
+    FindSingerNameComponent
   ],
   imports: [
     BrowserModule,
