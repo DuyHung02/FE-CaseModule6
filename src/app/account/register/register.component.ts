@@ -39,7 +39,7 @@ export class RegisterComponent {
     let account = this.formRegister.value
     if (this.checkPassword()) {
       this.accountService.register(account).subscribe(data => {
-        location.replace('')
+        location.replace('/')
       }, error => {
         console.log(account)
         alert("false")

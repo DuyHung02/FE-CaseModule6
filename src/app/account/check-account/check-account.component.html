@@ -1,10 +1,20 @@
-<div class="container mt-3">
-  <h2>Check account</h2>
-  <form [formGroup]="formCheckAccount" (ngSubmit)="checkAccount()">
-    <div class="mb-3 mt-3">
-      <label>Old Password:</label>
-      <input type="text" placeholder="old password" formControlName="password">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+
+
+<div>
+  <div>
+    <form [formGroup]="formCheckAccount" (ngSubmit)="checkAccount()" class="login">
+      <h2 style="text-align: center; color: #ffffff">Enter Password</h2><br>
+      <div class="password-field">
+        <i class="fa fa-lock login-icon"></i>
+        <input type="password" class="login-input" placeholder="Password" formControlName="password">
+      </div>
+      <a href="#" class="login-forgot-password">Forgot password?</a>
+      <button class="login-submit" type="submit">Submit</button>
+      <br>
+    </form>
+  </div>
+
+  <div>
+    <img src="https://i.pinimg.com/originals/4f/0a/96/4f0a962300ed883b1403de6fbfeaa461.gif" width="100%" height="100%">
+  </div>
 </div>

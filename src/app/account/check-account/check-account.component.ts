@@ -40,10 +40,7 @@ export class CheckAccountComponent implements OnInit{
     if (this.password == this.password2) {
       this.router.navigate(['/password'])
     } else {
-      console.log("password1  input")
-      console.log(this.password)
-      console.log("password2  trả về")
-      console.log(this.password2)
+      alert("Wrong password")
     }
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AccountService} from "../../service/account/account.service";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class LoginComponent {
 
-  constructor(private accountService : AccountService) {
+  constructor(private accountService : AccountService, private router : Router) {
   }
 
   formLogin : FormGroup = new FormGroup({
@@ -25,7 +26,7 @@ export class LoginComponent {
       this.account = data
       localStorage.setItem("token", data.token + "")
       localStorage.setItem("accountToken", JSON.stringify(data))
-      window.location.replace('')
+      window.location.replace('/')
     }, error => {
       alert("login false")
     })
