@@ -1,46 +1,21 @@
-<!--<nav class="navbar navbar-expand-sm navbar-dark bg-dark">-->
-<!--  <div class="container-fluid">-->
-<!--    <a class="navbar-brand" routerLink="">Home</a>-->
-<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">-->
-<!--      <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="collapse navbar-collapse" id="mynavbar">-->
-<!--      <div *ngIf="account == null">-->
-<!--        <ul class="navbar-nav me-auto">-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" href="javascript:void(0)">Link</a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" href="javascript:void(0)">Link</a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" routerLink="/login">Login</a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" routerLink="/register">Register</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--      <div *ngIf="account != null">-->
-<!--        <ul class="navbar-nav me-auto">-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link">Hello {{account?.full_name}}</a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" (click)="logout()">Logout</a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" routerLink="/profile">Profile</a>-->
-<!--          </li>-->
-<!--          <li class="nav-item">-->
-<!--            <a class="nav-link" routerLink="/password/{{account?.id}}">Re Password</a>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--      <form class="d-flex">-->
-<!--        <input class="form-control me-2" type="text" placeholder="Search">-->
-<!--        <button class="btn btn-primary" type="button">Search</button>-->
-<!--      </form>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</nav>-->
+
+  <div class="main">
+    <div class="header" >
+      <div class="search">
+        <i class="search-icon fa fa-search"></i>
+        <input
+          type="text"
+          inputmode="search"
+          placeholder="Search for song, arties etc..."
+          class="search-input"
+        />
+      </div>
+      <div class="tool">
+        <i class="fa fa-bell tool-icon"></i>
+        <i class="tool-icon fa fa-cog"></i>
+        <a href="#" class="upgrade">Upgrade plan</a>
+      </div>
+    </div>
+
+  </div>
+

@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './home/header/header.component';
 import { CreateComponent } from './song/create/create.component';
-import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
-import { FindSingerNameComponent } from './singer/find-singer-name/find-singer-name.component';
 import { RegisterComponent } from './account/register/register.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
@@ -23,14 +18,14 @@ import {AddTokenInterceptor} from "./service/token/add-token.interceptor";
 import { environment } from '../environments/environment';
 import { ChangePasswordComponent } from './account/change-password/change-password.component';
 import { CheckAccountComponent } from './account/check-account/check-account.component';
-import { HeaderComponent } from './header/header.component';
-import {FooterComponent} from "./footer/footer.component";
 import {BodyComponent} from "./home/body/body.component";
 import {NewSongComponent} from "./home/body/new-song/new-song.component";
-import {NavbarComponent} from "./navbar/navbar.component";
 import {ChartsComponent} from "./home/body/charts/charts.component";
 import {PlayListComponent} from "./home/body/play-list/play-list.component";
 import {SingerComponent} from "./home/body/singer/singer.component";
+import {FooterComponent} from "./home/footer/footer.component";
+import {HeaderComponent} from "./home/header/header.component";
+import {NavbarComponent} from "./home/navbar/navbar.component";
 
 @NgModule({
   declarations: [

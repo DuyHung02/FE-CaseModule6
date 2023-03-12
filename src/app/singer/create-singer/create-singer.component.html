@@ -3,7 +3,7 @@
 <form [formGroup]="formCreateSinger" *ngIf="formCreateSinger" (ngSubmit)="create()">
   <input placeholder="singer_name" formControlName="singer_name"><br>
   <input placeholder="singer_gender" formControlName="singer_gender" ><br>
-  <input placeholder="birthday" formControlName="birthday" ><br>
+  <input type="date" placeholder="birthday" formControlName="birthday" ><br>
   <input placeholder="music_genre" formControlName='music_genre'><br>
   <input placeholder="story" formControlName="story"><br>
   <input placeholder="year" formControlName="year"><br>
