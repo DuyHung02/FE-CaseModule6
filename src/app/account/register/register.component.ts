@@ -16,12 +16,12 @@ export class RegisterComponent {
 
   formRegister: FormGroup = new FormGroup({
     id: new FormControl(""),
-    username: new FormControl(""),
-    password: new FormControl(""),
-    rePassword: new FormControl(""),
+    username: new FormControl(null),
+    password: new FormControl(null),
+    rePassword: new FormControl(null),
     full_name: new FormControl(""),
     phone_number: new FormControl(""),
-    gender: new FormControl(""),
+    gender: new FormControl(null),
   })
 
 
@@ -38,21 +38,30 @@ export class RegisterComponent {
   }
 
   register() {
-    if (!this.formRegister.value.username == null) {
-      let account = this.formRegister.value
-      if (this.check) {
-        if (this.checkPassword()) {
-          this.accountService.register(account).subscribe(data => {
-            location.replace('/')
-          }, error => {
-            console.log(account)
-            alert("false")
-          })
+    let account = this.formRegister.value
+
+    if (this.formRegister.value.username != null) {
+      if (this.formRegister.value.password != null) {
+        if (this.check) {
+          if (this.checkPassword()) {
+            if (this.formRegister.value.gender != null) {
+              this.accountService.register(account).subscribe(data => {
+                location.replace('/')
+              }, error => {
+                console.log(account)
+                alert("false")
+              })
+            } else {
+              alert("nhap gioi tinh")
+            }
+          } else {
+            alert("sai mat khau")
+          }
         } else {
-          alert("sai mat khau")
+          alert("Tai khoan da ton tai")
         }
       } else {
-        alert("Tai khoan da ton tai")
+        alert("Mat khau trong")
       }
     } else {
       alert("Username khong hop le")
@@ -64,7 +73,7 @@ export class RegisterComponent {
 
   checkUsername() {
     let username = this.formRegister.value.username
-    if (/^[a-zA-Z\-]+$/.test(<any>$("#username").val())) {
+    if (/^[a-zA-Z0-9\-]+$/.test(<any>$("#username").val())) {
       this.accountService.checkUsername(username).subscribe(data => {
         if (data) {
           $("#checkUsername").text("✅")

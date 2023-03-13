@@ -19,7 +19,7 @@ export class ChangePasswordComponent implements OnInit{
   password!: String
 
   formChangePassword: FormGroup = new FormGroup({
-    password: new FormControl(),
+    password: new FormControl(null),
     rePassword: new FormControl()
   })
 
@@ -42,17 +42,21 @@ export class ChangePasswordComponent implements OnInit{
   }
 
   changePassword() {
-    if (this.checkPassword()) {
-      this.password = this.formChangePassword.value.password
-      console.log(this.password)
-      this.accountService.savePassword(this.password, this.id).subscribe(data => {
-        alert("success")
-        this.router.navigate([''])
-      }, error => {
-        alert("false")
-      })
+    if (this.formChangePassword.value.password != null) {
+      if (this.checkPassword()) {
+        this.password = this.formChangePassword.value.password
+        console.log(this.password)
+        this.accountService.savePassword(this.password, this.id).subscribe(data => {
+          alert("success")
+          this.router.navigate([''])
+        }, error => {
+          alert("false")
+        })
+      } else {
+        alert("sai password")
+      }
     } else {
-      alert("sai password")
+      alert("mat khau trong")
     }
   }
 }

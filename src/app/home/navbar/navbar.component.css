@@ -79,7 +79,8 @@ body {
   height: 130px;
   border-radius: 100rem;
   object-fit: cover;
-  margin: 0 auto 20px;
+  /*margin: 0 auto 20px;*/
+  margin-bottom: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .profile-name {
