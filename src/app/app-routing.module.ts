@@ -11,6 +11,8 @@ import {ProfileEditComponent} from "./account/profile-edit/profile-edit.componen
 import {ChangePasswordComponent} from "./account/change-password/change-password.component";
 import {CheckAccountComponent} from "./account/check-account/check-account.component";
 import {BodyComponent} from "./home/body/body.component";
+import {ShowSongComponent} from "./song/show-song/show-song.component";
+import {ShowSingerComponent} from "./singer/show-singer/show-singer.component";
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path:'createSinger',component: CreateSingerComponent},
   {path:'createSingerSong/:id',component: CreateSingerSongComponent},
   {path:'findSinger',component: FindSingerNameComponent},
+  {path:'showSong',component: ShowSongComponent},
+  {path:'showSinger',component: ShowSingerComponent},
 ]
 
 @NgModule({
