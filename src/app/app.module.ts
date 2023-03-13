@@ -6,7 +6,7 @@ import { CreateComponent } from './song/create/create.component';
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
 import { RegisterComponent } from './account/register/register.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './account/login/login.component';
 import { ProfileComponent } from './account/profile/profile.component';
@@ -26,6 +26,7 @@ import {SingerComponent} from "./home/body/singer/singer.component";
 import {FooterComponent} from "./home/footer/footer.component";
 import {HeaderComponent} from "./home/header/header.component";
 import {NavbarComponent} from "./home/navbar/navbar.component";
+import { PlayDemoComponent } from './playMusic/play-demo/play-demo.component';
 
 @NgModule({
   declarations: [
@@ -47,16 +48,18 @@ import {NavbarComponent} from "./home/navbar/navbar.component";
     NavbarComponent,
     SingerComponent,
     PlayListComponent,
+    PlayDemoComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        FormsModule
+    ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AddTokenInterceptor,
