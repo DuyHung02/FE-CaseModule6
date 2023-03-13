@@ -26,6 +26,7 @@ import {SingerComponent} from "./home/body/singer/singer.component";
 import {FooterComponent} from "./home/footer/footer.component";
 import {HeaderComponent} from "./home/header/header.component";
 import {NavbarComponent} from "./home/navbar/navbar.component";
+import {FindSingerNameComponent} from "./singer/find-singer-name/find-singer-name.component";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import {NavbarComponent} from "./home/navbar/navbar.component";
     NavbarComponent,
     SingerComponent,
     PlayListComponent,
+    FindSingerNameComponent,
   ],
   imports: [
     BrowserModule,
