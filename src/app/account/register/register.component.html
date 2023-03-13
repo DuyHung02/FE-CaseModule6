@@ -46,8 +46,9 @@
         <div style="float: left">
           <div class="register-field">
             <i class="fa fa-envelope login-icon"></i>
-            <input type="text" class="register-input" placeholder="Username" formControlName="username"
-                   style="width: 350px">
+            <input type="text" id="username" class="register-input" placeholder="Username" formControlName="username"
+                   style="width: 350px" (input)="checkUsername()">
+            <span id="checkUsername"></span>
           </div>
           <div class="register-field">
             <i class="fa fa-lock login-icon"></i>

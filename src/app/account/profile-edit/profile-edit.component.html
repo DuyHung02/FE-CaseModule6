@@ -47,7 +47,8 @@
         </tr>
         <tr>
           <td><h4 class="card-desc">Gmail:</h4></td>
-          <td><input class="input-edit" type="text" placeholder="edit gmail" formControlName="gmail"></td>
+          <td><input class="input-edit" id="gmail" type="text" placeholder="edit gmail" formControlName="gmail" (input)="validateEmail()"></td>
+          <span id="checkGmail"></span>
         </tr>
         <tr>
           <td><h4 class="card-desc">Address:</h4></td>

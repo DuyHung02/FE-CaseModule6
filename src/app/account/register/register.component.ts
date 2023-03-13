@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {AccountService} from "../../service/account/account.service";
 import * as $ from "jquery/dist/jquery.slim"
 import {Router} from "@angular/router";
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +11,7 @@ import {Router} from "@angular/router";
 })
 export class RegisterComponent {
 
-  constructor(private accountService : AccountService, private router : Router) {
+  constructor(private accountService: AccountService, private router: Router) {
   }
 
   formRegister: FormGroup = new FormGroup({
@@ -22,6 +23,7 @@ export class RegisterComponent {
     phone_number: new FormControl(""),
     gender: new FormControl(""),
   })
+
 
   checkPassword() {
     let pass = this.formRegister.value.password
@@ -36,16 +38,46 @@ export class RegisterComponent {
   }
 
   register() {
-    let account = this.formRegister.value
-    if (this.checkPassword()) {
-      this.accountService.register(account).subscribe(data => {
-        location.replace('/')
-      }, error => {
-        console.log(account)
-        alert("false")
-      })
+    if (!this.formRegister.value.username == null) {
+      let account = this.formRegister.value
+      if (this.check) {
+        if (this.checkPassword()) {
+          this.accountService.register(account).subscribe(data => {
+            location.replace('/')
+          }, error => {
+            console.log(account)
+            alert("false")
+          })
+        } else {
+          alert("sai mat khau")
+        }
+      } else {
+        alert("Tai khoan da ton tai")
+      }
     } else {
-      alert("sai thong tin")
+      alert("Username khong hop le")
     }
   }
+
+
+  check: boolean = false
+
+  checkUsername() {
+    let username = this.formRegister.value.username
+    if (/^[a-zA-Z\-]+$/.test(<any>$("#username").val())) {
+      this.accountService.checkUsername(username).subscribe(data => {
+        if (data) {
+          $("#checkUsername").text("✅")
+          this.check = true
+        } else {
+          $("#checkUsername").text("❌")
+          this.check = false
+        }
+      })
+    } else {
+      $("#checkUsername").text("❌")
+      this.check = false
+    }
+  }
+
 }

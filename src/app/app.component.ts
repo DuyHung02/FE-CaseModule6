@@ -5,10 +5,7 @@ declare var $: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   title = 'FE-CaseModule-6';
 
-  ngOnInit(): void {
-    $('#test').text('Welcome HTien');
-  }
 }

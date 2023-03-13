@@ -56,6 +56,16 @@ img {
   font-size: 30px;
   margin-bottom: 1rem;
 }
+
+.card-id {
+  /*background: blue;*/
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 1rem;
+}
+
 .card-desc {
   /*background: yellow;*/
   font-size: 20px;

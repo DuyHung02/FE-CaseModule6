@@ -18,8 +18,9 @@ body {
   border-radius: 20px;
   padding: 30px;
   position: absolute;
-  right: 230px;
-  top: 200px
+  right: 10%;
+  left: 40%;
+  top: 20%;
 }
 
 .register-field {

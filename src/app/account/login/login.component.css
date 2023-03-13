@@ -12,15 +12,22 @@ body {
 }
 
 .login {
-  width: 600px;
+  width: 900px;
   margin: 50px auto;
   background-color: rgba(0,0,0,0.4);
   border-radius: 20px;
   padding: 30px;
   position: absolute;
-  right: 370px;
+  right: 10%;
+  left: 40%;
   top: 200px
 }
+
+/*.form-login {*/
+/*  padding-top: 10%;*/
+/*  padding-left: 10%;*/
+/*  padding-right: 10%;*/
+/*}*/
 
 .login-field {
   display: flex;

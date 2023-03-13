@@ -64,14 +64,46 @@ export class ProfileEditComponent implements OnInit {
 
   edit() {
     this.account = this.formProfile.value
-    this.accountService.editProfile(this.account).subscribe(data => {
-      this.account = data
-      localStorage.setItem("accountToken", JSON.stringify(data))
-      console.log(data)
-      location.replace('/profile')
-    }, error => {
-      console.log(this.account)
-      alert("false")
+    if (this.check) {
+      this.accountService.editProfile(this.account).subscribe(data => {
+        this.account = data
+        localStorage.setItem("accountToken", JSON.stringify(data))
+        console.log(data)
+        location.replace('/profile')
+      }, error => {
+        console.log(this.account)
+        alert("false")
+      })
+    } else {
+      alert("Gmail khong hop le")
+    }
+  }
+
+  check: boolean = true
+
+  checkGmail() {
+    let gmail = this.formProfile.value.gmail
+    this.id = this.account.id
+    this.accountService.checkGmail(gmail, this.id).subscribe(data => {
+      if (data) {
+        $("#checkGmail").text("✅")
+        this.check = true
+      } else {
+        $("#checkGmail").text("❌")
+        this.check = false
+      }
     })
   }
+
+  validateEmail() {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(<any>$("#gmail").val())) {
+      $("#checkGmail").text("✅")
+      this.checkGmail()
+    } else {
+      $("#checkGmail").text("❌")
+      this.check = false
+    }
+  }
+
 }
+

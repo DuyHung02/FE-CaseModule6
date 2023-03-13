@@ -47,4 +47,19 @@ export class AccountService {
     return this.http.post<any>('http://localhost:8080/account/save/password', newPassword)
   }
 
+  checkGmail(gmail : string | null, id: number): Observable<boolean> {
+    let newGmail = {
+      gmail: gmail,
+      id: id
+    }
+    return this.http.post<any>('http://localhost:8080/account/check/gmail', newGmail)
+  }
+
+  checkUsername(username : string | null): Observable<boolean> {
+    let newUsername = {
+      username: username
+    }
+    return this.http.post<any>('http://localhost:8080/account/check/username', newUsername)
+  }
+
 }
