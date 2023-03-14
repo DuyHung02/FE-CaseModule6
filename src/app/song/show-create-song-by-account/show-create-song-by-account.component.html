@@ -9,7 +9,7 @@
     <p class="song-title">{{s.song_name}}</p>
     <p class="song-album">{{s.song_music_genre}}</p>
     <p class="song-time">{{s.posted}}</p>
-    <button class="btn-show"> Show Details</button>
+    <a class="btn btn-warning" routerLink="/editSong/{{s.id}}"> Edit</a>
     <button class="btn-show"> Like</button>
     <label for="love" class="song-love">
       <input type="checkbox" name="love" id="love" />

@@ -17,7 +17,7 @@ export class CreateSingerSongComponent implements OnInit {
   singerSongId: SingerSongId | undefined;
   formCreateSingerSong !: FormGroup;
 
-  constructor(private songService:SongService,private activatedRoute: ActivatedRoute, private singerSongService: SingerSongService, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private singerSongService: SingerSongService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,7 +33,7 @@ export class CreateSingerSongComponent implements OnInit {
   create() {
     console.log(this.formCreateSingerSong.value);
     this.singerSongService.createSingerSong(this.formCreateSingerSong.value).subscribe((data) => {
-      // this.router.navigate(["/show"]);
+      this.router.navigate(["/showCreateSongByAccount"]);
     })
   }
 }

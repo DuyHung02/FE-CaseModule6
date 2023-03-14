@@ -30,6 +30,7 @@ import {FindSingerNameComponent} from "./singer/find-singer-name/find-singer-nam
 import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
 import { ShowDetailSingerComponent } from './singer/show-detail-singer/show-detail-singer.component';
 import { ShowCreateSongByAccountComponent } from './song/show-create-song-by-account/show-create-song-by-account.component';
+import { EditSongComponent } from './song/edit-song/edit-song.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ShowCreateSongByAccountComponent } from './song/show-create-song-by-acc
     ShowSingerComponent,
     ShowDetailSingerComponent,
     ShowCreateSongByAccountComponent,
+    EditSongComponent,
   ],
   imports: [
     BrowserModule,

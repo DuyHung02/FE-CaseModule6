@@ -1,0 +1,18 @@
+<h1>Edit Song</h1>
+
+<form [formGroup]="formEditSong" *ngIf="formEditSong" (ngSubmit)="edit()">
+  <input formControlName="id" hidden ><br>
+  <input formControlName="account_id" hidden ><br>
+  <input formControlName="actives" hidden ><br>
+  Song name <input placeholder="song_name" formControlName="song_name"><br>
+  Description <input placeholder="description" formControlName="description" ><br>
+  File_mp3 <input placeholder="file_mp3" formControlName="file_mp3" ><br>
+  Song_avatar <input placeholder="song_avatar" formControlName='song_avatar'><br>
+  Author <input placeholder="author" formControlName="author"><br>
+  Posted <input placeholder="posted" formControlName="posted"><br>
+  Album <input placeholder="album" formControlName="album"><br>
+  Song_music_genre <input placeholder="song_music_genre" formControlName="song_music_genre"><br>
+  <button type="submit">Edit</button>
+</form>
+
+
