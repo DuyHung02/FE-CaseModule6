@@ -28,6 +28,7 @@ import {HeaderComponent} from "./home/header/header.component";
 import {NavbarComponent} from "./home/navbar/navbar.component";
 import {FindSingerNameComponent} from "./singer/find-singer-name/find-singer-name.component";
 import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
+import { ShowDetailSingerComponent } from './singer/show-detail-singer/show-detail-singer.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { ShowSingerComponent } from './singer/show-singer/show-singer.component'
     PlayListComponent,
     FindSingerNameComponent,
     ShowSingerComponent,
+    ShowDetailSingerComponent,
   ],
   imports: [
     BrowserModule,
