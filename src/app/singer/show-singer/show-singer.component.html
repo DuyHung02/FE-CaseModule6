@@ -1,0 +1,16 @@
+<div class="song-list">
+  <div class="song" *ngFor="let sr of singers ">
+    <p class="song-title">{{sr.singer_name}}</p>
+    <p class="song-album">{{sr.singer_gender}}</p>
+    <p class="song-time">{{sr.birthday}}</p>
+    <p class="btn-show">{{sr.singer_gender}}</p>
+    <p class="btn-show">{{sr.year}}</p>
+    <p class="btn-show">{{sr.band}}</p>
+    <button class="btn-show"> Show Details</button>
+    <button class="btn-show"> Like</button>
+    <label for="love" class="song-love">
+      <input type="checkbox" name="love" id="love" />
+      <i class="fa fa-heart song-heart"></i>
+    </label>
+  </div>
+</div>
