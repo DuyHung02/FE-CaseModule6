@@ -13,6 +13,9 @@ import {CheckAccountComponent} from "./account/check-account/check-account.compo
 import {BodyComponent} from "./home/body/body.component";
 import {ShowSingerComponent} from "./singer/show-singer/show-singer.component";
 import {ShowDetailSingerComponent} from "./singer/show-detail-singer/show-detail-singer.component";
+import {
+  ShowCreateSongByAccountComponent
+} from "./song/show-create-song-by-account/show-create-song-by-account.component";
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -28,6 +31,7 @@ const routes: Routes = [
   {path:'findSinger',component: FindSingerNameComponent},
   {path:'showSinger',component: ShowSingerComponent},
   {path:'showDetailSinger/:id',component: ShowDetailSingerComponent},
+  {path:'showCreateSongByAccount',component: ShowCreateSongByAccountComponent},
 ]
 
 @NgModule({

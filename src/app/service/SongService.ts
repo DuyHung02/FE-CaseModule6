@@ -31,4 +31,9 @@ export class SongService {
     return this.http.put<Song>("http://localhost:8080/songs", song);
   }
 
+  findSaveSong( id:number) :Observable<Song[]>{
+    return this.http.get<Song[]>(`http://localhost:8080/songs/saveSong/${id}`);
+  }
+
+
 }
