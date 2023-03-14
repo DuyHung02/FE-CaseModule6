@@ -27,6 +27,10 @@ import {FooterComponent} from "./home/footer/footer.component";
 import {HeaderComponent} from "./home/header/header.component";
 import {NavbarComponent} from "./home/navbar/navbar.component";
 import {FindSingerNameComponent} from "./singer/find-singer-name/find-singer-name.component";
+import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
+import { SongShowComponent } from './song/song-show/song-show.component';
+import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
+import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,10 @@ import {FindSingerNameComponent} from "./singer/find-singer-name/find-singer-nam
     SingerComponent,
     PlayListComponent,
     FindSingerNameComponent,
+    PlaylistShowComponent,
+    SongShowComponent,
+    PlaylistCreateComponent,
+    PlaylistDeleteComponent,
   ],
   imports: [
     BrowserModule,
