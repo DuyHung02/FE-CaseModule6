@@ -1,0 +1,6 @@
+
+<h1>Them playlist</h1>
+<form [formGroup]="formPlaylist" (ngSubmit)="savePlaylist()">
+  <input type="text" placeholder="name" formControlName="name">
+  <button type="submit">Submit</button>
+</form>
