@@ -15,8 +15,8 @@ export class SingerService {
     return this.http.post<any>("http://localhost:8080/singer", singer);
   }
 
-  getAll() :Observable<Singer[]>{
-    return this.http.get<Singer[]>("http://localhost:8080/singer");
+  getAll(page:number) :Observable<Singer[]>{
+    return this.http.get<Singer[]>("http://localhost:8080/singer"+'?page=' + page);
   }
 
   delete(id:number) :Observable<void>{

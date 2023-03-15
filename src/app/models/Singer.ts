@@ -9,6 +9,7 @@ export class Singer{
   band!: string;
   hot_music!: string;
   information!: string;
+  singer_avatar!: string ;
 
   constructor(id: number, singer_name: string, singer_gender: string, birthday: string, music_genre: string, story: string, year: number, band: string, hot_music: string, information: string) {
     this.id = id;

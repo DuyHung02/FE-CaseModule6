@@ -1,23 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CreateComponent } from './song/create/create.component';
-import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
-import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
-import { RegisterComponent } from './account/register/register.component';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {CreateComponent} from './song/create/create.component';
+import {CreateSingerComponent} from './singer/create-singer/create-singer.component';
+import {CreateSingerSongComponent} from './singerSong/create-singer-song/create-singer-song.component';
+import {RegisterComponent} from './account/register/register.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import { LoginComponent } from './account/login/login.component';
-import { ProfileComponent } from './account/profile/profile.component';
-import { ProfileEditComponent } from './account/profile-edit/profile-edit.component';
+import {LoginComponent} from './account/login/login.component';
+import {ProfileComponent} from './account/profile/profile.component';
+import {ProfileEditComponent} from './account/profile-edit/profile-edit.component';
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AddTokenInterceptor} from "./service/token/add-token.interceptor";
-import { environment } from '../environments/environment';
-import { ChangePasswordComponent } from './account/change-password/change-password.component';
-import { CheckAccountComponent } from './account/check-account/check-account.component';
+import {environment} from '../environments/environment';
+import {ChangePasswordComponent} from './account/change-password/change-password.component';
+import {CheckAccountComponent} from './account/check-account/check-account.component';
 import {BodyComponent} from "./home/body/body.component";
 import {NewSongComponent} from "./home/body/new-song/new-song.component";
 import {ChartsComponent} from "./home/body/charts/charts.component";
@@ -26,7 +26,8 @@ import {SingerComponent} from "./home/body/singer/singer.component";
 import {FooterComponent} from "./home/footer/footer.component";
 import {HeaderComponent} from "./home/header/header.component";
 import {NavbarComponent} from "./home/navbar/navbar.component";
-import { PlayDemoComponent } from './playMusic/play-demo/play-demo.component';
+import {PlayDemoComponent} from './playMusic/play-demo/play-demo.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -50,16 +51,18 @@ import { PlayDemoComponent } from './playMusic/play-demo/play-demo.component';
     PlayListComponent,
     PlayDemoComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        AngularFireAuthModule,
-        AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    FormsModule,
+    NgxPaginationModule
+
+  ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: AddTokenInterceptor,
@@ -67,4 +70,5 @@ import { PlayDemoComponent } from './playMusic/play-demo/play-demo.component';
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
