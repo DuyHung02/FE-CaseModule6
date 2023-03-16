@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {SongService} from "../../service/SongService";
 import {ActivatedRoute} from "@angular/router";
 import {Song} from "../../models/Song";
+import {data} from "jquery";
 
 @Component({
   selector: 'app-play-for-singer',
@@ -37,6 +38,7 @@ export class PlayForSingerComponent implements OnInit, OnDestroy {
   currentSongIndex: number = 0;
 
   audio: HTMLAudioElement = new Audio();
+  newListens: number = 0
 
 
   constructor(private songService: SongService, private route: ActivatedRoute) {
@@ -103,6 +105,11 @@ export class PlayForSingerComponent implements OnInit, OnDestroy {
       this.playBtn.innerHTML = '<i class="fa fa-pause play-icon" aria-hidden="true"></i>'
       this.audio.addEventListener('ended', () => {
         this.nextSong();
+        //  Hàm tự động thêm lượt nghe sau khi hết bài hát
+        this.updateListens()
+
+
+
       });
       this.audio.addEventListener('loadedmetadata', () => {
         // console.log('Thoi luong bai hat la: ' + this.audio.duration + ' s');
@@ -264,6 +271,15 @@ export class PlayForSingerComponent implements OnInit, OnDestroy {
       this.duration.innerHTML = this.formatTime(Math.floor(this.audio.duration));
     }
   }
+
+  //  Hàm tự động thêm lượt nghe sau khi hết bài hát
+  updateListens(){
+    this.newListens = this.songs[this.currentSongIndex].listens + 1
+    this.songService.saveListens(this.newListens,this.currentSongIndex).subscribe((data)=>{})
+  }
+
+
+
 
 
 }

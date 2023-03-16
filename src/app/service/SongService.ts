@@ -38,6 +38,22 @@ export class SongService {
     console.log(this.http.get<Song[]>(`http://localhost:8080/songs/findSongBySinger/${id}`))
     return this.http.get<Song[]>(`http://localhost:8080/songs/findSongBySinger/${id}`+'?page=' + page);
   }
+  // Hoành thêm
+
+  saveListens(listens: number, id: number) : Observable<any> {
+    // Khởi tạo dữ liệu theo cùng phần thân của Request gửi đi
+    let newListens = {
+      listens : listens,
+      id: id
+    }
+    return this.http.post<any>('http://localhost:8080/songs/save/newListens', newListens)
+  }
+
+
+  // Hoành thêm
+  findTop10Song(page:number) :Observable<Song[]>{
+    return this.http.get<Song[]>("http://localhost:8080/songs/findTop10Song"+'?page=' + page);
+  }
 
 
 
