@@ -1,13 +1,10 @@
 <div class="song-list">
-  <div class="song-song" *ngFor="let sg of song ">
+  <div class="song-song" *ngFor="let sg of  ">
     <p class="song-title" >{{sg.song_name}}</p>
-    <p class="song-album">{{sg.song_avatar}}</p>
-    <p class="song-time">{{sg.song_music_genre}}</p>
-    <p class="btn-show">{{sg.actives}}</p>
-    <p class="btn-show">{{sg.description}}</p>
-    <p class="btn-show">{{sg.file_mp3}}</p>
-    <p class="btn-show">{{sg.posted}}</p>
-    <a class="btn btn-warning" routerLink="/showDetailSinger/{{sg.id}}">Show</a>
+    <p class="song-album">{{sg.description}}</p>
+    <p class="song-time">{{sg.file_mp3}}</p>
+    <p class="btn-show">{{sg.song_avatar}}</p>
+    <a class="btn btn-warning" routerLink="/showDetailSong/{{sg.id}}">Show</a>
     <button class="btn-show"> Like</button>
     <label for="love" class="song-love">
       <input type="checkbox" name="love" id="love"/>

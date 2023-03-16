@@ -11,19 +11,19 @@ export class SongService {
 
   }
 
-  createSong(song:Song): Observable<Song> {
+  createSong(song: Song): Observable<Song> {
     return this.http.post<Song>("http://localhost:8080/songs", song);
   }
 
-  getAll() :Observable<Song[]>{
+  getAll(): Observable<Song[]> {
     return this.http.get<Song[]>("http://localhost:8080/songs");
   }
 
-  delete(id:number) :Observable<void>{
+  delete(id: number): Observable<void> {
     return this.http.delete<void>(`http://localhost:8080/songs/${id}`);
   }
 
-  findById(id:number) :Observable<Song>{
+  findById(id: number): Observable<Song> {
     return this.http.get<Song>(`http://localhost:8080/songs/${id}`);
   }
 
@@ -31,12 +31,15 @@ export class SongService {
     return this.http.post<Song>("http://localhost:8080/songs/edit", song);
   }
 
-  findSaveSong( id:number) :Observable<Song[]>{
+  findSaveSong(id: number): Observable<Song[]> {
     return this.http.get<Song[]>(`http://localhost:8080/songs/saveSong/${id}`);
   }
-  findNewSong(id: number): Observable<Song[]>{
-    return this.http.get<Song[]>(`http://localhost:8080/songs/findNewSong/${id}`);
-  }
 
+  findNewSong(page: number): Observable<Song[]> {
+    return this.http.get<Song[]>("http://localhost:8080/songs/findNewSong" + "?page" + page);
+  }
+  getAllOrderBySong_id(page: number): Observable<Song[]>{
+    return this.http.get<Song[]>("http://localhost:8080/songs/findAllSong" + "?page" + page);
+  }
 
 }

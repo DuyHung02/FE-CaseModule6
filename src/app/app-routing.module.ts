@@ -18,6 +18,7 @@ import {
 } from "./song/show-create-song-by-account/show-create-song-by-account.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
 
+
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
@@ -34,6 +35,7 @@ const routes: Routes = [
   {path:'showDetailSinger/:id',component: ShowDetailSingerComponent},
   {path:'showCreateSongByAccount',component: ShowCreateSongByAccountComponent},
   {path:'editSong/:id',component: EditSongComponent},
+
 ]
 
 @NgModule({

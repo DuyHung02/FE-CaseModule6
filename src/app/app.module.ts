@@ -31,7 +31,8 @@ import { ShowSingerComponent } from './singer/show-singer/show-singer.component'
 import { ShowDetailSingerComponent } from './singer/show-detail-singer/show-detail-singer.component';
 import { ShowCreateSongByAccountComponent } from './song/show-create-song-by-account/show-create-song-by-account.component';
 import { EditSongComponent } from './song/edit-song/edit-song.component';
-import { FindNewSongComponent } from './song/find-new-song/find-new-song.component';
+import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-song.component';
+import {NgxPaginationModule} from "ngx-pagination";
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { FindNewSongComponent } from './song/find-new-song/find-new-song.compone
     ShowDetailSingerComponent,
     ShowCreateSongByAccountComponent,
     EditSongComponent,
-    FindNewSongComponent,
+
+    ShowDetailSongComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,8 @@ import { FindNewSongComponent } from './song/find-new-song/find-new-song.compone
     HttpClientModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    NgxPaginationModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
