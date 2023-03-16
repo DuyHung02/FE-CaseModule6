@@ -28,6 +28,7 @@ import {HeaderComponent} from "./home/header/header.component";
 import {NavbarComponent} from "./home/navbar/navbar.component";
 import {PlayDemoComponent} from './playMusic/play-demo/play-demo.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { PlayForSingerComponent } from './playMusic/play-for-singer/play-for-singer.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {NgxPaginationModule} from "ngx-pagination";
     SingerComponent,
     PlayListComponent,
     PlayDemoComponent,
+    PlayForSingerComponent,
   ],
   imports: [
     BrowserModule,

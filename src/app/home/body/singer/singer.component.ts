@@ -23,7 +23,9 @@ export class SingerComponent implements OnInit {
 
   getAll(){
     this.singerService.getAll(this.p).subscribe((data) => {
+      console.log(data)
       this.singers = data
+      console.log(this.singers)
       this.total = data.length;
 
     })

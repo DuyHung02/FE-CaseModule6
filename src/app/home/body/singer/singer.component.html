@@ -7,7 +7,7 @@
     <div *ngFor="let singer of singers | paginate: { itemsPerPage: 4, currentPage: p, totalItems: total }" class="billboard-item">
       <div class="billboard-media">
 
-        <a routerLink="/play"> <img
+        <a routerLink="/playForSinger/{{singer.id}}"> <img
           [src]="singer.singer_avatar"
           alt="billboard image"
           class="billboard-image"

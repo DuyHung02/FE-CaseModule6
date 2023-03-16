@@ -28,11 +28,6 @@ export class PlayDemoComponent implements OnInit{
 
 
 
-
-
-
-
-
   ];
   //Khai báo 1 mảng chứa các phần tử dùng để phát nhạc
   playList: HTMLAudioElement[] = []

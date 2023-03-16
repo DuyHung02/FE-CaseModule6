@@ -1,0 +1,97 @@
+
+<div class="content">
+  <div class="content-item">
+    <div class="block-box">
+      <h2 class="heading">List Song</h2>
+      <span class="count">{{songs.length}} Songs</span>
+    </div>
+    <div class="song-list">
+      <!--    Bắt đầu 1 item-->
+
+      <div *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p, totalItems: total }"
+           class="billboard-item">
+
+        <div class="song" data-index="0" (click)="playAndPauseAudio()">
+          <span class="song-index">01</span>
+          <img
+            [src]="song.song_avatar"
+            alt=""
+            class="song-image"
+          />
+          <i class="fa fa-play song-play"  ></i>
+          <h4 class="song-title">{{song.song_name}}</h4>
+          <h5 class="song-album">{{song.album}}</h5>
+
+          <time class="song-time"></time>
+          <label for="love" class="song-love">
+            <input type="checkbox" name="love" id="love"/>{{song.listens}}
+            <i class="fa fa-headphones" aria-hidden="true"></i>
+          </label>
+        </div>
+
+
+      </div>
+      <!--    Kết thúc 1 item-->
+      <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+
+
+    </div>
+
+
+  </div>
+  <div class="content-item">
+    <div class="block-box">
+      <h2 class="heading">Now playing</h2>
+      <span class="count">{{songs.length}} Items on the list</span>
+    </div>
+    <div class="music">
+      <div class="music-thumb">
+        <img [src]="imgSong" alt="" id="imgSong"/>
+      </div>
+      <h3 class="music-name"> {{nameSong}}</h3>
+
+
+      <input class="range" type="range" min="0" max="{{audio.duration}}" step="1" value="{{audio.currentTime}}"
+             (input)="onRangeChange($event)"/>
+
+
+        <div class="timer">
+          <div class="remaining">{{remaining}}</div>
+          <div class="duration">{{duration}}</div>
+
+        </div>
+
+
+      <div class="controls">
+        <i class="fa fa-random play-random" aria-hidden="true" (click)="randomSong()"></i>
+        <i class="fa fa-fast-backward play-back" aria-hidden="true" (click)="previousSong()"></i>
+        <div class="play">
+          <div class="player-inner" (click)="playAndPauseAudio()">
+            <i class="fa fa-play play-icon" aria-hidden="true"></i>
+          </div>
+        </div>
+        <i class="fa fa-fast-forward play-forward" aria-hidden="true" (click)="nextSong()"></i>
+        <i class="fa fa-retweet play-infinite" aria-hidden="true" (click)="loopSong()"></i>
+
+      </div>
+      <div class="volume">
+        <div class="volume-mute" id="volume" (click)="onAndOffVolume()">
+          <i class="fa fa-volume-up" aria-hidden="true"></i>
+        </div>
+        <input (change)="controlVolume($event)" type="range" class="volume-range" min="0" max="1" step="0.01"
+               [(ngModel)]="volume">
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

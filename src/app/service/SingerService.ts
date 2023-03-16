@@ -14,7 +14,7 @@ export class SingerService {
   createSong(singer:any): Observable<any> {
     return this.http.post<any>("http://localhost:8080/singer", singer);
   }
-
+  // Hoành thêm
   getAll(page:number) :Observable<Singer[]>{
     return this.http.get<Singer[]>("http://localhost:8080/singer"+'?page=' + page);
   }

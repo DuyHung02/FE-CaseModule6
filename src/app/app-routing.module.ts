@@ -12,19 +12,21 @@ import {ChangePasswordComponent} from "./account/change-password/change-password
 import {CheckAccountComponent} from "./account/check-account/check-account.component";
 import {BodyComponent} from "./home/body/body.component";
 import {PlayDemoComponent} from "./playMusic/play-demo/play-demo.component";
+import {PlayForSingerComponent} from "./playMusic/play-for-singer/play-for-singer.component";
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'profile/: id', component: ProfileEditComponent},
+  {path: 'profile/:id', component: ProfileEditComponent},
   {path: 'password', component: ChangePasswordComponent},
-  {path: 'password/: id', component: CheckAccountComponent},
+  {path: 'password/:id', component: CheckAccountComponent},
   {path: '', component: BodyComponent},
   {path:'createSong',component: CreateComponent},
   {path:'createSinger',component: CreateSingerComponent},
   {path:'createSingerSong/:id',component: CreateSingerSongComponent},
   {path:'findSinger',component: FindSingerNameComponent},
+  {path:'playForSinger/:id',component: PlayForSingerComponent},
 
 
   //Demo phát nhạc
