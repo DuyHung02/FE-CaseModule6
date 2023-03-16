@@ -11,6 +11,15 @@
     <p class="song-time">{{s.posted}}</p>
     <a class="btn btn-warning" routerLink="/showDetailSong/{{s.id}}">Show</a>
     <button class="btn-show"> Like</button>
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary btn-show dropdown-toggle" data-bs-toggle="dropdown">
+        +playlist
+      </button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let p of playlists"><a class="dropdown-item" (click)="addSongToPlaylist(s.id, p.id)">{{p?.name}}</a></li>
+        <li><a class="dropdown-item" routerLink="/playlist/create">Add more playlist</a></li>
+      </ul>
+    </div>
     <label for="love" class="song-love">
       <input type="checkbox" name="love" id="love" />
       <i class="fa fa-heart song-heart"></i>

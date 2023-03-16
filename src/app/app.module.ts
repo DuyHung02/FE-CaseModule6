@@ -32,6 +32,10 @@ import { ShowDetailSingerComponent } from './singer/show-detail-singer/show-deta
 import { ShowCreateSongByAccountComponent } from './song/show-create-song-by-account/show-create-song-by-account.component';
 import { EditSongComponent } from './song/edit-song/edit-song.component';
 import { ShowSongComponent } from './song/show-song/show-song.component';
+import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
+import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
+import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
+import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
 import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-song.component';
 
 @NgModule({
@@ -61,6 +65,10 @@ import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-son
     EditSongComponent,
     ShowSongComponent,
     ShowDetailSongComponent,
+    PlaylistShowComponent,
+    PlaylistCreateComponent,
+    PlaylistDeleteComponent,
+    PlaylistEditComponent,
   ],
   imports: [
     BrowserModule,
