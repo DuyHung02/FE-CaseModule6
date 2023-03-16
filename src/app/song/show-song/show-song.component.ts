@@ -1,23 +1,24 @@
 import {Component, OnInit} from '@angular/core';
+import { Song } from 'src/app/models/Song';
+import {SongService} from "../../service/SongService";
+import {Router} from "@angular/router";
 import {PlaylistService} from "../../service/playlist/playlist.service";
-import {data} from "jquery";
 
 @Component({
-  selector: 'app-song-show',
-  templateUrl: './song-show.component.html',
-  styleUrls: ['./song-show.component.css']
+  selector: 'app-show-song',
+  templateUrl: './show-song.component.html',
+  styleUrls: ['./show-song.component.css']
 })
-export class SongShowComponent implements OnInit {
+export class ShowSongComponent implements OnInit {
+  songs: Song[] = [];
 
-  constructor(private playlistService: PlaylistService) {
+  constructor(private songService: SongService, private router: Router, private playlistService: PlaylistService) {
   }
 
-  account: any
-  account_id: any
-  playlists: any
-  checkSong!: boolean
-
   ngOnInit(): void {
+    this.songService.getAll().subscribe(data => {
+      this.songs = data;
+    })
     // @ts-ignore
     this.account = JSON.parse(localStorage.getItem("accountToken"))
     this.account_id = this.account.id
@@ -25,6 +26,11 @@ export class SongShowComponent implements OnInit {
       this.playlists = data
     })
   }
+
+  account: any
+  account_id: any
+  playlists: any
+  checkSong!: boolean
 
   addSongToPlaylist(id_song: number, id_playlist: number) {
     console.log("alo?")
@@ -40,5 +46,4 @@ export class SongShowComponent implements OnInit {
       }
     })
   }
-
 }

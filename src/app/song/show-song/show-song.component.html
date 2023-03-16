@@ -1,0 +1,28 @@
+<div class="song-list">
+  <div class="song-song" *ngFor="let s of songs ">
+    <img
+      src="https://cdn.dribbble.com/users/3960463/screenshots/13952774/media/1083c2b91054c7d7ee7c0bd47d60d5e0.png?compress=1&resize=800x600"
+      alt=""
+      class="song-image"
+    />
+    <i class="fa fa-play song-play"></i>
+    <p class="song-title">{{s.song_name}}</p>
+    <p class="song-album">{{s.song_music_genre}}</p>
+    <p class="song-time">{{s.posted}}</p>
+    <a class="btn btn-warning">Show</a>
+    <button class="btn-show"> Like</button>
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary btn-show dropdown-toggle" data-bs-toggle="dropdown">
+        +playlist
+      </button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let p of playlists"><a class="dropdown-item" (click)="addSongToPlaylist(s.id, p.id)">{{p?.name}}</a></li>
+        <li><a class="dropdown-item" routerLink="/playlist/create">Add more playlist</a></li>
+      </ul>
+    </div>
+    <label for="love" class="song-love">
+      <input type="checkbox" name="love" id="love" />
+      <i class="fa fa-heart song-heart"></i>
+    </label>
+  </div>
+</div>

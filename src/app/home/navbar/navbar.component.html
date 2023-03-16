@@ -9,6 +9,7 @@
                             class="profile-avatar"/>
                 </div>
             </div>
+
             <h2 style="text-align: center; margin-left: 5px">Welcome!</h2><br>
             <div style="margin-left: 8%">
                 <button class="upgrade" routerLink="/login"><i class="fa fa-user"></i><span>     Login</span></button>
@@ -21,6 +22,10 @@
             <ul class="menu">
                 <li class="menu-item">
                     <a routerLink="/home" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Home</span></a>
+                </li>
+                <li class="menu-item">
+                    <a routerLink="/showSong" class="menu-link"><i
+                            class="fa fa-home menu-icon"></i><span>Show Song</span></a>
                 </li>
                 <li class="menu-item">
                     <a routerLink="/showSinger" class="menu-link"><i
@@ -48,52 +53,34 @@
             </div>
             <h2 style="text-align: center; margin-left: 5px">Hello {{account.full_name}}</h2>
 
-
             <!--    Thanh menu-->
             <br>
-            <hr style="width: 150%">
             <ul class="menu">
+                <hr style="width: 150%">
                 <li class="menu-item">
                     <a routerLink="/" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Home</span></a>
-                </li>
-                <hr style="width: 150%">
-                <li class="menu-item">
-                    <a routerLink="/playlists" class="menu-link"><i
-                            class="fa fa-square menu-icon"></i><span>Playlist</span></a>
-                    <a routerLink="/showSinger" class="menu-link"><i
-                            class="fa fa-home menu-icon"></i><span>Show Singer</span></a>
-                </li>
-                <hr style="width: 150%">
-                <li class="menu-item">
-                    <a routerLink="/showCreateSongByAccount" class="menu-link"><i
-                            class="fa fa-home menu-icon"></i><span>Show Song Created at Account</span></a>
-                </li>
-                <hr style="width: 150%">
-                <li class="menu-item">
-                    <a class="menu-link" routerLink="createSong"><i
-                            class="fa fa-play menu-icon"></i><span>Create Song</span></a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link" routerLink="/songs"><i class="fa fa-play menu-icon"></i><span>Show Song</span></a>
-                </li>
-                <hr style="width: 150%">
-                <li class="menu-item">
-                    <a routerLink="createSinger" class="menu-link"><i class="fa fa-play menu-icon"></i><span>Create Singer</span></a>
                 </li>
                 <hr style="width: 150%">
                 <li class="menu-item">
                     <a class="menu-link" routerLink="findSinger"><i
                             class="fa fa-play menu-icon"></i><span>Find Singer</span></a>
                 </li>
-                <hr style="width: 150%">
-
                 <!--        Begin dropdown-->
+                <hr style="width: 150%">
                 <div class="dropdown">
                     <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
-                        <a class="menu-link"><i class="fa fa-square menu-icon"></i>Option</a>
+                        <a class="menu-link"><i class="fa fa-square menu-icon"></i>My Account</a>
                     </li>
-                    <ul class="dropdown-menu">
-                        <li class="menu-item" style="width: 300px;">
+                    <ul class="dropdown-menu" style="width: 300px;">
+                        <li class="menu-item">
+                            <a routerLink="/showCreateSongByAccount" class="menu-link"><i
+                                    class="fa fa-home menu-icon"></i><span>My Songs</span></a>
+                        </li>
+                        <li class="menu-item">
+                            <a routerLink="/playlists" class="menu-link"><i
+                                    class="fa fa-user menu-icon"></i><span>Playlist</span></a>
+                        </li>
+                        <li class="menu-item">
                             <a routerLink="/profile" class="menu-link"><i
                                     class="fa fa-user menu-icon"></i><span>Profile</span></a>
                         </li>
@@ -109,9 +96,46 @@
                 </div>
                 <!--        End dropdown-->
 
+                <!--        Begin dropdown-->
+                <div class="dropdown">
+                    <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
+                        <a class="menu-link"><i class="fa fa-square menu-icon"></i>Songs</a>
+                    </li>
+                    <ul class="dropdown-menu" style="width: 300px;">
+                        <li class="menu-item">
+                            <a routerLink="/songs" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Show Song</span></a>
+                        </li>
+                        <li class="menu-item">
+                            <a class="menu-link" routerLink="createSong"><i
+                                    class="fa fa-play menu-icon"></i><span>Create Song</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--        End dropdown-->
+
+                <!--        Begin dropdown-->
+                <div class="dropdown">
+                    <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
+                        <a class="menu-link"><i class="fa fa-square menu-icon"></i>Singer</a>
+                    </li>
+                    <ul class="dropdown-menu" style="width: 300px;">
+                        <li class="menu-item">
+                            <a routerLink="/showSinger" class="menu-link"><i
+                                    class="fa fa-home menu-icon"></i><span>Show Singer</span></a>
+                        </li>
+                        <li class="menu-item">
+                            <a routerLink="createSinger" class="menu-link"><i
+                                    class="fa fa-home menu-icon"></i><span>Create Singer</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <!--        End dropdown-->
+
             </ul>
         </div>
     </div>
 </div>
+
+
 
 

@@ -31,8 +31,8 @@ import { ShowSingerComponent } from './singer/show-singer/show-singer.component'
 import { ShowDetailSingerComponent } from './singer/show-detail-singer/show-detail-singer.component';
 import { ShowCreateSongByAccountComponent } from './song/show-create-song-by-account/show-create-song-by-account.component';
 import { EditSongComponent } from './song/edit-song/edit-song.component';
+import { ShowSongComponent } from './song/show-song/show-song.component';
 import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
-import { SongShowComponent } from './song/song-show/song-show.component';
 import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
 import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
@@ -62,8 +62,8 @@ import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.co
     ShowDetailSingerComponent,
     ShowCreateSongByAccountComponent,
     EditSongComponent,
+    ShowSongComponent,
     PlaylistShowComponent,
-    SongShowComponent,
     PlaylistCreateComponent,
     PlaylistDeleteComponent,
     PlaylistEditComponent,
