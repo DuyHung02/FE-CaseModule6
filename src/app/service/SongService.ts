@@ -11,8 +11,8 @@ export class SongService {
 
   }
 
-  createSong(song:any): Observable<any> {
-    return this.http.post<any>("http://localhost:8080/songs", song);
+  createSong(song:Song): Observable<Song> {
+    return this.http.post<Song>("http://localhost:8080/songs", song);
   }
 
   getAll() :Observable<Song[]>{
@@ -28,7 +28,12 @@ export class SongService {
   }
 
   editSong(song: Song): Observable<Song> {
-    return this.http.put<Song>("http://localhost:8080/songs", song);
+    return this.http.post<Song>("http://localhost:8080/songs/edit", song);
   }
+
+  findSaveSong( id:number) :Observable<Song[]>{
+    return this.http.get<Song[]>(`http://localhost:8080/songs/saveSong/${id}`);
+  }
+
 
 }

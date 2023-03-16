@@ -16,6 +16,7 @@
   </button>
   <ul class="dropdown-menu">
     <li *ngFor="let p of playlists"><a class="dropdown-item" (click)="addSongToPlaylist(2, p.id)">{{p?.name}}</a></li>
+    <li><a class="dropdown-item" routerLink="/playlist/create">Add more playlist</a></li>
   </ul>
 </div>
 

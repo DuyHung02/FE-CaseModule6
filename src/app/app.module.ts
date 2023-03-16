@@ -27,6 +27,10 @@ import {FooterComponent} from "./home/footer/footer.component";
 import {HeaderComponent} from "./home/header/header.component";
 import {NavbarComponent} from "./home/navbar/navbar.component";
 import {FindSingerNameComponent} from "./singer/find-singer-name/find-singer-name.component";
+import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
+import { ShowDetailSingerComponent } from './singer/show-detail-singer/show-detail-singer.component';
+import { ShowCreateSongByAccountComponent } from './song/show-create-song-by-account/show-create-song-by-account.component';
+import { EditSongComponent } from './song/edit-song/edit-song.component';
 import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
 import { SongShowComponent } from './song/song-show/song-show.component';
 import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
@@ -54,6 +58,10 @@ import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.co
     SingerComponent,
     PlayListComponent,
     FindSingerNameComponent,
+    ShowSingerComponent,
+    ShowDetailSingerComponent,
+    ShowCreateSongByAccountComponent,
+    EditSongComponent,
     PlaylistShowComponent,
     SongShowComponent,
     PlaylistCreateComponent,

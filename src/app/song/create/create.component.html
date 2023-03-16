@@ -1,6 +1,7 @@
 <h1>Create Song</h1>
 
 <form [formGroup]="formCreateSong" *ngIf="formCreateSong" (ngSubmit)="create()">
+  <input formControlName="account_id" hidden><br>
   <input placeholder="song_name" formControlName="song_name"><br>
   <input placeholder="description" formControlName="description" ><br>
   <input placeholder="file_mp3" formControlName="file_mp3" ><br>

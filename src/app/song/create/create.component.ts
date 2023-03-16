@@ -13,6 +13,8 @@ import {SingerSongId} from "../../models/dto/SingerSongId";
 })
 export class CreateComponent implements OnInit{
   song_id: any;
+  account: any;
+  account_id: any;
   song: Song | undefined;
   formCreateSong !: FormGroup;
   singerSongId: SingerSongId|undefined;
@@ -21,15 +23,20 @@ export class CreateComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    // @ts-ignore
+    this.account= JSON.parse(localStorage.getItem("accountToken"))
+    this.account_id =this.account.id;
+
     this.formCreateSong = new FormGroup({
-      song_name: new FormControl(this.song?.song_name),
-      description: new FormControl(this.song?.description),
-      file_mp3: new FormControl(this.song?.file_mp3),
-      song_avatar: new FormControl(this.song?.song_avatar),
-      author: new FormControl(this.song?.author),
-      posted: new FormControl(this.song?.posted),
-      album: new FormControl(this.song?.album),
-      song_music_genre: new FormControl(this.song?.song_music_genre),
+      account_id: new FormControl(this.account_id),
+      song_name: new FormControl(),
+      description: new FormControl(),
+      file_mp3: new FormControl(),
+      song_avatar: new FormControl(),
+      author: new FormControl(),
+      posted: new FormControl(),
+      album: new FormControl(),
+      song_music_genre: new FormControl(),
     })
   }
 

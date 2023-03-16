@@ -11,6 +11,12 @@ import {ProfileEditComponent} from "./account/profile-edit/profile-edit.componen
 import {ChangePasswordComponent} from "./account/change-password/change-password.component";
 import {CheckAccountComponent} from "./account/check-account/check-account.component";
 import {BodyComponent} from "./home/body/body.component";
+import {ShowSingerComponent} from "./singer/show-singer/show-singer.component";
+import {ShowDetailSingerComponent} from "./singer/show-detail-singer/show-detail-singer.component";
+import {
+  ShowCreateSongByAccountComponent
+} from "./song/show-create-song-by-account/show-create-song-by-account.component";
+import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {PlaylistShowComponent} from "./playlist/playlist-show/playlist-show.component";
 import {SongShowComponent} from "./song/song-show/song-show.component";
 import {PlaylistCreateComponent} from "./playlist/playlist-create/playlist-create.component";
@@ -32,8 +38,13 @@ const routes: Routes = [
   {path:'playlists',component: PlaylistShowComponent},
   {path:'songs',component: SongShowComponent},
   {path:'playlist/create',component: PlaylistCreateComponent},
+  {path:'playlist/create/:id',component: PlaylistCreateComponent},
   {path:'playlist/delete/:id',component: PlaylistDeleteComponent},
   {path:'playlist/edit/:id',component: PlaylistEditComponent},
+  {path:'showSinger',component: ShowSingerComponent},
+  {path:'showDetailSinger/:id',component: ShowDetailSingerComponent},
+  {path:'showCreateSongByAccount',component: ShowCreateSongByAccountComponent},
+  {path:'editSong/:id',component: EditSongComponent},
 ]
 
 @NgModule({

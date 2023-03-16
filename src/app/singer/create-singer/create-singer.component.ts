@@ -35,7 +35,7 @@ export class CreateSingerComponent implements OnInit{
   create() {
     console.log(this.formCreateSinger.value);
     this.singerService.createSong(this.formCreateSinger.value).subscribe((data) => {
-      // this.router.navigate(["/show"]);
+      this.router.navigate(["/showSinger"]);
     })
   }
 }

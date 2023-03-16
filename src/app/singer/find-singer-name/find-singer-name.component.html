@@ -8,14 +8,12 @@
 
 <hr>
 <br>
-<form [formGroup]="formSinger" *ngIf="formSinger" >
-  <input placeholder="singer_name" formControlName="singer_name"><br>
-  <input placeholder="singer_gender" formControlName="singer_gender" ><br>
-  <input placeholder="birthday" formControlName="birthday" ><br>
-  <input placeholder="music_genre" formControlName='music_genre'><br>
-  <input placeholder="story" formControlName="story"><br>
-  <input placeholder="year" formControlName="year"><br>
-  <input placeholder="band" formControlName="band"><br>
-  <input placeholder="hot_music" formControlName="hot_music"><br>
-  <input placeholder="information" formControlName="information"><br>
-</form>
+<p>{{singer?.singer_name}}</p>
+<p>{{singer?.singer_gender}}</p>
+<p>{{singer?.birthday}}</p>
+<p>{{singer?.music_genre}}</p>
+<p>{{singer?.story}}</p>
+<p>{{singer?.year}}</p>
+<p>{{singer?.band}}</p>
+<p>{{singer?.hot_music}}</p>
+<p>{{singer?.information}}</p>
