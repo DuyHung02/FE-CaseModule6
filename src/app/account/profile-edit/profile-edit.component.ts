@@ -42,6 +42,7 @@ export class ProfileEditComponent implements OnInit {
 
   upLoadFileImg() {
     this.selectedImage = this.avatarDom?.nativeElement.files[0];
+    console.log(this.selectedImage)
     this.submit()
   }
 
