@@ -14,23 +14,26 @@ import {BodyComponent} from "./home/body/body.component";
 import {PlaylistShowComponent} from "./playlist/playlist-show/playlist-show.component";
 import {SongShowComponent} from "./song/song-show/song-show.component";
 import {PlaylistCreateComponent} from "./playlist/playlist-create/playlist-create.component";
+import {PlaylistDeleteComponent} from "./playlist/playlist-delete/playlist-delete.component";
+import {PlaylistEditComponent} from "./playlist/playlist-edit/playlist-edit.component";
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'profile/: id', component: ProfileEditComponent},
+  {path: 'profile/:id', component: ProfileEditComponent},
   {path: 'password', component: ChangePasswordComponent},
-  {path: 'password/: id', component: CheckAccountComponent},
+  {path: 'password/:id', component: CheckAccountComponent},
   {path: '', component: BodyComponent},
   {path:'createSong',component: CreateComponent},
   {path:'createSinger',component: CreateSingerComponent},
   {path:'createSingerSong/:id',component: CreateSingerSongComponent},
   {path:'findSinger',component: FindSingerNameComponent},
-  {path:'playlist/show',component: PlaylistShowComponent},
-  {path:'song/show',component: SongShowComponent},
+  {path:'playlists',component: PlaylistShowComponent},
+  {path:'songs',component: SongShowComponent},
   {path:'playlist/create',component: PlaylistCreateComponent},
-  {path:'playlist/delete/: id',component: PlaylistCreateComponent},
+  {path:'playlist/delete/:id',component: PlaylistDeleteComponent},
+  {path:'playlist/edit/:id',component: PlaylistEditComponent},
 ]
 
 @NgModule({

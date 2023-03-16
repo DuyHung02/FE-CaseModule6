@@ -1,1 +1,3 @@
-<h2>Delete</h2>
+<h2>Delete playlist {{playlist.name}}?</h2>
+<button routerLink="/playlists">NO</button>
+<button (click)="deletePlaylist(playlist.id)">YES</button>

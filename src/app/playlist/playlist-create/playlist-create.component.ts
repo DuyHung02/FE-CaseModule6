@@ -15,27 +15,28 @@ export class PlaylistCreateComponent implements OnInit {
 
   account: any
   account_id: any
-  token!: String
 
   ngOnInit(): void {
     // @ts-ignore
     this.account = JSON.parse(localStorage.getItem("accountToken"))
     this.account_id = this.account.id
-    this.token = this.account.token
   }
 
   formPlaylist: FormGroup = new FormGroup({
-    name: new FormControl
+    name: new FormControl,
+    active: new FormControl
   })
 
   savePlaylist() {
     let name = this.formPlaylist.value.name
-    console.log(name, this.account_id, this.token)
-    this.playlistService.savePlaylist(this.account_id, name, this.token).subscribe(data => {
-      localStorage.setItem("accountToken", JSON.stringify(data))
-      this.router.navigate(['/song/show'])
-      console.log(data)
-    })
+    let active = this.formPlaylist.value.active
+    if (active != null) {
+      this.playlistService.savePlaylist(this.account_id, name, active).subscribe(data => {
+        this.router.navigate(['/song/show'])
+      })
+    } else {
+      alert("choice mode")
+    }
   }
 
 

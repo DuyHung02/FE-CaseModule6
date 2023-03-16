@@ -1,8 +1,13 @@
 
 
+<button routerLink="/playlist/create">Add more playlist</button>
+
 <div *ngFor="let p of playlists">
-  <h3>ID: {{p.id}}  Name: {{p.name}} <button routerLink="/playlist/delete/{{p.id}}">Delete</button></h3>
+  <h3>ID: {{p.id}}  Name: {{p.name}}
+    <button routerLink="/playlist/delete/{{p.id}}">Delete</button>
+    <button routerLink="/playlist/edit/{{p.id}}">Edit</button>
+  </h3>
   <ul *ngFor="let s of p.songs">
-    <li><a>Name: {{s.song_name}} posted: {{s.posted}}</a></li>
+    <li><a>Name: {{s.song_name}} posted: {{s.posted}}</a><button (click)="deleteSongInPlaylist(s.id, p.id)">delete</button></li>
   </ul>
 </div>

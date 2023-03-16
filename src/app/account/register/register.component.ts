@@ -69,7 +69,7 @@ export class RegisterComponent {
   }
 
 
-  check: boolean = false
+  check: boolean = true
 
   checkUsername() {
     let username = this.formRegister.value.username

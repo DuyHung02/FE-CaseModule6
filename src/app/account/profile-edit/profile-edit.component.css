@@ -132,7 +132,7 @@ img {
 
   text-align: center;
   font-size: 15px;
-  font-family: "Poppins";
+  /*font-family: "Poppins";*/
   overflow: hidden;
   position: relative;
   z-index: 1;
