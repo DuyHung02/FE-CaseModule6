@@ -29,7 +29,7 @@ export class PlaylistShowComponent implements OnInit{
   deleteSongInPlaylist(song_id: number, playlist_id: number) {
     this.playlistService.deleteSongInPlaylist(song_id, playlist_id).subscribe(data => {
       alert("success")
-      location.replace('playlist/show')
+      location.replace('playlists')
     })
   }
 
