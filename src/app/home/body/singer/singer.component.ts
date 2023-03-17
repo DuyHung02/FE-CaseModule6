@@ -22,7 +22,7 @@ export class SingerComponent implements OnInit {
   }
 
   getAll(){
-    this.singerService.getAll(this.p).subscribe((data) => {
+    this.singerService.getAllSinger(this.p).subscribe((data) => {
       console.log(data)
       this.singers = data
       console.log(this.singers)

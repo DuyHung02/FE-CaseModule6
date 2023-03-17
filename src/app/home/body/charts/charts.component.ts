@@ -118,6 +118,13 @@ export class ChartsComponent implements OnInit, OnDestroy {
     this.findSongByIdSinger();
   }
 
+  changeAudio(index: number):void{
+    this.currentSongIndex = index;
+    this.audio.src = this.songs[this.currentSongIndex].file_mp3;
+
+    this.playAndPauseAudio();
+  }
+
   playAndPauseAudio() {
     // alert("index")
     // alert(this.currentSongIndex)
@@ -125,11 +132,8 @@ export class ChartsComponent implements OnInit, OnDestroy {
 
     // this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
 
-    this.audio.src = this.songs[this.currentSongIndex].file_mp3;
     this.imgSong = this.songs[this.currentSongIndex].song_avatar
     this.nameSong = this.songs[this.currentSongIndex].song_name
-
-
 
     this.playBtn = document.querySelector(".player-inner");
     this.musicThumbnail = document.querySelector(".music-thumb");
@@ -161,7 +165,7 @@ export class ChartsComponent implements OnInit, OnDestroy {
     }
   }
 
-  imgSong: any
+  imgSong = "https://vietthuong.vn/upload/content/images/tuvan/piano/co-am-nhac-cuoc-song-tot-dep-hon-02.jpg"
   nameSong: any
 
   nextSong() {
