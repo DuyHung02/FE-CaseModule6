@@ -31,8 +31,13 @@ import { ShowSingerComponent } from './singer/show-singer/show-singer.component'
 import { ShowDetailSingerComponent } from './singer/show-detail-singer/show-detail-singer.component';
 import { ShowCreateSongByAccountComponent } from './song/show-create-song-by-account/show-create-song-by-account.component';
 import { EditSongComponent } from './song/edit-song/edit-song.component';
-import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-song.component';
+import { ShowSongComponent } from './song/show-song/show-song.component';
+import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
+import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
+import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
+import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
 import {NgxPaginationModule} from "ngx-pagination";
+import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-song.component';
 
 @NgModule({
   declarations: [
@@ -59,8 +64,12 @@ import {NgxPaginationModule} from "ngx-pagination";
     ShowDetailSingerComponent,
     ShowCreateSongByAccountComponent,
     EditSongComponent,
-
-    ShowDetailSongComponent,
+    ShowSongComponent,
+    // ShowDetailSongComponent,
+    PlaylistShowComponent,
+    PlaylistCreateComponent,
+    PlaylistDeleteComponent,
+    PlaylistEditComponent,
   ],
   imports: [
     BrowserModule,

@@ -26,7 +26,7 @@ export class CreateSingerSongComponent implements OnInit {
     this.singerService.getAll().subscribe(data => {
       this.singers = data;
       console.log(this.singers)
-      $('#toan').val('hello toàn');
+      // $('#toan').val('hello toàn');
       this.song_id = this.activatedRoute.snapshot.paramMap.get('id');
       if (this.song_id != null) {
         this.formCreateSingerSong = new FormGroup({

@@ -1,0 +1,9 @@
+
+<h1>Them playlist</h1>
+<form [formGroup]="formPlaylist" (ngSubmit)="savePlaylist()">
+  <input type="text" placeholder="name" formControlName="name"><br>
+  <label>Mode</label><br>
+  <input type="radio" name="active" value="1" formControlName="active">public<br>
+  <input type="radio" name="active" value="0" formControlName="active">private<br>
+  <button type="submit">Submit</button>
+</form>
