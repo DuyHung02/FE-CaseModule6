@@ -13,8 +13,8 @@ export class ShowCreateSongByAccountComponent implements OnInit {
   songs: Song[] = [];
   account: any;
   account_id: any;
-  playlists: any
   checkSong!: boolean
+  playlists: any
 
   constructor(private songService: SongService, private router: Router, private playlistService: PlaylistService) {
   }
@@ -25,12 +25,6 @@ export class ShowCreateSongByAccountComponent implements OnInit {
     this.account_id =this.account.id;
     this.songService.findSaveSong(this.account_id).subscribe(data => {
       this.songs = data;
-    })
-    // @ts-ignore
-    this.account = JSON.parse(localStorage.getItem("accountToken"))
-    this.account_id = this.account.id
-    this.playlistService.showPlaylist(this.account_id).subscribe(data => {
-      this.playlists = data
     })
   }
 

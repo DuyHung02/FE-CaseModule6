@@ -37,9 +37,11 @@ import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-cre
 import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
 import {PlaylistDetailComponent} from "./playlist/playlist-detail/playlist-detail.component";
+import {ShowDetailSongComponent} from "./song/show-detail-song/show-detail-song.component";
 
 @NgModule({
   declarations: [
+    ShowDetailSongComponent,
     AppComponent,
     HeaderComponent,
     CreateComponent,
