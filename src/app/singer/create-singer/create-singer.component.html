@@ -1,0 +1,19 @@
+<h1>Create Singer</h1>
+
+<form [formGroup]="formCreateSinger" *ngIf="formCreateSinger" (ngSubmit)="create()">
+  <input placeholder="singer_name" formControlName="singer_name"><br>
+  <select formControlName="singer_gender">
+    <option value="Nam">Nam</option>
+    <option value="Nữ">Nữ</option>
+    <option value="Khác">Khác</option>
+  </select><br>
+  <input placeholder="birthday" formControlName="birthday" ><br>
+  <input placeholder="music_genre" formControlName='music_genre'><br>
+  <input placeholder="story" formControlName="story"><br>
+  <input type="number" placeholder="year" formControlName="year"><br>
+  <input placeholder="band" formControlName="band"><br>
+  <input placeholder="hot_music" formControlName="hot_music"><br>
+  <input placeholder="information" formControlName="information"><br>
+  <button type="submit" >Create Singer</button>
+
+</form>

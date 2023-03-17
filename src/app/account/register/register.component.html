@@ -1,0 +1,59 @@
+<div class="row">
+  <div>
+    <form [formGroup]="formRegister" (ngSubmit)="register()" class="login">
+      <h2 style="text-align: center; color: #ffffff">Form Register</h2><br>
+
+      <div>
+        <div style="float: left" class="col-5">
+          <div class="register-field">
+            <i class="fa fa-envelope login-icon"></i>
+            <input type="text" id="username" class="register-input" placeholder="Username" formControlName="username"
+                   style="width: 350px" (input)="checkUsername()">
+            <span id="checkUsername"></span>
+          </div>
+          <div class="register-field">
+            <i class="fa fa-lock login-icon"></i>
+            <input type="text" class="register-input" placeholder="Password" formControlName="password"
+                   (input)="checkPassword()">
+          </div>
+          <div class="register-field">
+            <i class="fa fa-lock login-icon"></i>
+            <input type="text" class="register-input" placeholder="Re-password" formControlName="rePassword"
+                   (input)="checkPassword()">
+            <span id="checkPassword"></span>
+          </div>
+        </div>
+
+        <div style="float: right" class="col-5">
+          <div class="register-field">
+            <i class="fa fa-envelope login-icon"></i>
+            <input type="text" class="register-input" placeholder="Full Name" formControlName="full_name"
+                   style="width: 350px">
+          </div>
+          <div class="register-field">
+            <i class="fa fa-envelope login-icon"></i>
+            <input type="text" class="register-input" placeholder="Phone number" formControlName="phone_number">
+          </div>
+          <div class="register-field">
+            <div class="register-input">
+              <input type="radio" name="gender" value="Nam" formControlName="gender" style="margin-left: 10px">Nam
+              <input type="radio" name="gender" value="Nữ" formControlName="gender" style="margin-left: 10px">Nữ
+              <input type="radio" name="gender" value="Khác" formControlName="gender" style="margin-left: 10px">Khác
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <div>
+        <button class="register-submit" type="submit">Submit</button>
+        <br>
+        <hr style="color: white">
+        <button class="register-google">Sign with google</button>
+      </div>
+    </form>
+
+
+    <img src="https://i.pinimg.com/originals/4f/0a/96/4f0a962300ed883b1403de6fbfeaa461.gif" width="100%" height="100%">
+  </div>
+</div>

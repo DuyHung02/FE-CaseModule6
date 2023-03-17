@@ -1,0 +1,19 @@
+<h1>Find Singer</h1>
+
+<form [formGroup]="formFindSinger" *ngIf="formFindSinger" (ngSubmit)="find()">
+  <input placeholder="singer_name" formControlName="singer_name">
+  <button type="submit" >Find Singer</button>
+
+</form>
+
+<hr>
+<br>
+<p>{{singer?.singer_name}}</p>
+<p>{{singer?.singer_gender}}</p>
+<p>{{singer?.birthday}}</p>
+<p>{{singer?.music_genre}}</p>
+<p>{{singer?.story}}</p>
+<p>{{singer?.year}}</p>
+<p>{{singer?.band}}</p>
+<p>{{singer?.hot_music}}</p>
+<p>{{singer?.information}}</p>

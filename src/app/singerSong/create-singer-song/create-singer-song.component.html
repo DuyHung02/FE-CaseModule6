@@ -1,0 +1,10 @@
+<h1>Thêm ca sĩ vào bài hát</h1>
+
+<form [formGroup]="formCreateSingerSong" *ngIf="formCreateSingerSong" (ngSubmit)="create()">
+  <select formControlName="singer_id">
+    <option *ngFor="let sr of singers " value="{{sr.id}}"  >{{sr.singer_name}}</option>
+  </select><br>
+  <input placeholder="song_id" formControlName="song_id" hidden ><br>
+  <button type="submit" >Submit</button>
+</form>
+

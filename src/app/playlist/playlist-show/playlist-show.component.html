@@ -1,0 +1,34 @@
+
+
+<button routerLink="/playlist/create/1" class="btn btn-success">Add more playlist</button>
+<br>
+<br>
+
+<div class="block-box">
+    <div><h2 >Playlist</h2></div>
+    <br>
+    <div class="billboard-list" >
+
+        <!--    Bắt đầu 1 item-->
+        <div *ngFor="let p of playlists" class="billboard-item">
+            <div class="billboard-media">
+
+                <a routerLink="/playlistDetail/{{p.id}}"> <img
+                        src="{{p.avatarPlaylist}}"
+                        alt="billboard image"
+                        class="billboard-image"
+                /></a>
+                <!--        Cái ảnh dưới này không được động đến-->
+                <img
+                        src="https://cdn.dribbble.com/users/3960463/screenshots/13952774/media/1083c2b91054c7d7ee7c0bd47d60d5e0.png?compress=1&resize=800x600"
+                        alt="billboard image"
+                        class="billboard-image-shadow"
+                />
+            </div>
+            <a href="Thả link sang trang vào đây"><h4 class="billboard-title title">{{p.name}}</h4></a>
+        </div>
+        <!--    Kết thúc 1 item-->
+<!--        <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>-->
+
+    </div>
+</div>
