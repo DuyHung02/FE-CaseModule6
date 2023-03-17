@@ -12,7 +12,8 @@ body {
 }
 
 .login {
-  width: 900px;
+  width: 50%;
+  height: auto;
   margin: 50px auto;
   background-color: rgba(0,0,0,0.4);
   border-radius: 20px;

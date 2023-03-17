@@ -1,7 +1,7 @@
 <div class="song-list">
   <div class="song-song" *ngFor="let s of songs ">
     <img
-      src="{{s.song_avatar}}"
+      src="https://cdn.dribbble.com/users/3960463/screenshots/13952774/media/1083c2b91054c7d7ee7c0bd47d60d5e0.png?compress=1&resize=800x600"
       alt=""
       class="song-image"
     />
@@ -9,7 +9,7 @@
     <p class="song-title">{{s.song_name}}</p>
     <p class="song-album">{{s.song_music_genre}}</p>
     <p class="song-time">{{s.posted}}</p>
-    <a class="btn btn-warning" routerLink="/showDetailSong/{{s.id}}">Show</a>
+    <a class="btn btn-warning">Show</a>
     <button class="btn-show"> Like</button>
     <div class="dropdown">
       <button type="button" class="btn btn-primary btn-show dropdown-toggle" data-bs-toggle="dropdown">

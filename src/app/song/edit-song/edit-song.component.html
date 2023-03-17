@@ -1,6 +1,6 @@
 <h1>Edit Song</h1>
 
-<form [formGroup]="formEditSong"  (ngSubmit)="edit()">
+<form [formGroup]="formEditSong" *ngIf="formEditSong" (ngSubmit)="edit()">
   <input formControlName="id" hidden ><br>
   <input formControlName="account_id" hidden ><br>
   <input formControlName="actives" hidden ><br>

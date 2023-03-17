@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PlaylistService} from "../../service/playlist/playlist.service";
+import {AccountToken} from "../../models/AccountToken";
 
 @Component({
   selector: 'app-playlist-show',
@@ -11,7 +12,7 @@ export class PlaylistShowComponent implements OnInit{
   constructor(private playlistService : PlaylistService) {
   }
 
-  account: any
+  account!: AccountToken
   account_id: any
   playlists: any
   songs: any
@@ -26,11 +27,5 @@ export class PlaylistShowComponent implements OnInit{
     })
   }
 
-  deleteSongInPlaylist(song_id: number, playlist_id: number) {
-    this.playlistService.deleteSongInPlaylist(song_id, playlist_id).subscribe(data => {
-      alert("success")
-      location.replace('playlist/show')
-    })
-  }
 
 }

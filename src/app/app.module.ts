@@ -36,7 +36,7 @@ import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.co
 import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
 import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
-import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-song.component';
+import {PlaylistDetailComponent} from "./playlist/playlist-detail/playlist-detail.component";
 
 @NgModule({
   declarations: [
@@ -64,7 +64,7 @@ import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-son
     ShowCreateSongByAccountComponent,
     EditSongComponent,
     ShowSongComponent,
-    ShowDetailSongComponent,
+    PlaylistDetailComponent,
     PlaylistShowComponent,
     PlaylistCreateComponent,
     PlaylistDeleteComponent,

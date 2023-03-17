@@ -19,11 +19,12 @@ export class PlaylistService {
     return this.http.post<PlaylistSong>('http://localhost:8080/playlist/add/song', playlistSongId)
   }
 
-  savePlaylist(account_id: number, name: String, active: boolean): Observable<any> {
+  savePlaylist(account_id: number, name: String, active: boolean, avatarPlaylist: String): Observable<any> {
     let playlist = {
       account_id: account_id,
       name: name,
-      active: active
+      active: active,
+      avatarPlaylist: avatarPlaylist
     }
     return this.http.post<any>('http://localhost:8080/playlist/create', playlist)
   }

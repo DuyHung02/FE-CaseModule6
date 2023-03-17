@@ -5,5 +5,8 @@
   <label>Mode</label><br>
   <input type="radio" name="active" value="1" formControlName="active">public<br>
   <input type="radio" name="active" value="0" formControlName="active">private<br>
+  <label>Avatar playlist</label>
+  <input type="file" #upLoadFile (change)="upAvatarPlaylist()">
+  <img [src]="arrayPicture" width="200">
   <button type="submit">Submit</button>
 </form>

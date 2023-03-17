@@ -22,7 +22,6 @@ import {PlaylistCreateComponent} from "./playlist/playlist-create/playlist-creat
 import {PlaylistDeleteComponent} from "./playlist/playlist-delete/playlist-delete.component";
 import {PlaylistEditComponent} from "./playlist/playlist-edit/playlist-edit.component";
 import {ShowSongComponent} from "./song/show-song/show-song.component";
-import {ShowDetailSongComponent} from "./song/show-detail-song/show-detail-song.component";
 
 const routes: Routes = [
   {path: 'register', component: RegisterComponent},
@@ -45,7 +44,6 @@ const routes: Routes = [
   {path:'showDetailSinger/:id',component: ShowDetailSingerComponent},
   {path:'showCreateSongByAccount',component: ShowCreateSongByAccountComponent},
   {path:'editSong/:id',component: EditSongComponent},
-  {path:'showDetailSong/:id',component: ShowDetailSongComponent},
   {path:'songs',component: ShowSongComponent},
 ]
 
