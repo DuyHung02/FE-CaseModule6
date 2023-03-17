@@ -11,7 +11,7 @@ export class PlaylistShowComponent implements OnInit{
   constructor(private playlistService : PlaylistService) {
   }
 
-  account: any
+  account!: any
   account_id: any
   playlists: any
   songs: any
@@ -26,11 +26,11 @@ export class PlaylistShowComponent implements OnInit{
     })
   }
 
-  deleteSongInPlaylist(song_id: number, playlist_id: number) {
-    this.playlistService.deleteSongInPlaylist(song_id, playlist_id).subscribe(data => {
-      alert("success")
-      location.replace('playlists')
-    })
-  }
+  // deleteSongInPlaylist(song_id: number, playlist_id: number) {
+  //   this.playlistService.deleteSongInPlaylist(song_id, playlist_id).subscribe(data => {
+  //     alert("success")
+  //     location.replace('playlists')
+  //   })
+  // }
 
 }

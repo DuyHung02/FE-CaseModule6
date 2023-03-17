@@ -10,6 +10,15 @@
     <p class="song-album">{{s.song_music_genre}}</p>
     <p class="song-time">{{s.posted}}</p>
     <a class="btn btn-warning" routerLink="/editSong/{{s.id}}"> Edit</a>
+    <div class="dropdown">
+      <button type="button" class="btn btn-primary btn-show dropdown-toggle" data-bs-toggle="dropdown">
+        +playlist
+      </button>
+      <ul class="dropdown-menu">
+        <li *ngFor="let p of playlists"><a class="dropdown-item" (click)="addSongToPlaylist(s.id, p.id)">{{p?.name}}</a></li>
+        <li><a class="dropdown-item" routerLink="/playlist/create">Add more playlist</a></li>
+      </ul>
+    </div>
     <a class="btn btn-warning" routerLink="/showDetailSong/{{s.id}}">Show</a>
     <button class="btn-show"> Like</button>
     <label for="love" class="song-love">

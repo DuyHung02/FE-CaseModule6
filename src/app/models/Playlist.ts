@@ -4,4 +4,5 @@ export class Playlist {
   account_id?: number
   songs?: any
   active?: number
+  avatarPlaylist?: String
 }

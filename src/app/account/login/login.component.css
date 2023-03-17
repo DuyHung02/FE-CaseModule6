@@ -12,7 +12,8 @@ body {
 }
 
 .login {
-  width: 900px;
+  width: 50%;
+  height: auto;
   margin: 50px auto;
   background-color: rgba(0,0,0,0.4);
   border-radius: 20px;
@@ -20,7 +21,7 @@ body {
   position: absolute;
   right: 10%;
   left: 40%;
-  top: 200px
+  top: 23%;
 }
 
 /*.form-login {*/
