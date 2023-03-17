@@ -1,13 +1,15 @@
 <div class="content">
   <div class="content-item">
+
     <div class="block-box">
       <h2 class="heading">{{playlist.name}}</h2>
       <span class="count"></span>
     </div>
-    <div class="song-list">
 
-      <div class="song" data-index="0" *ngFor="let s of songs">
-        <span class="song-index">01</span>
+    <div class="song-list" *ngFor="let s of songs">
+      <button class="btn btn-dark" (click)="deleteSongInPlaylist(s.id, playlist_id)">delete: {{s.song_name}}</button>
+      <div class="song" data-index="0" >
+        <span class="song-index">{{s.index}}</span>
         <img
           src="{{s.song_avatar}}"
           class="song-image"
@@ -21,7 +23,6 @@
           <i class="fa fa-heart song-heart"></i>
         </label>
       </div>
-
     </div>
   </div>
 

@@ -29,14 +29,6 @@ export class PlaylistService {
     return this.http.post<any>('http://localhost:8080/playlist/create', playlist)
   }
 
-  saveAvatarPlaylist(avatarPlaylist: String, playlist_id: number): Observable<String> {
-    let playlist = {
-      avatarPlaylist: avatarPlaylist,
-      playlist_id: playlist_id
-    }
-    return this.http.post<String>('http://localhost:8080/playlist/avatar', playlist)
-  }
-
   saveEditPlaylist(playlist: Playlist): Observable<Playlist> {
     return this.http.post<Playlist>('http://localhost:8080/playlist/save', playlist)
   }

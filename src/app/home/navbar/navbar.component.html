@@ -1,139 +1,143 @@
 <div class="wrapper">
-    <div class="sidebar">
-        <!--    Hộp ảnh đại diện-->
-        <div *ngIf="account == null">
-            <div class="dropdown">
-                <div class="dropdown__select">
-                    <img
-                            src="https://cdn.dribbble.com/users/3960463/screenshots/13952774/media/1083c2b91054c7d7ee7c0bd47d60d5e0.png?compress=1&resize=800x600"
-                            class="profile-avatar"/>
-                </div>
-            </div>
-
-            <h2 style="text-align: center; margin-left: 5px">Welcome!</h2><br>
-            <div style="margin-left: 8%">
-                <button class="upgrade" routerLink="/login"><i class="fa fa-user"></i><span>     Login</span></button>
-                <button style="margin-left: 10%" class="upgrade" routerLink="/register"><i class="fa fa-user"></i><span>     Register</span>
-                </button>
-            </div>
-            <!--    Thanh menu-->
-            <br>
-            <hr style="width: 150%">
-            <ul class="menu">
-                <li class="menu-item">
-                    <a routerLink="/home" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Home</span></a>
-                </li>
-                <li class="menu-item">
-                    <a routerLink="/showSong" class="menu-link"><i
-                            class="fa fa-home menu-icon"></i><span>Show Song</span></a>
-                </li>
-                <li class="menu-item">
-                    <a routerLink="/showSinger" class="menu-link"><i
-                            class="fa fa-home menu-icon"></i><span>Show Singer</span></a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link"><i class="fa fa-square menu-icon"></i><span>Playlist</span></a>
-                </li>
-                <li class="menu-item">
-                    <a class="menu-link" routerLink="findSinger"><i
-                            class="fa fa-play menu-icon"></i><span>Find Singer</span></a>
-                </li>
-                <li class="menu-item">
-                    <a href="#" class="menu-link"><i class="fa fa-play menu-icon"></i><span>Videos</span></a>
-                </li>
-                <br>
-            </ul>
+  <div class="sidebar">
+    <!--    Hộp ảnh đại diện-->
+    <div *ngIf="account == null">
+      <div class="dropdown">
+        <div class="dropdown__select">
+          <img
+            src="https://cdn.dribbble.com/users/3960463/screenshots/13952774/media/1083c2b91054c7d7ee7c0bd47d60d5e0.png?compress=1&resize=800x600"
+            class="profile-avatar"/>
         </div>
+      </div>
 
-        <div *ngIf="account != null">
-            <div class="dropdown">
-                <div class="dropdown__select">
-                    <img [src]="account?.avatar" class="profile-avatar">
-                </div>
-            </div>
-            <h2 style="text-align: center; margin-left: 5px">Hello {{account.full_name}}</h2>
-
-            <!--    Thanh menu-->
-            <br>
-            <ul class="menu">
-                <hr style="width: 150%">
-                <li class="menu-item">
-                    <a routerLink="/" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Home</span></a>
-                </li>
-                <hr style="width: 150%">
-                <li class="menu-item">
-                    <a class="menu-link" routerLink="findSinger"><i
-                            class="fa fa-play menu-icon"></i><span>Find Singer</span></a>
-                </li>
-                <!--        Begin dropdown-->
-                <hr style="width: 150%">
-                <div class="dropdown">
-                    <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
-                        <a class="menu-link"><i class="fa fa-square menu-icon"></i>My Account</a>
-                    </li>
-                    <ul class="dropdown-menu" style="width: 300px;">
-                        <li class="menu-item">
-                            <a routerLink="/showCreateSongByAccount" class="menu-link"><i
-                                    class="fa fa-home menu-icon"></i><span>My Songs</span></a>
-                        </li>
-                        <li class="menu-item">
-                            <a routerLink="/playlists" class="menu-link"><i
-                                    class="fa fa-user menu-icon"></i><span>Playlist</span></a>
-                        </li>
-                        <li class="menu-item">
-                            <a routerLink="/profile" class="menu-link"><i
-                                    class="fa fa-user menu-icon"></i><span>Profile</span></a>
-                        </li>
-                        <li class="menu-item">
-                            <a routerLink="/password/{{account?.id}}" class="menu-link"><i
-                                    class="fa fa-user menu-icon"></i><span>Re password</span></a>
-                        </li>
-                        <li class="menu-item">
-                            <a class="menu-link" (click)="logout()"><i
-                                    class="fa fa-square menu-icon"></i><span>Logout</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <!--        End dropdown-->
-
-                <!--        Begin dropdown-->
-                <div class="dropdown">
-                    <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
-                        <a class="menu-link"><i class="fa fa-square menu-icon"></i>Songs</a>
-                    </li>
-                    <ul class="dropdown-menu" style="width: 300px;">
-                        <li class="menu-item">
-                            <a routerLink="/songs" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Show Song</span></a>
-                        </li>
-                        <li class="menu-item">
-                            <a class="menu-link" routerLink="createSong"><i
-                                    class="fa fa-play menu-icon"></i><span>Create Song</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <!--        End dropdown-->
-
-                <!--        Begin dropdown-->
-                <div class="dropdown">
-                    <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
-                        <a class="menu-link"><i class="fa fa-square menu-icon"></i>Singer</a>
-                    </li>
-                    <ul class="dropdown-menu" style="width: 300px;">
-                        <li class="menu-item">
-                            <a routerLink="/showSinger" class="menu-link"><i
-                                    class="fa fa-home menu-icon"></i><span>Show Singer</span></a>
-                        </li>
-                        <li class="menu-item">
-                            <a routerLink="createSinger" class="menu-link"><i
-                                    class="fa fa-home menu-icon"></i><span>Create Singer</span></a>
-                        </li>
-                    </ul>
-                </div>
-                <!--        End dropdown-->
-
-            </ul>
-        </div>
+      <h2 style="text-align: center; margin-left: 5px">Welcome!</h2><br>
+      <div style="margin-left: 8%">
+        <button class="upgrade" routerLink="/login"><i class="fa fa-user"></i><span>     Login</span></button>
+        <button style="margin-left: 10%" class="upgrade" routerLink="/register"><i class="fa fa-user"></i><span>     Register</span>
+        </button>
+      </div>
+      <!--    Thanh menu-->
+      <br>
+      <hr style="width: 150%">
+      <ul class="menu">
+        <li class="menu-item">
+          <a routerLink="/home" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Home</span></a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/showSong" class="menu-link"><i
+            class="fa fa-home menu-icon"></i><span>Show Song</span></a>
+        </li>
+        <li class="menu-item">
+          <a routerLink="/showSinger" class="menu-link"><i
+            class="fa fa-home menu-icon"></i><span>Show Singer</span></a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link"><i class="fa fa-square menu-icon"></i><span>Playlist</span></a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" routerLink="findSinger"><i
+            class="fa fa-play menu-icon"></i><span>Find Singer</span></a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link"><i class="fa fa-play menu-icon"></i><span>Videos</span></a>
+        </li>
+        <br>
+      </ul>
     </div>
+
+    <div *ngIf="account != null">
+      <div class="dropdown">
+        <div class="dropdown__select">
+          <img [src]="account?.avatar" class="profile-avatar">
+        </div>
+      </div>
+      <h2 style="text-align: center; margin-left: 5px">Hello {{account.full_name}}</h2>
+
+      <!--    Thanh menu-->
+      <br>
+      <ul class="menu">
+        <hr style="width: 150%">
+        <li class="menu-item">
+          <a routerLink="/" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Home</span></a>
+        </li>
+        <hr style="width: 150%">
+        <li class="menu-item">
+          <a class="menu-link" routerLink="findSinger"><i
+            class="fa fa-play menu-icon"></i><span>Find Singer</span></a>
+        </li>
+        <hr style="width: 150%">
+        <li class="menu-item">
+          <a routerLink="/songs" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Show Song</span></a>
+        </li>
+        <!--        Begin dropdown-->
+        <hr style="width: 150%">
+        <div class="dropdown">
+          <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
+            <a class="menu-link"><i class="fa fa-square menu-icon"></i>My Account</a>
+          </li>
+          <ul class="dropdown-menu" style="width: 300px;">
+            <li class="menu-item">
+              <a routerLink="/showCreateSongByAccount" class="menu-link"><i
+                class="fa fa-home menu-icon"></i><span>My Songs</span></a>
+            </li>
+            <li class="menu-item">
+              <a routerLink="/playlists" class="menu-link"><i
+                class="fa fa-user menu-icon"></i><span>Playlist</span></a>
+            </li>
+            <li class="menu-item">
+              <a routerLink="/profile" class="menu-link"><i
+                class="fa fa-user menu-icon"></i><span>Profile</span></a>
+            </li>
+            <li class="menu-item">
+              <a routerLink="/password/{{account?.id}}" class="menu-link"><i
+                class="fa fa-user menu-icon"></i><span>Re password</span></a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" (click)="logout()"><i
+                class="fa fa-square menu-icon"></i><span>Logout</span></a>
+            </li>
+          </ul>
+        </div>
+        <!--        End dropdown-->
+
+        <!--        Begin dropdown-->
+        <div class="dropdown">
+          <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
+            <a class="menu-link"><i class="fa fa-square menu-icon"></i>Songs</a>
+          </li>
+          <ul class="dropdown-menu" style="width: 300px;">
+            <li class="menu-item">
+              <a routerLink="/songs" class="menu-link"><i class="fa fa-home menu-icon"></i><span>Show Song</span></a>
+            </li>
+            <li class="menu-item">
+              <a class="menu-link" routerLink="createSong"><i
+                class="fa fa-play menu-icon"></i><span>Create Song</span></a>
+            </li>
+          </ul>
+        </div>
+        <!--        End dropdown-->
+
+        <!--        Begin dropdown-->
+        <div class="dropdown">
+          <li class="menu-item dropdown-toggle" data-bs-toggle="dropdown">
+            <a class="menu-link"><i class="fa fa-square menu-icon"></i>Singer</a>
+          </li>
+          <ul class="dropdown-menu" style="width: 300px;">
+            <li class="menu-item">
+              <a routerLink="/showSinger" class="menu-link"><i
+                class="fa fa-home menu-icon"></i><span>Show Singer</span></a>
+            </li>
+            <li class="menu-item">
+              <a routerLink="createSinger" class="menu-link"><i
+                class="fa fa-home menu-icon"></i><span>Create Singer</span></a>
+            </li>
+          </ul>
+        </div>
+        <!--        End dropdown-->
+
+      </ul>
+    </div>
+  </div>
 </div>
 
 

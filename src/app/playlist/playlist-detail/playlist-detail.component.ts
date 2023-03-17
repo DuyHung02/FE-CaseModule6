@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PlaylistService} from "../../service/playlist/playlist.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Playlist} from "../../models/Playlist";
 
 @Component({
@@ -10,7 +10,7 @@ import {Playlist} from "../../models/Playlist";
 })
 export class PlaylistDetailComponent implements OnInit{
 
-  constructor(private playlistService : PlaylistService, private route : ActivatedRoute) {
+  constructor(private playlistService : PlaylistService, private route : ActivatedRoute, private router: Router) {
   }
 
   playlist!: any
@@ -22,6 +22,13 @@ export class PlaylistDetailComponent implements OnInit{
     this.playlistService.findPlaylistById(this.playlist_id).subscribe(data => {
       this.playlist = data;
       this.songs = this.playlist.songs
+    })
+  }
+
+  deleteSongInPlaylist(song_id: number, playlist_id: number) {
+    console.log(song_id, playlist_id)
+    this.playlistService.deleteSongInPlaylist(song_id, playlist_id).subscribe(data => {
+      this.router.navigate(['/playlists'])
     })
   }
 
