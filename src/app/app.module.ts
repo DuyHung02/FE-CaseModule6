@@ -65,7 +65,7 @@ import { ShowDetailSongComponent } from './song/show-detail-song/show-detail-son
     ShowCreateSongByAccountComponent,
     EditSongComponent,
     ShowSongComponent,
-    // ShowDetailSongComponent,
+    ShowDetailSongComponent,
     PlaylistShowComponent,
     PlaylistCreateComponent,
     PlaylistDeleteComponent,
