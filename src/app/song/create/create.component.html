@@ -4,7 +4,7 @@
   <input formControlName="account_id" hidden><br>
   <input placeholder="song_name" formControlName="song_name"><br>
   <input placeholder="description" formControlName="description" ><br>
-  <input placeholder="file_mp3" formControlName="file_mp3" ><br>
+  File_mp3 :<input type="file" #file_mp3 (change)="upLoadFileMp3()"><br>
   <input placeholder="author" formControlName="author"><br>
   <input placeholder="posted" formControlName="posted"><br>
   <input placeholder="album" formControlName="album"><br>

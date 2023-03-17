@@ -17,11 +17,15 @@ export class CreateComponent implements OnInit {
 
   @ViewChild('song_avatar', {static: true}) public avatarDom: ElementRef | undefined;
 
+  @ViewChild('file_mp3', {static: true})  public mp3Dom: ElementRef | undefined;
+
   constructor(private singerSongService: SingerSongService, private songService: SongService, private router: Router, private storage: AngularFireStorage) {
   }
 
   selectedImage: any = null;
   url_avatar = '';
+  selectedMp3: any = null;
+  url_mp3 = '';
 
   song_id: any;
   account: any;
@@ -51,7 +55,8 @@ export class CreateComponent implements OnInit {
 
   create() {
     this.formCreateSong.patchValue({
-      song_avatar: this.url_avatar
+      song_avatar: this.url_avatar,
+      file_mp3:this.url_mp3,
     })
     this.songService.createSong(this.formCreateSong.value).subscribe((data) => {
       this.song = data;
@@ -61,7 +66,6 @@ export class CreateComponent implements OnInit {
 
   upLoadFileImg() {
     this.selectedImage = this.avatarDom?.nativeElement.files[0];
-    console.log(this.selectedImage)
     this.submit()
   }
 
@@ -73,6 +77,24 @@ export class CreateComponent implements OnInit {
         finalize(() => (fileRef.getDownloadURL().subscribe(url => {
           this.url_avatar = url;
           console.log(this.url_avatar)
+        })))
+      ).subscribe();
+    }
+  }
+
+  upLoadFileMp3() {
+    this.selectedMp3 = this.mp3Dom?.nativeElement.files[0];
+    this.submitMp3()
+  }
+
+  submitMp3() {
+    if (this.selectedMp3 != null) {
+      const filePathMp3 = this.selectedMp3.name;
+      const fileRefMp3 = this.storage.ref(filePathMp3);
+      this.storage.upload(filePathMp3, this.selectedImage).snapshotChanges().pipe(
+        finalize(() => (fileRefMp3.getDownloadURL().subscribe(url => {
+          this.url_mp3 = url;
+          console.log(this.url_mp3)
         })))
       ).subscribe();
     }
