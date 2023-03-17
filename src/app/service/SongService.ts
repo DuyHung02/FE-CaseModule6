@@ -55,6 +55,15 @@ export class SongService {
     return this.http.get<Song[]>("http://localhost:8080/songs/findTop10Song"+'?page=' + page);
   }
 
+  // Hoành thêm
+  findTopLikeSong(page:number) :Observable<Song[]>{
+    return this.http.get<Song[]>("http://localhost:8080/songs/findTopLikeSong"+'?page=' + page);
+  }
+
+
+
+
+
 //  Hùng thêm
 
   findNewSong(page: number): Observable<Song[]> {

@@ -1,5 +1,5 @@
 <div class="block-box">
-  <div style="background: #7aafff"><h2 >Singer</h2></div>
+  <div class="head-title" ><h3 >Singer</h3></div>
   <br>
   <div class="billboard-list" >
 
@@ -19,7 +19,7 @@
           class="billboard-image-shadow"
         />
       </div>
-      <a href="Thả link sang trang vào đây"><h4 class="billboard-title title">{{singer.singer_name}}</h4></a>
+      <a href="Thả link sang trang vào đây"><h4 class="billboard-title title" style="padding-left: 40px">{{singer.singer_name}}</h4></a>
     </div>
     <!--    Kết thúc 1 item-->
     <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>

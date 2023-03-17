@@ -35,9 +35,9 @@ body {
   padding: 20px;
 }
 .music {
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: white;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding: 35px 15px 30px;
@@ -48,7 +48,7 @@ body {
   margin: 0 auto 25px;
 }
 .music-thumb.is-playing {
-  animation: spinner 5s infinite linear;
+  animation: spinner 7s infinite linear;
 }
 .music-thumb img {
   width: 100%;
@@ -363,10 +363,19 @@ body {
 }
 
 .block-box {
+  border-radius: 10px;
   margin-bottom: 30px;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx-fqzOTgYLWtXUIiaIc7zZ3eXVIxm24jm2w&usqp=CAU");
+}
+.count{
+  padding: 5px 5px;
+  padding-left: 10px;
+
 }
 
 .heading {
+  padding: 5px 5px;
+  padding-left: 10px;
   font-size: 25px;
   color: #050938;
   margin-bottom: 10px;
@@ -451,6 +460,9 @@ body {
 }
 
 .song-list {
+  border-radius: 10px;
+
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeIq8iJhhw16KnZhIRenEv9Zxlgx-zxZ0cuw&usqp=CAU");
   padding: 10px;
   max-height: 420px;
   overflow-y: auto;
@@ -728,7 +740,12 @@ body {
 }
 
 /*# sourceMappingURL=app.css.map */
-
+.head-title{
+  border-radius: 10px;
+  background: #7aafff;
+  padding: 10px 10px;
+  padding-left: 30px;
+}
 
 
 

@@ -526,3 +526,9 @@ body {
 }
 
 /*# sourceMappingURL=app.css.map */
+.head-title{
+  border-radius: 10px;
+  background: #7aafff;
+  padding: 10px 10px;
+  padding-left: 30px;
+}

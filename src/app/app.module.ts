@@ -29,6 +29,7 @@ import {NavbarComponent} from "./home/navbar/navbar.component";
 import {PlayDemoComponent} from './playMusic/play-demo/play-demo.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import { PlayForSingerComponent } from './playMusic/play-for-singer/play-for-singer.component';
+import { TopLikeComponent } from './home/body/top-like/top-like.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { PlayForSingerComponent } from './playMusic/play-for-singer/play-for-sin
     PlayListComponent,
     PlayDemoComponent,
     PlayForSingerComponent,
+    TopLikeComponent,
   ],
   imports: [
     BrowserModule,

@@ -68,29 +68,25 @@ export class ChartsComponent implements OnInit, OnDestroy {
     });
 
 
-
-    // this.audio.src = this.songs[0].file_mp3;
-
-    // this.audio.src = this.songs[0].file_mp3;
-    // this.audio.play()
-
-
   }
 
 
   //  Hàm tự động thêm lượt nghe sau khi hết bài hát
   updateListens() {
-    this.nextSong();
-    // alert("hoanh")
-    // alert("index")
+
     // alert(this.currentSongIndex)
-    this.newListens = this.songs[this.currentSongIndex].listens + 10
-    // alert("index")
-    // alert(this.currentSongIndex)
+    this.newListens = this.songs[this.currentSongIndex].listens + 1
+
     // alert("lươt nghe mới là" + this.newListens)
-    this.songService.saveListens(this.newListens, this.currentSongIndex).subscribe((data) => {
+
+    let id : number = this.songs[this.currentSongIndex].id
+
+    this.songService.saveListens(this.newListens, id).subscribe((data) => {
       this.findSongByIdSinger();
     })
+
+    this.nextSong();
+
   }
 
 
@@ -104,11 +100,9 @@ export class ChartsComponent implements OnInit, OnDestroy {
 
   }
 
-
   findSongByIdSinger() {
     this.songService.findTop10Song(this.p).subscribe((data) => {
       this.songs = data;
-      // this.audio.src = this.songs[this.currentSongIndex].file_mp3;
       this.total = data.length;
     })
   }
@@ -121,16 +115,10 @@ export class ChartsComponent implements OnInit, OnDestroy {
   changeAudio(index: number):void{
     this.currentSongIndex = index;
     this.audio.src = this.songs[this.currentSongIndex].file_mp3;
-
     this.playAndPauseAudio();
   }
 
   playAndPauseAudio() {
-    // alert("index")
-    // alert(this.currentSongIndex)
-
-
-    // this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
 
     this.imgSong = this.songs[this.currentSongIndex].song_avatar
     this.nameSong = this.songs[this.currentSongIndex].song_name
@@ -147,7 +135,6 @@ export class ChartsComponent implements OnInit, OnDestroy {
       this.playBtn.innerHTML = '<i class="fa fa-pause play-icon" aria-hidden="true"></i>'
 
       this.audio.addEventListener('loadedmetadata', () => {
-        // console.log('Thoi luong bai hat la: ' + this.audio.duration + ' s');
         this.duration = this.audio.duration;
 
       });
@@ -171,7 +158,6 @@ export class ChartsComponent implements OnInit, OnDestroy {
   nextSong() {
     this.audio.pause();
     this.currentSongIndex++;
-
     if (this.currentSongIndex >= this.songs.length) {
       this.currentSongIndex = 0;
       this.imgSong = this.songs[0].song_avatar
@@ -204,7 +190,6 @@ export class ChartsComponent implements OnInit, OnDestroy {
       this.nameSong = this.songs[this.currentSongIndex].song_name
     }
 
-    // this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
 
     this.audio.src = this.songs[this.currentSongIndex].file_mp3;
     if (this.audio.paused) {
@@ -299,18 +284,7 @@ export class ChartsComponent implements OnInit, OnDestroy {
   }
 
 
-  updateProgressValue() {
 
-    this.remaining = document.querySelector(".player-remaining")
-    this.remaining.innerHTML = this.formatTime(Math.floor(this.audio.currentTime));
-
-    this.duration = document.querySelector(".player-duration")
-    if (this.duration.innerHTML === "NaN:NaN") {
-      this.duration.innerHTML = "0:00";
-    } else {
-      this.duration.innerHTML = this.formatTime(Math.floor(this.audio.duration));
-    }
-  }
 
 
 

@@ -1,5 +1,7 @@
-<div class="head-title" ><h3>New Song</h3></div>
+
+<div class="head-title" ><h3>Top Favorite Song</h3></div>
 <br>
+
 
 
 <div class="cards">
@@ -18,10 +20,18 @@
       </div>
       <div class="card-bottom">
 
-        <!--Lượt view-->
-        <div style="width: 20px">  {{song.listens}}</div>
+        <!--Lượt like-->
+        <div style="width: 100px"></div>
+        {{song.likes}}<div style="width: 15px"></div>
+        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
 
+
+        <!--Lượt view-->
+        {{song.listens}}
+        <div style="width: 15px"></div>
         <i class="fa fa-headphones" aria-hidden="true"></i>
+
+
 
       </div>
 
@@ -31,3 +41,4 @@
   <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
 
 </div>
+
