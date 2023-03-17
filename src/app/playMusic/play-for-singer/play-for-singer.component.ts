@@ -103,14 +103,17 @@ export class PlayForSingerComponent implements OnInit, OnDestroy {
       this.audio.play();
       this.musicThumbnail.classList.add("is-playing");
       this.playBtn.innerHTML = '<i class="fa fa-pause play-icon" aria-hidden="true"></i>'
-      this.audio.addEventListener('ended', () => {
-        this.nextSong();
-        //  Hàm tự động thêm lượt nghe sau khi hết bài hát
-        this.updateListens()
+      // this.audio.addEventListener('ended', () => {
+      //   alert("xong bài")
+      //   this.nextSong();
+      //
+      //   //  Hàm tự động thêm lượt nghe sau khi hết bài hát
+      //   this.updateListens()
+      //
+      //
+      //
+      // });
 
-
-
-      });
       this.audio.addEventListener('loadedmetadata', () => {
         // console.log('Thoi luong bai hat la: ' + this.audio.duration + ' s');
         this.duration = this.audio.duration;
@@ -132,6 +135,10 @@ export class PlayForSingerComponent implements OnInit, OnDestroy {
   nameSong: any
 
   nextSong() {
+    this.newListens = this.songs[this.currentSongIndex-1].listens + 1
+    console.log("luot nghe")
+    console.log(this.newListens)
+    console.log("da nexthfdjgfhjghj")
     this.audio.pause();
     this.currentSongIndex++;
     if (this.currentSongIndex >= this.songs.length) {
@@ -274,7 +281,7 @@ export class PlayForSingerComponent implements OnInit, OnDestroy {
 
   //  Hàm tự động thêm lượt nghe sau khi hết bài hát
   updateListens(){
-    this.newListens = this.songs[this.currentSongIndex].listens + 1
+    this.newListens = this.songs[this.currentSongIndex-1].listens + 1
     this.songService.saveListens(this.newListens,this.currentSongIndex).subscribe((data)=>{})
   }
 

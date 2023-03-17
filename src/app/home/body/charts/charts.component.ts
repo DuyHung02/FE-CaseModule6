@@ -47,11 +47,12 @@ export class ChartsComponent implements OnInit, OnDestroy {
     // Gọi hàm tìm tất cả bài hát theo id của ca sĩ
     this.findSongByIdSinger();
 
-    // Tải tài nguyên cho trình phát nhạc
-    this.loadAudioResources();
+    // // Tải tài nguyên cho trình phát nhạc
+    // this.loadAudioResources();
 
 
   }
+
 
   ngOnInit(): void {
 
@@ -61,20 +62,37 @@ export class ChartsComponent implements OnInit, OnDestroy {
     // Tải tài nguyên cho trình phát nhạc
     this.loadAudioResources();
 
+    this.audio.addEventListener('ended', () => {
+      this.updateListens()
+
+    });
+
+
+
+    // this.audio.src = this.songs[0].file_mp3;
+
+    // this.audio.src = this.songs[0].file_mp3;
+    // this.audio.play()
+
+
   }
 
-  findSongByIdSinger() {
-    this.songService.findTop10Song(this.p).subscribe((data) => {
-      this.songs = data;
-      this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
-      this.total = data.length;
+
+  //  Hàm tự động thêm lượt nghe sau khi hết bài hát
+  updateListens() {
+    this.nextSong();
+    // alert("hoanh")
+    // alert("index")
+    // alert(this.currentSongIndex)
+    this.newListens = this.songs[this.currentSongIndex].listens + 10
+    // alert("index")
+    // alert(this.currentSongIndex)
+    // alert("lươt nghe mới là" + this.newListens)
+    this.songService.saveListens(this.newListens, this.currentSongIndex).subscribe((data) => {
+      this.findSongByIdSinger();
     })
   }
 
-  pageChangeEvent(event: number) {
-    this.p = event;
-    this.findSongByIdSinger();
-  }
 
   loadAudioResources() {
     let audio = new Audio
@@ -86,10 +104,35 @@ export class ChartsComponent implements OnInit, OnDestroy {
 
   }
 
+
+  findSongByIdSinger() {
+    this.songService.findTop10Song(this.p).subscribe((data) => {
+      this.songs = data;
+      // this.audio.src = this.songs[this.currentSongIndex].file_mp3;
+      this.total = data.length;
+    })
+  }
+
+  pageChangeEvent(event: number) {
+    this.p = event;
+    this.findSongByIdSinger();
+  }
+
   playAndPauseAudio() {
+    // alert("index")
+    // alert(this.currentSongIndex)
+
+
+    // this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
+
+    this.audio.src = this.songs[this.currentSongIndex].file_mp3;
+    this.imgSong = this.songs[this.currentSongIndex].song_avatar
+    this.nameSong = this.songs[this.currentSongIndex].song_name
+
+
+
     this.playBtn = document.querySelector(".player-inner");
     this.musicThumbnail = document.querySelector(".music-thumb");
-
 
     this.remaining = this.formatTime(this.audio.currentTime)
     this.duration = this.formatTime(this.audio.duration)
@@ -98,20 +141,15 @@ export class ChartsComponent implements OnInit, OnDestroy {
       this.audio.play();
       this.musicThumbnail.classList.add("is-playing");
       this.playBtn.innerHTML = '<i class="fa fa-pause play-icon" aria-hidden="true"></i>'
-      this.audio.addEventListener('ended', () => {
-        this.nextSong();
-        //  Hàm tự động thêm lượt nghe sau khi hết bài hát
-        this.updateListens()
 
-
-
-      });
       this.audio.addEventListener('loadedmetadata', () => {
         // console.log('Thoi luong bai hat la: ' + this.audio.duration + ' s');
         this.duration = this.audio.duration;
 
       });
       setInterval(() => {
+        this.remaining = this.formatTime(this.audio.currentTime)
+        this.duration = this.formatTime(this.audio.duration)
       }, 1000);
 
 
@@ -129,6 +167,7 @@ export class ChartsComponent implements OnInit, OnDestroy {
   nextSong() {
     this.audio.pause();
     this.currentSongIndex++;
+
     if (this.currentSongIndex >= this.songs.length) {
       this.currentSongIndex = 0;
       this.imgSong = this.songs[0].song_avatar
@@ -136,14 +175,16 @@ export class ChartsComponent implements OnInit, OnDestroy {
     } else {
       this.imgSong = this.songs[this.currentSongIndex].song_avatar
       this.nameSong = this.songs[this.currentSongIndex].song_name
-
     }
-    this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
+    // this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
+
+    this.audio.src = this.songs[this.currentSongIndex].file_mp3;
 
     if (this.audio.paused) {
-      this.audio.play();
+      // this.audio.play();
+      this.playAndPauseAudio();
+
     }
-    // this.audio.play();
 
   }
 
@@ -158,14 +199,14 @@ export class ChartsComponent implements OnInit, OnDestroy {
       this.imgSong = this.songs[this.currentSongIndex].song_avatar
       this.nameSong = this.songs[this.currentSongIndex].song_name
     }
-    this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
 
+    // this.audio = new Audio(this.songs[this.currentSongIndex].file_mp3);
+
+    this.audio.src = this.songs[this.currentSongIndex].file_mp3;
     if (this.audio.paused) {
-      this.audio.play();
+      // this.audio.play();
+      this.playAndPauseAudio();
     }
-    // this.audio.play();
-
-    console.log(this.currentSongIndex)
   }
 
   isLoop: boolean = false;
@@ -266,13 +307,6 @@ export class ChartsComponent implements OnInit, OnDestroy {
       this.duration.innerHTML = this.formatTime(Math.floor(this.audio.duration));
     }
   }
-
-  //  Hàm tự động thêm lượt nghe sau khi hết bài hát
-  updateListens(){
-    this.newListens = this.songs[this.currentSongIndex].listens + 1
-    this.songService.saveListens(this.newListens,this.currentSongIndex).subscribe((data)=>{})
-  }
-
 
 
 
