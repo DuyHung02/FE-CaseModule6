@@ -1,314 +1,10 @@
 <body>
 <div id="wrapper">
-  <aside id="sidebar">
-    <div class="sidebar-head d-flex align-items-center justify-content-between"><a href="assets/demo/index-2.html"
-                                                                                   class="brand external"><img
-      src="assets/demo/images/logos/logo.svg" alt="Listen app"> </a><a href="javascript:void(0);" role="button"
-                                                           class="sidebar-toggler"
-                                                           aria-label="Sidebar toggler">
-      <div class="d-none d-lg-block"><i class="ri-menu-3-line sidebar-menu-1"></i> <i
-        class="ri-menu-line sidebar-menu-2"></i></div>
-      <i class="ri-menu-fold-line d-lg-none"></i></a></div>
-    <div class="sidebar-body" data-scroll="true">
-      <app-nav></app-nav>
-    </div>
-    <div class="sidebar-foot"><a href="assets/demo/add-music.html" class="btn btn-primary d-flex">
-      <div class="btn__wrap"><i class="ri-music-fill"></i> <span>Add Music</span></div>
-    </a></div>
-  </aside>
-  <header id="header">
-    <div class="container">
-      <div class="header-container">
-        <div class="d-flex align-items-center"><a href="javascript:void(0);" role="button"
-                                                  class="header-text sidebar-toggler d-lg-none me-3"
-                                                  aria-label="Sidebar toggler"><i
-          class="ri-menu-3-line"></i></a>
-          <form action="#" id="search_form" class="me-3"><label for="search_input"><i
-            class="ri-search-2-line"></i></label> <input type="text"
-                                                         placeholder="Type anything to get result..."
-                                                         id="search_input"
-                                                         class="form-control form-control-sm"></form>
-          <div id="search_results" class="search pb-3">
-            <div class="search__head">
-              <div class="search__head__filter">
-                <button type="button" class="btn btn-sm btn-light-primary active">Trending</button>
-                <button type="button" class="btn btn-sm btn-light-primary">Artists</button>
-                <button type="button" class="btn btn-sm btn-light-primary">Songs</button>
-                <button type="button" class="btn btn-sm btn-light-primary">Albums</button>
-              </div>
-            </div>
-            <div class="search__body" data-scroll="true">
-              <div class="mb-4">
-                <div class="d-flex align-items-center justify-content-between mb-3"><span
-                  class="search__title">Artists</span> <a href="assets/demo/artists.html"
-                                                          class="btn btn-link">View All</a></div>
-                <div class="row g-4 list">
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/artist-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/large/5.jpg" alt="Jina Moore"></a>
-                      <div class="list__content"><a href="assets/demo/artist-details.html"
-                                                    class="list__title text-truncate">Jina
-                        Moore</a></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/artist-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/large/6.jpg" alt="Rasomi Pelina"></a>
-                      <div class="list__content"><a href="assets/demo/artist-details.html"
-                                                    class="list__title text-truncate">Rasomi
-                        Pelina</a></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/artist-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/large/7.jpg" alt="Pimila Holliwy"></a>
-                      <div class="list__content"><a href="assets/demo/artist-details.html"
-                                                    class="list__title text-truncate">Pimila
-                        Holliwy</a></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/artist-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/large/8.jpg" alt="Karen Jennings"></a>
-                      <div class="list__content"><a href="assets/demo/artist-details.html"
-                                                    class="list__title text-truncate">Karen
-                        Jennings</a></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="mb-4">
-                <div class="d-flex align-items-center justify-content-between mb-3"><span
-                  class="search__title">Songs</span> <a href="assets/demo/songs.html" class="btn btn-link">View
-                  All</a></div>
-                <div class="row g-4 list">
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/song-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/6.jpg" alt="Hey not me"></a>
-                      <div class="list__content"><a href="assets/demo/song-details.html"
-                                                    class="list__title text-truncate">Hey not
-                        me</a>
-                        <p class="list__subtitle text-truncate"><a href="assets/demo/artist-details.html">Rasomi
-                          Pelina</a></p></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/song-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/7.jpg" alt="Deep inside"></a>
-                      <div class="list__content"><a href="assets/demo/song-details.html"
-                                                    class="list__title text-truncate">Deep
-                        inside</a>
-                        <p class="list__subtitle text-truncate"><a href="assets/demo/artist-details.html">Pimila
-                          Holliwy</a></p></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/song-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/8.jpg" alt="Sadness"></a>
-                      <div class="list__content"><a href="assets/demo/song-details.html"
-                                                    class="list__title text-truncate">Sadness</a>
-                        <p class="list__subtitle text-truncate"><a href="assets/demo/artist-details.html">Karen
-                          Jennings</a></p></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/song-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/9.jpg" alt="Electric wave"></a>
-                      <div class="list__content"><a href="assets/demo/song-details.html"
-                                                    class="list__title text-truncate">Electric
-                        wave</a>
-                        <p class="list__subtitle text-truncate"><a href="assets/demo/artist-details.html">Lenisa
-                          Gory</a></p></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <div class="d-flex align-items-center justify-content-between mb-3"><span
-                  class="search__title">Albums</span> <a href="assets/demo/albums.html" class="btn btn-link">View
-                  All</a></div>
-                <div class="row g-4 list">
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/album-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/1.jpg" alt="Mummy"></a>
-                      <div class="list__content"><a href="assets/demo/album-details.html"
-                                                    class="list__title text-truncate">Mummy</a>
-                        <p class="list__subtitle text-truncate"><a href="assets/demo/artist-details.html">Arebica
-                          Luna</a></p></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/album-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/2.jpg" alt="Hot shot"></a>
-                      <div class="list__content"><a href="assets/demo/album-details.html"
-                                                    class="list__title text-truncate">Hot shot</a>
-                        <p class="list__subtitle text-truncate"><a href="assets/demo/artist-details.html">Gerrina
-                          Linda</a></p></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="assets/demo/album-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/3.jpg" alt="Own way"></a>
-                      <div class="list__content"><a href="album-details.html"
-                                                    class="list__title text-truncate">Own way</a>
-                        <p class="list__subtitle text-truncate"><a href="artist-details.html">Zunira
-                          Willy & Nutty Nina</a></p></div>
-                    </div>
-                  </div>
-                  <div class="col-xl-3 col-md-4 col-sm-6">
-                    <div class="list__item"><a href="album-details.html" class="list__cover"><img
-                      src="assets/demo/images/cover/small/4.jpg" alt="Say yes"></a>
-                      <div class="list__content"><a href="album-details.html"
-                                                    class="list__title text-truncate">Say yes</a>
-                        <p class="list__subtitle text-truncate"><a href="artist-details.html">Johnny
-                          Marro</a></p></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="dropdown"><a href="javascript:void(0);"
-                                     class="header-text d-flex align-items-center" role="button"
-                                     id="language_menu" data-bs-toggle="dropdown"
-                                     data-bs-auto-close="outside" aria-expanded="false"><i
-              class="ri-earth-line fs-5"></i> <span class="d-none d-md-block ms-1">Language</span></a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end"
-                   aria-labelledby="language_menu">
-                <div class="py-2 px-4"><span class="d-block fw-bold">What music do you like?</span>
-                  <p>Select languages you want to listen.</p></div>
-                <div class="dropdown-divider"></div>
-                <div class="d-flex flex-wrap py-2">
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_1"> <label
-                      class="form-check-label fw-semi-bold" for="lang_1">Hindi</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_2"> <label
-                      class="form-check-label fw-semi-bold" for="lang_2">Punjabi</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_3"> <label
-                      class="form-check-label fw-semi-bold" for="lang_3">Tamil</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_4"> <label
-                      class="form-check-label fw-semi-bold" for="lang_4">Bengali</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_5"> <label
-                      class="form-check-label fw-semi-bold" for="lang_5">Kannada</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_6"> <label
-                      class="form-check-label fw-semi-bold" for="lang_6">Gujarati</label>
-                    </div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_7"> <label
-                      class="form-check-label fw-semi-bold" for="lang_7">Urdu</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_8"> <label
-                      class="form-check-label fw-semi-bold" for="lang_8">English</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_9"> <label
-                      class="form-check-label fw-semi-bold" for="lang_9">Telugu</label></div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_10"> <label
-                      class="form-check-label fw-semi-bold" for="lang_10">Bhojpuri</label>
-                    </div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_11"> <label
-                      class="form-check-label fw-semi-bold" for="lang_11">Malayalam</label>
-                    </div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_12"> <label
-                      class="form-check-label fw-semi-bold" for="lang_12">Marathi</label>
-                    </div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_13"> <label
-                      class="form-check-label fw-semi-bold" for="lang_13">Haryanvi</label>
-                    </div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_14"> <label
-                      class="form-check-label fw-semi-bold" for="lang_14">Rajasthani</label>
-                    </div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_15"> <label
-                      class="form-check-label fw-semi-bold" for="lang_15">Assamese</label>
-                    </div>
-                  </div>
-                  <div class="py-2 px-4 w-50">
-                    <div class="form-check mb-0"><input class="form-check-input" type="checkbox"
-                                                        id="lang_16"> <label
-                      class="form-check-label fw-semi-bold" for="lang_16">Odia</label></div>
-                  </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <div class="py-2 px-4">
-                  <button type="button" class="btn btn-primary w-100 justify-content-center">Update
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="dropdown ms-3 ms-sm-4"><a href="javascript:void(0);" class="avatar header-text"
-                                                  role="button" id="user_menu" data-bs-toggle="dropdown"
-                                                  aria-expanded="false">
-              <div class="avatar__image"><img src="assets/demo/images/users/thumb.jpg" alt="user"></div>
-              <span class="ps-2 d-none d-sm-block">Androws</span></a>
-              <ul class="dropdown-menu dropdown-menu-md dropdown-menu-end" aria-labelledby="user_menu">
-                <li>
-                  <div class="py-2 px-3 avatar avatar--lg">
-                    <div class="avatar__image"><img src="assets/demo/images/users/thumb.jpg" alt="user"></div>
-                    <div class="avatar__content"><span class="avatar__title">Androws Kinny</span>
-                      <span class="avatar__subtitle">Artist</span></div>
-                  </div>
-                </li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item d-flex align-items-center" href="profile.html"><i
-                  class="ri-user-3-line fs-5"></i> <span class="ps-2">Profile</span></a></li>
-                <li><a class="dropdown-item d-flex align-items-center" href="favorites.html"><i
-                  class="ri-heart-line fs-5"></i> <span class="ps-2">Favorites</span></a></li>
-                <li><a class="dropdown-item d-flex align-items-center" href="settings.html"><i
-                  class="ri-settings-line fs-5"></i> <span class="ps-2">Settings</span></a></li>
-                <li><a class="dropdown-item d-flex align-items-center" href="plan.html"><i
-                  class="ri-money-dollar-circle-line fs-5"></i> <span class="ps-2">Plan</span></a>
-                </li>
-                <li class="dropdown-divider"></li>
-                <li><a class="dropdown-item d-flex align-items-center external text-danger"
-                       href="index-2.html"><i class="ri-logout-circle-line fs-5"></i> <span
-                  class="ps-2">Logout</span></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+
+  <app-nav></app-nav>
+
+  <app-header-user></app-header-user>
+
   <main id="page_content">
     <div class="hero" style="background-image: url(assets/demo/images/banner/home.jpg);"></div>
     <div class="under-hero container">
@@ -323,7 +19,8 @@
               <div class="swiper-slide">
                 <div class="cover cover--round" data-song-id="1" data-song-name="I love you mummy"
                      data-song-artist="Arebica Luna" data-song-album="Mummy"
-                     data-song-url="assets/demo/audio/ringtone-1.mp3" data-song-cover="assets/demo/images/cover/small/1.jpg">
+                     data-song-url="assets/demo/audio/ringtone-1.mp3"
+                     data-song-cover="assets/demo/images/cover/small/1.jpg">
                   <div class="cover__head">
                     <ul class="cover__label d-flex">
                       <li><span class="badge rounded-pill bg-danger"><i class="ri-heart-fill"></i></span>
@@ -621,7 +318,8 @@
                                                      class="cover__image"><img
                     src="assets/demo/images/background/horizontal/3.jpg" alt="Event cover"></a>
                     <div class="cover__foot mt-3 px-2"><p class="cover__subtitle d-flex mb-2"><i
-                      class="ri-map-pin-fill fs-6"></i> <span class="ms-1 fw-semi-bold">2105 Badger Pond Lane, FL - USA</span>
+                      class="ri-map-pin-fill fs-6"></i> <span
+                      class="ms-1 fw-semi-bold">2105 Badger Pond Lane, FL - USA</span>
                     </p><a href="event-details.html" class="cover__title fs-6 mb-3">Varida Meronny
                       music band</a>
                       <div class="d-flex align-items-center justify-content-between">
@@ -652,7 +350,8 @@
                                                      class="cover__image"><img
                     src="assets/demo/images/background/horizontal/1.jpg" alt="Event cover"></a>
                     <div class="cover__foot mt-3 px-2"><p class="cover__subtitle d-flex mb-2"><i
-                      class="ri-map-pin-fill fs-6"></i> <span class="ms-1 fw-semi-bold">2801 Pine Lake Rd, TX - USA</span>
+                      class="ri-map-pin-fill fs-6"></i> <span
+                      class="ms-1 fw-semi-bold">2801 Pine Lake Rd, TX - USA</span>
                     </p><a href="event-details.html" class="cover__title fs-6 mb-3">Music night
                       virtual event to welcome new year</a>
                       <div class="d-flex align-items-center justify-content-between">
@@ -2371,7 +2070,8 @@
         <input type="range" class="amplitude-song-slider player-progress__slider" aria-label="Progress slider">
       </div>
       <div class="cover d-flex align-items-center">
-        <div class="cover__image"><img data-amplitude-song-info="cover_art_url" src="assets/demo/images/cover/small/1.jpg"
+        <div class="cover__image"><img data-amplitude-song-info="cover_art_url"
+                                       src="assets/demo/images/cover/small/1.jpg"
                                        alt=""></div>
         <div class="cover__content ps-3 d-none d-sm-block"><a href="song-details.html"
                                                               class="cover__title text-truncate"
