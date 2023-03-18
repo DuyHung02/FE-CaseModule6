@@ -1,0 +1,87 @@
+<body>
+<div id="wrapper">
+  <aside id="sidebar">
+    <div class="sidebar-head d-flex align-items-center justify-content-between"><a href="index-2.html"
+                                                                                   class="brand external"><img
+      src="assets/demo/images/logos/logo.svg" alt="Listen app"> </a><a href="javascript:void(0);" role="button"
+                                                                       class="sidebar-toggler"
+                                                                       aria-label="Sidebar toggler">
+      <div class="d-none d-lg-block"><i class="ri-menu-3-line sidebar-menu-1"></i> <i
+        class="ri-menu-line sidebar-menu-2"></i></div>
+      <i class="ri-menu-fold-line d-lg-none"></i></a></div>
+    <div class="sidebar-body" data-scroll="true">
+      <app-nav></app-nav>
+    </div>
+    <div class="sidebar-foot"><a href="add-music.html" class="btn btn-primary d-flex">
+      <div class="btn__wrap"><i class="ri-music-fill"></i> <span>Add Music</span></div>
+    </a></div>
+  </aside>
+  <header id="header">
+    <div class="container">
+    </div>
+  </header>
+  <main id="page_content">
+    <div class="hero" style="background-image: url(/assets/demo/images/banner/song.jpg);"></div>
+
+    <div class="under-hero container">
+
+      <div class="section">
+        <div class="col-xl-7 col-md-10 mx-auto">
+          <div class="card">
+            <div class="card-body">
+
+              <div id="singer_pane" role="tabpanel" aria-labelledby="singer" tabindex="0">
+                <form [formGroup]="formCreateSinger" (ngSubmit)="create()" class="row">
+                  <div class="col-12 mb-4">
+                    <div style="text-align: center">
+                      <img width="150px"
+                           [src]="url_avatar">
+                    </div>
+                  </div>
+
+                  <div class="col-12 mb-4"><input type="text" class="form-control" placeholder="Singer name"
+                                                  formControlName="singer_name"></div>
+                  <div class="col-12 mb-4">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-select" aria-label="Select category"
+                            formControlName="singer_gender">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </select></div>
+
+                  <div class="col-12 mb-4"><label class="form-label">Avatar</label>
+                    <input type="file" class="form-control" #singer_avatar (change)="upLoadFileSinger()"></div>
+
+                  <div class="col-sm-6 mb-4"><input type="date" class="form-control" placeholder="Birthday"
+                                                    formControlName="birthday"></div>
+<!--                  <div class="col-sm-6 mb-4"><input type="number" class="form-control" placeholder="Year"-->
+<!--                                                    formControlName="year"></div>-->
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Music genre"
+                                                    formControlName='music_genre'></div>
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Band"
+                                                    formControlName="band"></div>
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Hot music"
+                                                  formControlName="hot_music"></div>
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Story"
+                                                    formControlName="story"></div>
+                  <div class="col-12 mb-4">
+                    <textarea name="lyrics" id="album_lyrics" cols="30" rows="4"
+                              class="form-control" placeholder="Information" formControlName="information"></textarea>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button class="btn btn-primary" style="min-width: 140px;">Add Singer</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </main>
+</div>
+<div id="backdrop"></div>
+
+</body>

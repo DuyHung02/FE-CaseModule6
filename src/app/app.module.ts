@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {environment} from "./environments/environment.prod";
+import {environment} from "../environments/environment.prod";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
@@ -18,6 +18,7 @@ import {RegisterComponent} from "./account/register/register.component";
 import {AfterRegisterComponent} from "./account/after-register/after-register.component";
 import {LoginComponent} from "./account/login/login.component";
 import {HomeComponent} from "./home/home.component";
+import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {HomeComponent} from "./home/home.component";
     AfterRegisterComponent,
     LoginComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    CreateSingerComponent
   ],
   imports: [
     BrowserModule,
