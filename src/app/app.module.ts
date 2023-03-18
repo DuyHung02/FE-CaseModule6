@@ -19,6 +19,7 @@ import {AfterRegisterComponent} from "./account/after-register/after-register.co
 import {LoginComponent} from "./account/login/login.component";
 import {HomeComponent} from "./home/home.component";
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
+import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CreateSingerComponent } from './singer/create-singer/create-singer.comp
     LoginComponent,
     HomeComponent,
     NavComponent,
-    CreateSingerComponent
+    CreateSingerComponent,
+    ShowSingerComponent
   ],
   imports: [
     BrowserModule,
