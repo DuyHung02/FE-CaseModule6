@@ -15,10 +15,10 @@
         <hr>
         <div class="section__head"><h3 class="mb-0">All <span class="text-primary">Singer</span></h3></div>
         <div class="row g-4" >
-          <div class="col-6 col-xl-2 col-md-3 col-sm-4" *ngFor="let sr of singers ">
-            <a href="artist-details.html" class="cover cover--round">
+          <div class="col-6 col-xl-2 col-md-3 col-sm-4" style="margin-right: 2%" *ngFor="let sr of singers ">
+            <a class="cover cover--round">
             <div class="cover__image" >
-              <img src="{{sr.singer_avatar}}" alt="Arebica Luna"></div>
+              <img src="{{sr.singer_avatar}}" style="display: block ;width: 220px; height: 220px; object-fit: cover"></div>
             <div class="cover__foot">
               <span class="cover__title text-truncate">{{sr.singer_name}}</span></div>
           </a></div>
