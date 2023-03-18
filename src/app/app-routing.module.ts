@@ -6,6 +6,7 @@ import {LoginComponent} from "./account/login/login.component";
 import {AfterRegisterComponent} from "./account/after-register/after-register.component";
 import {RegisterComponent} from "./account/register/register.component";
 import {CreateSingerComponent} from "./singer/create-singer/create-singer.component";
+import {ShowSingerComponent} from "./singer/show-singer/show-singer.component";
 
 const routes: Routes = [
   {path: '', component: HomeIndexComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   {path: 'createSinger', component: CreateSingerComponent},
+  {path: 'showSinger', component: ShowSingerComponent},
 ];
 
 @NgModule({

@@ -16,10 +16,13 @@ export class CreateSingerComponent implements OnInit {
   formCreateSinger !: FormGroup;
   selectedSinger: any = null;
   url_avatar = '';
+  openMessage:Boolean=false;
 
   @ViewChild('singer_avatar', {static: true}) public avatarDom: ElementRef | undefined;
   constructor(private singerService: SingerService, private router: Router, private storage: AngularFireStorage) {
   }
+
+
 
   ngOnInit(): void {
     this.formCreateSinger = new FormGroup({
@@ -56,15 +59,23 @@ export class CreateSingerComponent implements OnInit {
   }
 
   create() {
+    this.openMessage=false;
     console.log(this.url_avatar);
     this.formCreateSinger.patchValue({
       singer_avatar: this.url_avatar,
     })
     console.log(this.formCreateSinger.value);
     this.singerService.createSinger(this.formCreateSinger.value).subscribe((data) => {
+      this.openMessage=true;
       // this.router.navigate(["/showSinger"]);
-      alert("success singer");
+
+      this.formCreateSinger.reset();
     })
+  }
+
+  changeStatus() {
+    this.openMessage = false
+    location.reload()
   }
 
 

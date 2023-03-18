@@ -1,1 +1,34 @@
-<p>show-singer works!</p>
+<body>
+
+<div id="wrapper">
+  <app-nav></app-nav>
+
+
+
+  <main id="page_content">
+    <div class="hero" style="background-image: url(/assets/demo/images/banner/artists.jpg);"></div>
+    <div class="under-hero container">
+      <div class="section">
+        <div class="sidebar-foot"><a  class="btn btn-outline-primary " routerLink="/createSinger">
+          <div class="btn__wrap"><i class="ri-music-fill"></i> <span>Add Singer</span></div>
+        </a></div>
+        <hr>
+        <div class="section__head"><h3 class="mb-0">All <span class="text-primary">Singer</span></h3></div>
+        <div class="row g-4" >
+          <div class="col-6 col-xl-2 col-md-3 col-sm-4" *ngFor="let sr of singers ">
+            <a href="artist-details.html" class="cover cover--round">
+            <div class="cover__image" >
+              <img src="{{sr.singer_avatar}}" alt="Arebica Luna"></div>
+            <div class="cover__foot">
+              <span class="cover__title text-truncate">{{sr.singer_name}}</span></div>
+          </a></div>
+
+        </div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </main>
+</div>
+
+
+</body>
