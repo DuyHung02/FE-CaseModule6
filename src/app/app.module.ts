@@ -24,6 +24,8 @@ import { PlaylistDetailComponent } from './playlist/playlist-detail/playlist-det
 import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
 import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
+import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
+import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,9 @@ import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.co
     AfterRegisterComponent,
     LoginComponent,
     HomeComponent,
+    NavComponent,
+    CreateSingerComponent,
+    ShowSingerComponent,
     NavComponent,
     HeaderUserComponent,
     PlaylistShowComponent,
