@@ -18,6 +18,11 @@ export class SingerService {
   getAll() :Observable<Singer[]>{
     return this.http.get<Singer[]>("http://localhost:8080/singer");
   }
+  createSong(singer:any): Observable<any> {
+    return this.http.post<any>("http://localhost:8080/singer", singer);
+  }
+
+
 
   delete(id:number) :Observable<void>{
     return this.http.delete<void>(`http://localhost:8080/singer/${id}`);
@@ -33,6 +38,11 @@ export class SingerService {
 
   editSong(singer: Singer): Observable<Singer> {
     return this.http.put<Singer>("http://localhost:8080/singer", singer);
+  }
+
+  // Hoành thêm
+  getAllSinger(page:number) :Observable<Singer[]>{
+    return this.http.get<Singer[]>("http://localhost:8080/singer"+'?page=' + page);
   }
 
 }

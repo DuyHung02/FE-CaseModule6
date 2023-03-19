@@ -33,10 +33,10 @@
                 <div class="mb-3"><label class="form-label fw-medium">Phone Number</label>
                   <input type="text" class="form-control" formControlName="phone_number"></div>
 
-                <div class="mb-3"><label class="form-label fw-medium">Gender</label>
-                  <input type="radio" name="gender" value="Male" class="form-check" formControlName="gender">Male
-                  <input type="radio" name="gender" value="Female" class="form-check" formControlName="gender">Female
-                  <input type="radio" name="gender" value="Other" class="form-check" formControlName="gender">Other
+                <div class="mb-3"><label class="form-label fw-medium">Gender</label><br>
+                  <input type="radio" name="gender" value="Male" class="form-check-inline" formControlName="gender">Male<br>
+                  <input type="radio" name="gender" value="Female" class="form-check-inline" formControlName="gender">Female<br>
+                  <input type="radio" name="gender" value="Other" class="form-check-inline" formControlName="gender">Other
                 </div>
 
 <!--                <div class="mb-4">-->
@@ -44,9 +44,9 @@
 <!--                    href="#">Terms & Condition</a></label></div>-->
 <!--                </div>-->
 
-                <div class="mb-5"><input type="submit" class="btn btn-primary w-100" value="Login">
+                <div class="mb-5"><input type="submit" class="btn btn-primary w-100">
                 </div>
-                <p>Do you have an Account?<br><a href="#" class="fw-medium external">Login</a>
+                <p>Do you have an Account?<br><a routerLink="/login" class="fw-medium external">login here!</a>
                 </p></form>
             </div>
           </div>
