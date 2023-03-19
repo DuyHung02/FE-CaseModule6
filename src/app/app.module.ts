@@ -8,7 +8,7 @@ import {AngularFireStorageModule} from "@angular/fire/compat/storage";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BodyIndexComponent} from "./home-index/body-index/body-index.component";
 import {FooterComponent} from "./home-index/footer/footer.component";
 import {NavComponent} from "./home-index/nav/nav.component";
@@ -18,7 +18,6 @@ import {RegisterComponent} from "./account/register/register.component";
 import {AfterRegisterComponent} from "./account/after-register/after-register.component";
 import {LoginComponent} from "./account/login/login.component";
 import {HomeComponent} from "./home/home.component";
-import { HeaderUserComponent } from './home-index/header-user/header-user.component';
 import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
 import { PlaylistDetailComponent } from './playlist/playlist-detail/playlist-detail.component';
 import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
@@ -28,6 +27,9 @@ import { CreateSingerComponent } from './singer/create-singer/create-singer.comp
 import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
 import { CheckPasswordComponent } from './account/check-password/check-password.component';
 import { ChangePasswordComponent } from './account/change-password/change-password.component';
+import { TopMostListensComponent } from './play-music/playMusic/top-most-listens/top-most-listens.component';
+import {NgxPaginationModule} from "ngx-pagination";
+import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,6 @@ import { ChangePasswordComponent } from './account/change-password/change-passwo
     CreateSingerComponent,
     ShowSingerComponent,
     NavComponent,
-    HeaderUserComponent,
     PlaylistShowComponent,
     PlaylistDetailComponent,
     PlaylistCreateComponent,
@@ -52,16 +53,21 @@ import { ChangePasswordComponent } from './account/change-password/change-passwo
     PlaylistEditComponent,
     CheckPasswordComponent,
     ChangePasswordComponent,
+    NavComponent,
+    TopMostListensComponent,
+    HeaderUserComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        NgxPaginationModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './header-user.component.html',
   styleUrls: ['./header-user.component.css']
 })
-export class HeaderUserComponent implements OnInit{
+export class HeaderUserComponent implements OnInit {
 
   account: any
 

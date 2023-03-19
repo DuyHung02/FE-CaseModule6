@@ -1998,7 +1998,7 @@ body[data-sidebar-toggle=true] #sidebar {
   -webkit-transition: all .35s ease-in-out;
   transition: all .35s ease-in-out;
   color: #151719;
-  display: none
+  /*display: none*/
 }
 
 #player.show {
@@ -2076,11 +2076,27 @@ body[data-sidebar-toggle=true] #sidebar {
   visibility: visible
 }
 
+
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+/*Hoành đã tìm ra ở đây*/
+
+
 .player-progress {
   position: absolute;
   top: 0;
   right: .5rem;
-  left: .5rem;
+  left: 0;
   height: .25rem;
   z-index: 1
 }
@@ -2195,6 +2211,7 @@ body[data-sidebar-toggle=true] #sidebar {
 }
 
 .player-control {
+  /*width: 500px;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2212,6 +2229,7 @@ body[data-sidebar-toggle=true] #sidebar {
 }
 
 .player-control .btn-default:hover {
+
   background-color: #196eed;
   color: #fff !important
 }
@@ -3502,3 +3520,65 @@ body[data-theme=dark] .plan .plan__col {
 }
 
 /*# sourceMappingURL=styles.bundle.css.map */
+
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+/*Hoành thêm CSS*/
+
+
+.range {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+  margin-bottom: 20px;
+  cursor: pointer;
+
+}
+.range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background-color: #2BB6F3;
+}
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: #20e3b2;
+  width: 15px;
+  height: 15px;
+  border-radius: 100rem;
+  margin-top: -8px;
+  box-shadow: 0 0 0 3px white, 0 0 0 6px rgba(100, 100, 111, 0.05);
+  cursor: pointer;
+
+}
+
+
+
+.volume-range {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 20%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+  cursor: pointer;
+
+}
+.volume-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background-color: gray;
+}
+.volume-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: cornflowerblue;
+  width: 15px;
+  height: 15px;
+  border-radius: 100rem;
+  margin-top: -8px;
+  box-shadow: 0 0 0 3px white, 0 0 0 6px rgba(100, 100, 111, 0.05);
+}
+

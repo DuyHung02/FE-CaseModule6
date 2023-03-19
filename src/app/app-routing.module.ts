@@ -14,6 +14,7 @@ import {CreateSingerComponent} from "./singer/create-singer/create-singer.compon
 import {ShowSingerComponent} from "./singer/show-singer/show-singer.component";
 import {CheckPasswordComponent} from "./account/check-password/check-password.component";
 import {ChangePasswordComponent} from "./account/change-password/change-password.component";
+import {TopMostListensComponent} from "./play-music/playMusic/top-most-listens/top-most-listens.component";
 
 const routes: Routes = [
   {path: '', component: HomeIndexComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'afterRegister', component: AfterRegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'topMost', component: TopMostListensComponent},
   {path: 'createSinger', component: CreateSingerComponent},
   {path: 'showSinger', component: ShowSingerComponent},
   {path: 'playlists', component: PlaylistShowComponent},
