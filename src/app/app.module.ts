@@ -20,6 +20,7 @@ import {LoginComponent} from "./account/login/login.component";
 import {HomeComponent} from "./home/home.component";
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
+import { CreateSong2Component } from './song/create-song2/create-song2.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ShowSingerComponent } from './singer/show-singer/show-singer.component'
     HomeComponent,
     NavComponent,
     CreateSingerComponent,
-    ShowSingerComponent
+    ShowSingerComponent,
+    CreateSong2Component
   ],
   imports: [
     BrowserModule,
