@@ -1,1 +1,59 @@
-<p>create-song2 works!</p>
+<body>
+<div id="wrapper">
+  <app-nav></app-nav>
+  <header id="header">
+    <div class="container">
+    </div>
+  </header>
+  <main id="page_content">
+    <div class="hero" style="background-image: url(/assets/demo/images/banner/song.jpg);"></div>
+
+    <div class="under-hero container">
+
+      <div class="section">
+        <div class="col-xl-7 col-md-10 mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <div id="song_pane" role="tabpanel" aria-labelledby="song" tabindex="0">
+                <form [formGroup]="formCreateSong"  (ngSubmit)="create()" class="row">
+                  <div class="col-12 mb-4">
+                    <div style="text-align: center">
+                      <img style="width: 200px ; height: 200px ; object-fit: cover ; border-radius: 10px"
+                           [src]="url_avatar">
+                    </div>
+                  </div>
+                  <input formControlName="account_id" hidden><br>
+                  <div class="col-12 mb-4"><input type="text" class="form-control" placeholder="Song name"
+                                                  formControlName="song_name"></div>
+                  <div class="col-12 mb-4"><label class="form-label">Avatar</label>
+                    <input type="file" class="form-control" #song_avatar (change)="upLoadFileImg()"></div>
+                  <div class="col-12 mb-4"><label class="form-label">File mp3</label>
+                    <input type="file" class="form-control" #file_mp3 (change)="upLoadFileMp3()"></div>
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Music genre" formControlName="song_music_genre"></div>
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Author" formControlName="author"></div>
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Album" formControlName="album"></div>
+                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Posted" formControlName="posted"></div>
+                  <div class="col-12 mb-4">
+                    <textarea name="lyrics" id="album_lyrics" cols="30" rows="4"
+                              class="form-control" placeholder="Lyrics" formControlName="description"></textarea>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button class="btn btn-primary" style="min-width: 140px;">Add Song</button>
+                  </div>
+                </form>
+<!--                <div class="alert alert-success alert-dismissible">-->
+<!--                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>-->
+<!--                  <strong>Success!</strong> Song has been created successfully.-->
+<!--                </div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </main>
+</div>
+<div id="backdrop"></div>
+
+</body>

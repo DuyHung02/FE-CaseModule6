@@ -21,6 +21,7 @@ import {HomeComponent} from "./home/home.component";
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
 import { CreateSong2Component } from './song/create-song2/create-song2.component';
+import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CreateSong2Component } from './song/create-song2/create-song2.component
     NavComponent,
     CreateSingerComponent,
     ShowSingerComponent,
-    CreateSong2Component
+    CreateSong2Component,
+    CreateSingerSongComponent
   ],
   imports: [
     BrowserModule,

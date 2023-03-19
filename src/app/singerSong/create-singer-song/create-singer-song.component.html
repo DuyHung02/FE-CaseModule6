@@ -1,0 +1,49 @@
+<body>
+<div id="wrapper">
+  <app-nav></app-nav>
+  <header id="header">
+    <div class="container">
+    </div>
+  </header>
+  <main id="page_content">
+    <div class="hero" style="background-image: url(/assets/demo/images/banner/song.jpg);"></div>
+
+    <div class="under-hero container">
+
+      <div class="section">
+        <div class="col-xl-7 col-md-10 mx-auto">
+          <div class="card">
+            <div class="card-body">
+              <div id="singerSong_pane" role="tabpanel" aria-labelledby="singerSong" tabindex="0">
+                <form [formGroup]="formCreateSingerSong" (ngSubmit)="create()" class="row">
+                  <input  formControlName="song_id" hidden><br>
+                  <div class="col-12 mb-4">
+                    <label  class="form-label">Singer</label>
+                    <select  class="form-select" aria-label="Select singer"
+                            formControlName="singer_id">
+                      <option *ngFor="let sr of singers " value="{{sr.id}}"  >{{sr.singer_name}}</option>
+                    </select></div>
+                  <div class="alert alert-primary alert-dismissible" *ngIf="openMessage">
+                    <div style="text-align: center">
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="changeStatus()"></button>
+                      <strong>Success!</strong> Singer has been added Music.<br>
+                    </div>
+                  </div>
+                  <div class="card-footer text-center">
+                    <button class="btn btn-primary" style="min-width: 140px; margin-right: 5%" (click)="back()">Back</button>
+                    <button type="submit" class="btn btn-primary" style="min-width: 140px;">Add Singer</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </main>
+</div>
+<div id="backdrop"></div>
+
+</body>

@@ -41,21 +41,25 @@
                   <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Band"
                                                     formControlName="band"></div>
                   <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Hot music"
-                                                  formControlName="hot_music"></div>
+                                                    formControlName="hot_music"></div>
                   <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Story"
                                                     formControlName="story"></div>
                   <div class="col-12 mb-4">
                     <textarea name="lyrics" id="album_lyrics" cols="30" rows="4"
                               class="form-control" placeholder="Information" formControlName="information"></textarea>
                   </div>
+                  <div class="alert alert-primary alert-dismissible" *ngIf="openMessage">
+                    <div style="text-align: center" >
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="changeStatus()"></button>
+                      <strong>Success!</strong> Singer has been created successfully.<br>
+                    </div>
+                  </div>
                   <div class="card-footer text-center">
+                    <button class="btn btn-primary" style="min-width: 140px; margin-right: 5%" (click)="back()">Back</button>
                     <button class="btn btn-primary" style="min-width: 140px;">Add Singer</button>
                   </div>
                 </form>
-                <div class="alert alert-success alert-dismissible" *ngIf="openMessage">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="changeStatus()"></button>
-                  <strong>Success!</strong> Singer has been created successfully.
-                </div>
+
               </div>
             </div>
           </div>
