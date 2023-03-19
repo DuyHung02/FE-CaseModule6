@@ -37,7 +37,7 @@
                       </ul>
                     </div>
                   </div>
-                  <a routerLink="/playlistDetail/{{p.id}}" class="cover__image"><img src="{{p.avatarPlaylist}}" width="300px" height="200px"></a>
+                  <a routerLink="/playlistDetail/{{p.id}}" class="cover__image"><img src="{{p.avatarPlaylist}}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px"></a>
                   <div class="cover__foot"><a href="assets/demo/album-details.html"
                                               class="cover__title text-truncate">{{p.name}}</a>
                   </div>
@@ -137,7 +137,4 @@
     </div>
   </div>
 </div>
-<div id="backdrop"></div>
-<script src="js/plugins.bundle.js"></script>
-<script src="js/scripts.bundle.js"></script>
 </body>

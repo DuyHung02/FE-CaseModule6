@@ -26,6 +26,8 @@ import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-del
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
+import { CheckPasswordComponent } from './account/check-password/check-password.component';
+import { ChangePasswordComponent } from './account/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { ShowSingerComponent } from './singer/show-singer/show-singer.component'
     PlaylistCreateComponent,
     PlaylistDeleteComponent,
     PlaylistEditComponent,
+    CheckPasswordComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,
