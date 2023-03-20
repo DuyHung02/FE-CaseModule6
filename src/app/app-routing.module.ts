@@ -20,6 +20,7 @@ import {TopMostListensComponent} from "./play-music/playMusic/top-most-listens/t
 import {SongUploadedComponent} from "./song/song-uploaded/song-uploaded.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {ShowDetailSong2Component} from "./song/show-detail-song2/show-detail-song2.component";
+import {ShowSongComponent} from "./song/show-song/show-song.component";
 
 const routes: Routes = [
   {path: '', component: HomeIndexComponent},
@@ -42,6 +43,7 @@ const routes: Routes = [
   {path: 'songUploaded', component: SongUploadedComponent},
   {path: 'editSong/:id', component: EditSongComponent},
   {path: 'showDetailSong/:id', component: ShowDetailSong2Component},
+  {path: 'showSong', component: ShowSongComponent},
 ];
 
 @NgModule({
