@@ -45,5 +45,12 @@ export class SingerService {
     return this.http.get<Singer[]>("http://localhost:8080/singer"+'?page=' + page);
   }
 
+  // Hoành thêm
+  getAllSingerNoPaging() :Observable<Singer[]>{
+    return this.http.get<Singer[]>("http://localhost:8080/singer");
+  }
+
+
+
 }
 

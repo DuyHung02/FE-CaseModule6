@@ -1,0 +1,26 @@
+<div class="section"  >
+  <div class="section__head">
+    <div class="flex-grow-1"><span class="section__subtitle">Best to listen</span>
+      <h3 class="mb-0">Featured <span class="text-primary">Artists</span></h3></div>
+    <a href="artists.html" class="btn btn-link">View All</a></div>
+  <div class="swiper-carousel swiper-carousel-button">
+    <div class="swiper" data-swiper-slides="6" data-swiper-autoplay="true">
+      <div class="swiper-wrapper">
+
+<!--        Bắt đầu item-->
+        <div *ngFor="let singer of singers" class="swiper-slide">
+          <div class="avatar avatar--xxl d-block text-center">
+            <div class="avatar__image"><a href="artist-details.html"><img
+              src="{{singer.singer_avatar}}" alt="Arebica Luna"></a></div>
+            <a href="artist-details.html" class="avatar__title mt-3">{{singer.singer_name}}</a></div>
+        </div>
+<!--        Kết thúc item-->
+
+
+
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</div>

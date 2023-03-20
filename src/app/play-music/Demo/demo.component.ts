@@ -1,14 +1,16 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {SongService} from "../../../service/SongService";
+import {Song} from "../../models/Song";
+import {SongService} from "../../service/SongService";
 import {ActivatedRoute} from "@angular/router";
-import {Song} from "../../../models/Song";
 
 @Component({
-  selector: 'app-top-most-listens',
-  templateUrl: './top-most-listens.component.html',
-  styleUrls: ['./top-most-listens.component.css']
+  selector: 'app-demo',
+  templateUrl: './demo.component.html',
+  styleUrls: ['./demo.component.css']
 })
-export class TopMostListensComponent implements OnInit,OnDestroy{
+
+
+export class DemoComponent implements OnInit,OnDestroy{
 
   id: any
   songs: Song [] = [];
@@ -37,7 +39,7 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
   ngOnInit(): void {
 
-    // Gọi hàm tìm 10 bài nghe nhiều nhất
+    // Gọi hàm tìm tất cả bài hát theo id của ca sĩ
     this.findTop10Song();
     // Tải tài nguyên cho trình phát nhạc
     this.loadAudioResources();
@@ -108,7 +110,6 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
   imgSong = "https://vietthuong.vn/upload/content/images/tuvan/piano/co-am-nhac-cuoc-song-tot-dep-hon-02.jpg"
   nameSong: any
-
   playAndPauseAudio() {
 
     this.imgSong = this.songs[this.currentSongIndex].song_avatar
@@ -277,3 +278,4 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
 
 }
+

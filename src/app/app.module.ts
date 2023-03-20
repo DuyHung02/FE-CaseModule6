@@ -30,6 +30,11 @@ import { ChangePasswordComponent } from './account/change-password/change-passwo
 import { TopMostListensComponent } from './play-music/playMusic/top-most-listens/top-most-listens.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
+import {DemoComponent} from "./play-music/Demo/demo.component";
+import { TopChartsComponent } from './home/top-charts/top-charts.component';
+import { Top10ListensComponent } from './home/top10-listens/top10-listens.component';
+import { ArtistsComponent } from './home/artists/artists.component';
+import { BestPlayListComponent } from './home/best-play-list/best-play-list.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +60,15 @@ import {HeaderUserComponent} from "./home-index/header-user/header-user.componen
     ChangePasswordComponent,
     NavComponent,
     TopMostListensComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+
+    //Hoành thêm
+    DemoComponent,
+      TopChartsComponent,
+      Top10ListensComponent,
+      ArtistsComponent,
+      BestPlayListComponent
+
   ],
     imports: [
         BrowserModule,
