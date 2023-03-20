@@ -34,6 +34,7 @@ import {NgxPaginationModule} from "ngx-pagination";
 import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
 import { SongUploadedComponent } from './song/song-uploaded/song-uploaded.component';
 import { EditSongComponent } from './song/edit-song/edit-song.component';
+import { ShowDetailSong2Component } from './song/show-detail-song2/show-detail-song2.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { EditSongComponent } from './song/edit-song/edit-song.component';
     CreateSong2Component,
     CreateSingerSongComponent,
     SongUploadedComponent,
-    EditSongComponent
+    EditSongComponent,
+    ShowDetailSong2Component
   ],
     imports: [
         BrowserModule,

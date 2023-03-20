@@ -1,0 +1,63 @@
+<body>
+<div id="wrapper">
+  <app-nav></app-nav>
+
+  <app-header-user></app-header-user>
+
+  <main id="page_content">
+    <div class="hero" [style.background-image]="'url(assets/demo/images/banner/song.jpg)'"></div>
+    <div class="under-hero container">
+      <div class="section">
+        <div class="row align-items-center">
+          <div class="col-xl-3 col-md-4">
+            <div class="cover cover--round">
+              <div class="cover__image"><img src="{{song.song_avatar}}" alt="Treasure face"></div>
+            </div>
+          </div>
+          <div class="col-1 d-none d-xl-block"></div>
+
+          <div class="col-md-8 mt-5 mt-md-0">
+
+            <div class="d-flex flex-wrap mb-2"><span class="text-dark fs-4 fw-semi-bold pe-2">{{song.song_name}}</span>
+              <div class="dropstart d-inline-flex ms-auto"><a class="dropdown-link" href="javascript:void(0);"
+                                                              role="button" data-bs-toggle="dropdown"
+                                                              aria-label="Cover options" aria-expanded="false"></a>
+              </div>
+            </div>
+            <ul>Author: {{song.author}}</ul>
+            <ul>Posted: {{song.posted}}</ul>
+            <ul>Album: {{song.album}}</ul>
+            <ul>Song music genre: {{song.song_music_genre}}</ul>
+            <ul>Singer:
+              <li style="display: inline" *ngFor="let ss of singerSongs ">{{ss.singer.singer_name}},</li>
+            </ul>
+
+            <ul class="info-list">
+              <li>
+                <div class="d-flex align-items-center">
+                  <button type="button" id="play_all" class="btn btn-icon btn-primary rounded-pill"
+                          data-collection-play-id="1"><i class="ri-play-fill icon-play"></i> <i
+                    class="ri-pause-fill icon-pause"></i></button>
+                  <label for="play_all" class="ps-2 fw-semi-bold text-primary mb-0" style="cursor: pointer;">Play
+                    all</label></div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-sm-12"><label for="about" class="form-label fw-medium">Lyrics</label>
+            <textarea name="about" id="about" cols="30" rows="5" class="form-control"
+                      readonly>{{song.description}}</textarea>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="list">
+          <div class="row" data-collection-song-id="1">
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer"></footer>
+  </main>
+</div>
+</body>

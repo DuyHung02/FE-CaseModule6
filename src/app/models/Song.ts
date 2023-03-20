@@ -30,6 +30,4 @@ export class Song {
     this.likes = likes;
   }
 
-
-
 }
