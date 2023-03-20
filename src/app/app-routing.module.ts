@@ -36,7 +36,7 @@ const routes: Routes = [
   {path: 'showSinger', component: ShowSingerComponent},
   {path: 'createSong', component: CreateSong2Component},
   {path:'createSingerSong/:id',component: CreateSingerSongComponent},
-  {path: 'playlists', component: PlaylistShowComponent},
+  {path: 'playlists/:id', component: PlaylistShowComponent},
   {path: 'detail/:id', component: DetailComponent},
   {path: 'playlistCreate', component: PlaylistCreateComponent},
   {path: 'playlistDelete/:id', component: PlaylistDeleteComponent},

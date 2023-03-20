@@ -92,7 +92,7 @@ export class CreateSong2Component implements OnInit {
     if (this.selectedMp3 != null) {
       const filePathMp3 = this.selectedMp3.name;
       const fileRefMp3 = this.storage.ref(filePathMp3);
-      this.storage.upload(filePathMp3, this.selectedImage).snapshotChanges().pipe(
+      this.storage.upload(filePathMp3, this.selectedMp3).snapshotChanges().pipe(
         finalize(() => (fileRefMp3.getDownloadURL().subscribe(url => {
           this.url_mp3 = url;
           console.log(this.url_mp3)
