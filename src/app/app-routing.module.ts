@@ -12,10 +12,16 @@ import {PlaylistDeleteComponent} from "./playlist/playlist-delete/playlist-delet
 import {PlaylistEditComponent} from "./playlist/playlist-edit/playlist-edit.component";
 import {CreateSingerComponent} from "./singer/create-singer/create-singer.component";
 import {ShowSingerComponent} from "./singer/show-singer/show-singer.component";
+import {CreateSong2Component} from "./song/create-song2/create-song2.component";
+import {CreateSingerSongComponent} from "./singerSong/create-singer-song/create-singer-song.component";
 import {CheckPasswordComponent} from "./account/check-password/check-password.component";
 import {ChangePasswordComponent} from "./account/change-password/change-password.component";
 import {TopMostListensComponent} from "./play-music/playMusic/top-most-listens/top-most-listens.component";
 import {ProfileComponent} from "./account/profile/profile.component";
+import {SongUploadedComponent} from "./song/song-uploaded/song-uploaded.component";
+import {EditSongComponent} from "./song/edit-song/edit-song.component";
+import {ShowDetailSong2Component} from "./song/show-detail-song2/show-detail-song2.component";
+import {ShowSongComponent} from "./song/show-song/show-song.component";
 
 const routes: Routes = [
   {path: '', component: HomeIndexComponent},
@@ -26,6 +32,8 @@ const routes: Routes = [
   {path: 'topMost', component: TopMostListensComponent},
   {path: 'createSinger', component: CreateSingerComponent},
   {path: 'showSinger', component: ShowSingerComponent},
+  {path: 'createSong', component: CreateSong2Component},
+  {path:'createSingerSong/:id',component: CreateSingerSongComponent},
   {path: 'playlists', component: PlaylistShowComponent},
   {path: 'detail/:id', component: DetailComponent},
   {path: 'playlistCreate', component: PlaylistCreateComponent},
@@ -34,6 +42,10 @@ const routes: Routes = [
   {path: 'checkPassword', component: CheckPasswordComponent},
   {path: 'changePassword', component: ChangePasswordComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'songUploaded', component: SongUploadedComponent},
+  {path: 'editSong/:id', component: EditSongComponent},
+  {path: 'showDetailSong/:id', component: ShowDetailSong2Component},
+  {path: 'showSong', component: ShowSongComponent},
 ];
 
 @NgModule({

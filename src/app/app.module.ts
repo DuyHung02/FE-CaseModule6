@@ -25,12 +25,19 @@ import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-del
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
 import { CreateSingerComponent } from './singer/create-singer/create-singer.component';
 import { ShowSingerComponent } from './singer/show-singer/show-singer.component';
+import { CreateSong2Component } from './song/create-song2/create-song2.component';
+import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
 import { CheckPasswordComponent } from './account/check-password/check-password.component';
 import { ChangePasswordComponent } from './account/change-password/change-password.component';
 import { TopMostListensComponent } from './play-music/playMusic/top-most-listens/top-most-listens.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
 import { ProfileComponent } from './account/profile/profile.component';
+import { SongUploadedComponent } from './song/song-uploaded/song-uploaded.component';
+import { EditSongComponent } from './song/edit-song/edit-song.component';
+import { ShowDetailSong2Component } from './song/show-detail-song2/show-detail-song2.component';
+import { ShowSongComponent } from './song/show-song/show-song.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +64,13 @@ import { ProfileComponent } from './account/profile/profile.component';
     TopMostListensComponent,
     HeaderUserComponent,
     ProfileComponent,
+    ShowSingerComponent,
+    CreateSong2Component,
+    CreateSingerSongComponent,
+    SongUploadedComponent,
+    EditSongComponent,
+    ShowDetailSong2Component,
+    ShowSongComponent
   ],
     imports: [
         BrowserModule,

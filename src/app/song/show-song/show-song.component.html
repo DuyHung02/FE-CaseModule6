@@ -1,0 +1,342 @@
+<body>
+<div id="wrapper">
+
+  <app-nav></app-nav>
+  <app-header-user></app-header-user>
+
+  <main id="page_content">
+    <div class="hero" style="background-image: url(assets/demo/images/banner/song.jpg);"></div>
+    <div class="under-hero container">
+      <div class="section">
+        <div class="section__head align-items-center"><span class="d-block pe-3 fs-6 fw-semi-bold">5240 Songs in the list</span>
+          <div><select class="form-select" aria-label="Filter song">
+            <option value="Popular">Popular</option>
+            <option value="Most played">Most played</option>
+            <option value="A to Z">A to Z</option>
+            <option value="Z to A">Z to A</option>
+          </select></div>
+        </div>
+
+
+        <div class="list">
+          <div class="row">
+            <div class="col-xl-6" *ngFor="let s of songs">
+              <div class="list__item">
+                <div class="list__cover"><img src="{{s.song_avatar}}"> <a
+                  href="javascript:void(0);" class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
+                  data-play-id="1" aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i
+                  class="ri-pause-fill icon-pause"></i></a></div>
+                <div class="list__content"><a href="#" class="list__title text-truncate">{{s.song_name}}</a>
+                  <p class="list__subtitle text-truncate"><a href="#">{{s.author}}</a></p></div>
+                <ul class="list__option">
+                  <li><a href="javascript:void(0);" role="button" class="d-inline-flex" aria-label="Favorite"
+                         data-favorite-id="1"><i class="ri-heart-line heart-empty"></i> <i
+                    class="ri-heart-fill heart-fill"></i></a></li>
+                  <li>01:14</li>
+                  <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);" role="button"
+                                                         data-bs-toggle="dropdown" aria-label="Cover options"
+                                                         aria-expanded="false"><i class="ri-more-fill"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-sm">
+                      <li><a class="dropdown-item" href="#" role="button" data-queue-id="1">Show detail</a></li>
+                      <li><a class="dropdown-item" routerLink="/home">Add to
+                        playlist</a></li>
+                      <li class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#" role="button" data-play-id="1">Play</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+        <div class="mt-5 text-center"><a href="javascript:void(0);" class="btn btn-primary">
+          <div class="btn__wrap"><i class="ri-loader-3-fill"></i> <span>Load more</span></div>
+        </a></div>
+      </div>
+      <div class="section">
+        <div class="section__head">
+          <div class="flex-grow-1"><h3 class="mb-0">Free <span class="text-primary">Albums</span></h3></div>
+          <a href="albums.html" class="btn btn-link">View All</a></div>
+        <div class="swiper-carousel swiper-carousel-button">
+          <div class="swiper" data-swiper-slides="5" data-swiper-autoplay="true">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="cover cover--round">
+                  <div class="cover__head">
+                    <ul class="cover__label d-flex">
+                      <li><span class="badge rounded-pill bg-danger"><i class="ri-heart-fill"></i></span></li>
+                    </ul>
+                    <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                   href="javascript:void(0);"
+                                                                                   role="button"
+                                                                                   data-bs-toggle="dropdown"
+                                                                                   aria-label="Cover options"
+                                                                                   aria-expanded="false"><i
+                      class="ri-more-2-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="100">Favorite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="audio/ringtone-1.mp3" download>Download</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="album-details.html">View details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a href="album-details.html" class="cover__image"><img src="images/cover/large/1.jpg" alt="Mummy"></a>
+                  <div class="cover__foot"><a href="album-details.html" class="cover__title text-truncate">Mummy</a>
+                    <p class="cover__subtitle text-truncate"><a href="artist-details.html">Arebica Luna</a></p></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="cover cover--round">
+                  <div class="cover__head">
+                    <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                   href="javascript:void(0);"
+                                                                                   role="button"
+                                                                                   data-bs-toggle="dropdown"
+                                                                                   aria-label="Cover options"
+                                                                                   aria-expanded="false"><i
+                      class="ri-more-2-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="101">Favorite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="audio/ringtone-2.mp3" download>Download</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="album-details.html">View details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a href="album-details.html" class="cover__image"><img src="images/cover/large/2.jpg" alt="Hot shot"></a>
+                  <div class="cover__foot"><a href="album-details.html" class="cover__title text-truncate">Hot shot</a>
+                    <p class="cover__subtitle text-truncate"><a href="artist-details.html">Gerrina Linda</a></p></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="cover cover--round">
+                  <div class="cover__head">
+                    <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                   href="javascript:void(0);"
+                                                                                   role="button"
+                                                                                   data-bs-toggle="dropdown"
+                                                                                   aria-label="Cover options"
+                                                                                   aria-expanded="false"><i
+                      class="ri-more-2-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="102">Favorite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="audio/ringtone-3.mp3" download>Download</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="album-details.html">View details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a href="album-details.html" class="cover__image"><img src="images/cover/large/3.jpg"
+                                                                         alt="Own way"></a>
+                  <div class="cover__foot"><a href="album-details.html" class="cover__title text-truncate">Own way</a>
+                    <p class="cover__subtitle text-truncate"><a href="artist-details.html">Zunira Willy</a>, <a
+                      href="artist-details.html">Nutty Nina</a></p></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="cover cover--round">
+                  <div class="cover__head">
+                    <ul class="cover__label d-flex">
+                      <li><span class="badge rounded-pill bg-danger"><i class="ri-heart-fill"></i></span></li>
+                    </ul>
+                    <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                   href="javascript:void(0);"
+                                                                                   role="button"
+                                                                                   data-bs-toggle="dropdown"
+                                                                                   aria-label="Cover options"
+                                                                                   aria-expanded="false"><i
+                      class="ri-more-2-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="103">Favorite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="audio/ringtone-4.mp3" download>Download</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="album-details.html">View details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a href="album-details.html" class="cover__image"><img src="images/cover/large/4.jpg"
+                                                                         alt="Say yes"></a>
+                  <div class="cover__foot"><a href="album-details.html" class="cover__title text-truncate">Say yes</a>
+                    <p class="cover__subtitle text-truncate"><a href="artist-details.html">Johnny Marro</a></p></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="cover cover--round">
+                  <div class="cover__head">
+                    <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                   href="javascript:void(0);"
+                                                                                   role="button"
+                                                                                   data-bs-toggle="dropdown"
+                                                                                   aria-label="Cover options"
+                                                                                   aria-expanded="false"><i
+                      class="ri-more-2-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="104">Favorite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="audio/ringtone-5.mp3" download>Download</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="album-details.html">View details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a href="album-details.html" class="cover__image"><img src="images/cover/large/5.jpg"
+                                                                         alt="Letter"></a>
+                  <div class="cover__foot"><a href="album-details.html" class="cover__title text-truncate">Letter</a>
+                    <p class="cover__subtitle text-truncate"><a href="artist-details.html">Jina Moore</a>, <a
+                      href="artist-details.html">Lenisa Gory</a></p></div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="cover cover--round">
+                  <div class="cover__head">
+                    <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                   href="javascript:void(0);"
+                                                                                   role="button"
+                                                                                   data-bs-toggle="dropdown"
+                                                                                   aria-label="Cover options"
+                                                                                   aria-expanded="false"><i
+                      class="ri-more-2-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="105">Favorite</a>
+                        </li>
+                        <li><a class="dropdown-item" href="audio/ringtone-6.mp3" download>Download</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="album-details.html">View details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a href="album-details.html" class="cover__image"><img src="images/cover/large/6.jpg" alt="Find soul"></a>
+                  <div class="cover__foot"><a href="album-details.html" class="cover__title text-truncate">Find soul</a>
+                    <p class="cover__subtitle text-truncate"><a href="artist-details.html">Rasomi Pelina</a></p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-prev btn-default rounded-pill"></div>
+          <div class="swiper-button-next btn-default rounded-pill"></div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+    </footer>
+  </main>
+</div>
+
+
+<!--<div id="player">-->
+<!--  <div class="container">-->
+<!--    <div class="player-container">-->
+<!--      <div class="player-progress">-->
+<!--        <progress class="amplitude-buffered-progress player-progress__bar" value="0"></progress>-->
+<!--        <progress class="amplitude-song-played-progress player-progress__bar"></progress>-->
+<!--        <input type="range" class="amplitude-song-slider player-progress__slider" aria-label="Progress slider"></div>-->
+<!--      <div class="cover d-flex align-items-center">-->
+<!--        <div class="cover__image"><img data-amplitude-song-info="cover_art_url" src="images/cover/small/1.jpg" alt="">-->
+<!--        </div>-->
+<!--        <div class="cover__content ps-3 d-none d-sm-block"><a href="song-details.html"-->
+<!--                                                              class="cover__title text-truncate"-->
+<!--                                                              data-amplitude-song-info="name"></a> <a-->
+<!--          href="artist-details.html" class="cover__subtitle text-truncate" data-amplitude-song-info="artist"></a></div>-->
+<!--      </div>-->
+
+
+<!--      <div class="player-control">-->
+
+<!--        <button type="button" class="amplitude-repeat btn btn-icon me-4 d-none d-md-block" aria-label="Repeat"><i-->
+<!--          class="ri-repeat-2-fill fs-5"></i></button>-->
+
+<!--        <button type="button" class="amplitude-prev btn btn-icon" aria-label="Backward"><i-->
+<!--          class="ri-skip-back-mini-fill"></i></button>-->
+
+<!--        <button type="button" class="amplitude-play-pause btn btn-icon btn-default rounded-pill"-->
+<!--                aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i class="ri-pause-fill icon-pause"></i>-->
+<!--        </button>-->
+
+<!--        <button type="button" class="amplitude-next btn btn-icon" aria-label="Forward"><i-->
+<!--          class="ri-skip-forward-mini-fill"></i></button>-->
+
+<!--        <button type="button" class="amplitude-shuffle amplitude-shuffle-off btn btn-icon ms-4 d-none d-md-block"-->
+<!--                aria-label="Shuffle"><i class="ri-shuffle-fill fs-5"></i></button>-->
+<!--      </div>-->
+
+
+<!--      <div class="player-info">-->
+
+<!--        <div class="me-4 d-none d-xl-block">-->
+<!--          <span class="amplitude-current-minutes"></span>-->
+<!--          :<span class="amplitude-current-seconds"></span>-->
+<!--          / <span class="amplitude-duration-minutes"></span>-->
+<!--          :<span class="amplitude-duration-seconds"></span>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash;        volume&ndash;&gt;-->
+<!--        <div class="player-volume dropdown d-none d-md-block">-->
+
+<!--          <button class="btn btn-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-label="Volume"-->
+<!--                  aria-expanded="false">-->
+<!--            <i class="ri-volume-mute-fill fs-5 d-none"></i>-->
+<!--            <i class="ri-volume-down-fill fs-5"></i>-->
+<!--            <i class="ri-volume-up-fill fs-5 d-none"></i>-->
+<!--          </button>-->
+
+<!--          <div class="dropdown-menu prevent-click">-->
+<!--            <input type="range" class="amplitude-volume-slider" value="50"-->
+<!--                   min="0" max="100" aria-label="Volume slider">-->
+<!--          </div>-->
+
+<!--        </div>-->
+<!--        &lt;!&ndash;        end volume&ndash;&gt;-->
+
+<!--        &lt;!&ndash;        option ...&ndash;&gt;-->
+<!--        <div class="dropstart d-none d-md-block">-->
+<!--          <button class="btn btn-icon" data-bs-toggle="dropdown" aria-label="Song options" aria-expanded="false"><i-->
+<!--            class="ri-more-2-fill fs-5"></i></button>-->
+<!--          <ul class="dropdown-menu dropdown-menu-sm" id="player_options">-->
+<!--            <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="1">Favorite</a></li>-->
+<!--            <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="1">Add to-->
+<!--              playlist</a></li>-->
+<!--            <li><a class="dropdown-item" href="audio/ringtone-1.mp3" download>Download</a></li>-->
+<!--            <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>-->
+<!--            <li class="dropdown-divider"></li>-->
+<!--            <li><a class="dropdown-item" href="song-details.html">View details</a></li>-->
+<!--          </ul>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        end option ...&ndash;&gt;-->
+
+<!--        &lt;!&ndash;        option playlist&ndash;&gt;-->
+<!--        <div class="playlist dropstart me-3">-->
+<!--          <button class="btn btn-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-label="Playlist"-->
+<!--                  aria-expanded="false"><i class="ri-play-list-fill fs-5"></i></button>-->
+<!--          <div class="dropdown-menu playlist__dropdown">-->
+<!--            <div class="playlist__head d-flex align-items-center justify-content-between"><h6 class="mb-0">Next-->
+<!--              Lineup</h6><a href="javascript:void(0);" role="button" id="clear_playlist" class="btn btn-link">Clear</a>-->
+<!--            </div>-->
+<!--            <div id="playlist" class="list playlist__body" data-scroll="true">-->
+<!--              <div class="col-sm-8 col-10 mx-auto mt-5 text-center"><i class="ri-music-2-line mb-3"></i>-->
+<!--                <p>No songs, album or playlist are added on lineup.</p></div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        end option playlist&ndash;&gt;-->
+
+
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+</body>

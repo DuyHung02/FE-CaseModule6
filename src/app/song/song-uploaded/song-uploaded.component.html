@@ -1,6 +1,6 @@
 <body>
-
 <div id="wrapper">
+
   <app-nav></app-nav>
 
   <app-header-user></app-header-user>
@@ -9,10 +9,8 @@
     <div class="hero" [style.background-image]="'url(assets/demo/images/banner/song.jpg)'"></div>
     <div class="under-hero container">
       <div class="section">
-        <div class="section__head"><h3 class="mb-0">All <span class="text-primary">Singer</span></h3>
+        <div class="section__head"><h3 class="mb-0">Song <span class="text-primary">Uploaded</span></h3>
         </div>
-
-        <button class="btn btn-outline-primary" routerLink="/createSinger"><i class="ri-add-line">Add singer</i></button>
         <hr>
 
         <div class="swiper-carousel swiper-carousel-button">
@@ -20,7 +18,7 @@
 
             <div class="swiper-wrapper">
 
-              <div class="swiper-slide" *ngFor="let s of singers">
+              <div class="swiper-slide" *ngFor="let s of songs">
                 <div class="cover cover--round">
                   <div class="cover__head">
                     <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
@@ -30,17 +28,14 @@
                                                                                    aria-expanded="false"><i
                       class="ri-more-2-fill"></i></a>
                       <ul class="dropdown-menu dropdown-menu-sm">
-<!--                        <li><a class="dropdown-item" routerLink="/singerEdit/{{s.id}}" role="button">Edit</a></li>-->
-<!--                        <li><a class="dropdown-item" routerLink="/singertDelete/{{s.id}}" role="button">Delete</a></li>-->
-                        <li><a class="dropdown-item" routerLink="" role="button">Option</a></li>
-                        <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" routerLink="/detail/{{s.id}}" [queryParams]="{type : 'singer'}">View details</a></li>
+                        <li><a class="dropdown-item" routerLink="/showDetailSong/{{s.id}}">View</a></li>
+                        <li><a class="dropdown-item" routerLink="/editSong/{{s.id}}">Edit</a></li>
                       </ul>
                     </div>
                   </div>
-                  <a routerLink="/detail/{{s.id}}" [queryParams]="{type : 'singer'}" class="cover__image"><img src="{{s.singer_avatar}}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px"></a>
+                  <img src="{{s.song_avatar}}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px">
                   <div class="cover__foot"><a href="assets/demo/album-details.html"
-                                              class="cover__title text-truncate">{{s.singer_name}}</a>
+                                              class="cover__title text-truncate">{{s.song_name}}</a>
                   </div>
                 </div>
 
@@ -53,16 +48,7 @@
 
       </div>
       <footer id="footer">
-        <div class="container">
-          <div class="text-center mb-4"><a href="mailto:info@listenapp.com"
-                                           class="display-5 email">info@listenapp.com</a>
-          </div>
-          <div class="app-btn-group pt-2"><a href="#" class="btn btn-lg btn-primary">
-            <div class="btn__wrap"><i class="ri-google-play-fill"></i> <span class="ms-2">Google Play</span></div>
-          </a><a href="#" class="btn btn-lg btn-primary">
-            <div class="btn__wrap"><i class="ri-app-store-fill"></i> <span class="ms-2">App Store</span></div>
-          </a></div>
-        </div>
+
       </footer>
     </div>
   </main>
@@ -138,6 +124,4 @@
     </div>
   </div>
 </div>
-
-
 </body>

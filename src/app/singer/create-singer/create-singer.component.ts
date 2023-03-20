@@ -25,6 +25,7 @@ export class CreateSingerComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.openMessage=false;
     this.formCreateSinger = new FormGroup({
       singer_name: new FormControl(),
       singer_avatar: new FormControl(),
@@ -46,6 +47,7 @@ export class CreateSingerComponent implements OnInit {
   }
 
   submit() {
+    this.openMessage=false;
     if (this.selectedSinger != null) {
       const filePath = this.selectedSinger.name;
       const fileRef = this.storage.ref(filePath);
@@ -59,7 +61,7 @@ export class CreateSingerComponent implements OnInit {
   }
 
   create() {
-    this.openMessage=false;
+
     console.log(this.url_avatar);
     this.formCreateSinger.patchValue({
       singer_avatar: this.url_avatar,
@@ -67,7 +69,7 @@ export class CreateSingerComponent implements OnInit {
     console.log(this.formCreateSinger.value);
     this.singerService.createSinger(this.formCreateSinger.value).subscribe((data) => {
       this.openMessage=true;
-      // this.router.navigate(["/showSinger"]);
+
 
       this.formCreateSinger.reset();
     })
@@ -75,7 +77,11 @@ export class CreateSingerComponent implements OnInit {
 
   changeStatus() {
     this.openMessage = false
-    location.reload()
+  }
+
+  back() {
+    this.openMessage = false
+    location.replace('/showSinger')
   }
 
 

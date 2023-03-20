@@ -1,12 +1,12 @@
 export class SingerSong {
   id!: number;
-  singer_id!: any;
-  song_id!: any;
+  singer!: any;
+  song!: any;
 
-  constructor(id: number, singer_id: any, song_id: any) {
+
+  constructor(id: number, singer: any, song: any) {
     this.id = id;
-    this.singer_id = singer_id;
-    this.song_id = song_id;
+    this.singer = singer;
+    this.song = song;
   }
-
 }

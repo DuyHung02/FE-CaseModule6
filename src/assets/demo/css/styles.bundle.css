@@ -887,7 +887,7 @@ a, button, input {
 
 .cover .cover__image {
   position: relative;
-  display: block
+  display: block;
 }
 
 .cover .cover__image img {
