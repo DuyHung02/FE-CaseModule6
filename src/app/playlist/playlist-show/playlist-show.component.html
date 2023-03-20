@@ -33,11 +33,11 @@
                         <li><a class="dropdown-item" routerLink="/playlistEdit/{{p.id}}" role="button">Edit</a></li>
                         <li><a class="dropdown-item" routerLink="/playlistDelete/{{p.id}}" role="button">Delete</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" routerLink="/playlistDetail/{{p.id}}">View details</a></li>
+                        <li><a class="dropdown-item" routerLink="/detail/{{p.id}}" [queryParams]="{type : 'playlist'}">View details</a></li>
                       </ul>
                     </div>
                   </div>
-                  <a routerLink="/playlistDetail/{{p.id}}" class="cover__image"><img src="{{p.avatarPlaylist}}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px"></a>
+                  <a routerLink="/detail/{{p.id}}" [queryParams]="{type : 'playlist'}" class="cover__image"><img src="{{p.avatarPlaylist}}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px"></a>
                   <div class="cover__foot"><a href="assets/demo/album-details.html"
                                               class="cover__title text-truncate">{{p.name}}</a>
                   </div>

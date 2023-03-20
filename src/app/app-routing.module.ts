@@ -15,6 +15,7 @@ import {ShowSingerComponent} from "./singer/show-singer/show-singer.component";
 import {CheckPasswordComponent} from "./account/check-password/check-password.component";
 import {ChangePasswordComponent} from "./account/change-password/change-password.component";
 import {TopMostListensComponent} from "./play-music/playMusic/top-most-listens/top-most-listens.component";
+import {ProfileComponent} from "./account/profile/profile.component";
 
 const routes: Routes = [
   {path: '', component: HomeIndexComponent},
@@ -26,12 +27,13 @@ const routes: Routes = [
   {path: 'createSinger', component: CreateSingerComponent},
   {path: 'showSinger', component: ShowSingerComponent},
   {path: 'playlists', component: PlaylistShowComponent},
-  {path: 'playlistDetail/:id', component: DetailComponent},
+  {path: 'detail/:id', component: DetailComponent},
   {path: 'playlistCreate', component: PlaylistCreateComponent},
   {path: 'playlistDelete/:id', component: PlaylistDeleteComponent},
   {path: 'playlistEdit/:id', component: PlaylistEditComponent},
   {path: 'checkPassword', component: CheckPasswordComponent},
   {path: 'changePassword', component: ChangePasswordComponent},
+  {path: 'profile', component: ProfileComponent},
 ];
 
 @NgModule({

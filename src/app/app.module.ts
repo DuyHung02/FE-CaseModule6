@@ -30,7 +30,7 @@ import { ChangePasswordComponent } from './account/change-password/change-passwo
 import { TopMostListensComponent } from './play-music/playMusic/top-most-listens/top-most-listens.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
-
+import { ProfileComponent } from './account/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +55,8 @@ import {HeaderUserComponent} from "./home-index/header-user/header-user.componen
     ChangePasswordComponent,
     NavComponent,
     TopMostListensComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    ProfileComponent,
   ],
     imports: [
         BrowserModule,
