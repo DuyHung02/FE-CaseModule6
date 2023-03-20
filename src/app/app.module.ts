@@ -32,6 +32,7 @@ import { ChangePasswordComponent } from './account/change-password/change-passwo
 import { TopMostListensComponent } from './play-music/playMusic/top-most-listens/top-most-listens.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
+import { SongUploadedComponent } from './song/song-uploaded/song-uploaded.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import {HeaderUserComponent} from "./home-index/header-user/header-user.componen
     HeaderUserComponent,
     ShowSingerComponent,
     CreateSong2Component,
-    CreateSingerSongComponent
+    CreateSingerSongComponent,
+    SongUploadedComponent
   ],
     imports: [
         BrowserModule,
