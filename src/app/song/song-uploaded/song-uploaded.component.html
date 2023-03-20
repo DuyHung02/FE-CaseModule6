@@ -29,12 +29,12 @@
                       class="ri-more-2-fill"></i></a>
                       <ul class="dropdown-menu dropdown-menu-sm">
                         <li><a class="dropdown-item" routerLink="/">View</a></li>
-                        <li><a class="dropdown-item" routerLink="/">Edit</a></li>
+                        <li><a class="dropdown-item" routerLink="/editSong/{{s.id}}">Edit</a></li>
 <!--                        <li><a class="dropdown-item" routerLink="/">Delete</a></li>-->
                       </ul>
                     </div>
                   </div>
-                  <img src="{{s.song_avatar}}" style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px">
+                  <img src="{{s.song_avatar}}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px">
                   <div class="cover__foot"><a href="assets/demo/album-details.html"
                                               class="cover__title text-truncate">{{s.song_name}}</a>
                   </div>

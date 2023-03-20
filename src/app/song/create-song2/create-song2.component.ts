@@ -49,6 +49,7 @@ export class CreateSong2Component implements OnInit {
       posted: new FormControl(),
       album: new FormControl(),
       song_music_genre: new FormControl(),
+      actives: new FormControl(),
     })
   }
 
@@ -56,6 +57,7 @@ export class CreateSong2Component implements OnInit {
     this.formCreateSong.patchValue({
       song_avatar: this.url_avatar,
       file_mp3: this.url_mp3,
+      actives: 1,
     })
     this.songService.createSong(this.formCreateSong.value).subscribe((data) => {
       this.song = data;

@@ -18,6 +18,7 @@ import {CheckPasswordComponent} from "./account/check-password/check-password.co
 import {ChangePasswordComponent} from "./account/change-password/change-password.component";
 import {TopMostListensComponent} from "./play-music/playMusic/top-most-listens/top-most-listens.component";
 import {SongUploadedComponent} from "./song/song-uploaded/song-uploaded.component";
+import {EditSongComponent} from "./song/edit-song/edit-song.component";
 
 const routes: Routes = [
   {path: '', component: HomeIndexComponent},
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path: 'checkPassword', component: CheckPasswordComponent},
   {path: 'changePassword', component: ChangePasswordComponent},
   {path: 'songUploaded', component: SongUploadedComponent},
+  {path: 'editSong/:id', component: EditSongComponent},
 ];
 
 @NgModule({

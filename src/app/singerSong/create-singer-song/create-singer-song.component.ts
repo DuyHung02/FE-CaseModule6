@@ -51,7 +51,7 @@ export class CreateSingerSongComponent implements OnInit {
       this.formCreateSingerSong.patchValue({
         singer_id: null
       })
-      // this.router.navigate(["/showCreateSongByAccount"]);
+
     })
   }
 
@@ -61,7 +61,7 @@ export class CreateSingerSongComponent implements OnInit {
 
   back() {
     this.openMessage = false
-    // this.router.navigate(["/showSong"]);
+    location.replace('/songUploaded')
   }
 
 
