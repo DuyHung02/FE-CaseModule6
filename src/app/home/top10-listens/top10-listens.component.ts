@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Song} from "../../models/Song";
 import {SongService} from "../../service/SongService";
 import {ActivatedRoute} from "@angular/router";
+import {AccountToken} from "../../models/AccountToken";
 
 @Component({
   selector: 'app-top10-listens',
@@ -23,11 +24,7 @@ export class Top10ListensComponent implements OnInit,OnDestroy{
   duration: any = "0:00";
   private playBtn: any;
   private loopBtn: any;
-  private randomBtn: any;
-  private muteBtn: any;
-  // Hiệu ứng quay ảnh
-  private musicThumbnail: any;
-  private musicName: any;
+
   currentSongIndex: number = 0;
   audio: HTMLAudioElement = new Audio();
   newListens: number = 0
@@ -235,6 +232,43 @@ export class Top10ListensComponent implements OnInit,OnDestroy{
     const target = event.target as HTMLInputElement;
     this.audio.currentTime = target.valueAsNumber;
   }
+
+  account: AccountToken | undefined
+
+  checkAccountLike(){
+    // @ts-ignore
+    this.account = JSON.parse(localStorage.getItem("accountToken"))
+
+  }
+
+
+  //  Hàm tự động thêm lượt like
+  updateLikes() {
+    this.newListens = this.songs[this.currentSongIndex].listens + 1
+    let id : number = this.songs[this.currentSongIndex].id
+    this.songService.saveListens(this.newListens, id).subscribe((data) => {
+      this.findTop5Song();
+    })
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
 
