@@ -16,7 +16,7 @@ export class ShowSongComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.songService.getAll().subscribe(data => {
+    this.songService.showActiveSong(1).subscribe(data => {
       this.songs = data;
     })
     // @ts-ignore
