@@ -22,7 +22,7 @@ export class CreateSong2Component implements OnInit {
   }
 
   selectedImage: any = null;
-  url_avatar = '';
+  url_avatar = 'https://i.pinimg.com/564x/de/4d/5d/de4d5dbf82c6d00acf82cd887162693e.jpg';
   selectedMp3: any = null;
   url_mp3 = '';
 

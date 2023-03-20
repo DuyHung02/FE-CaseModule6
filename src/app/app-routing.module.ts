@@ -6,7 +6,7 @@ import {LoginComponent} from "./account/login/login.component";
 import {AfterRegisterComponent} from "./account/after-register/after-register.component";
 import {RegisterComponent} from "./account/register/register.component";
 import {PlaylistShowComponent} from "./playlist/playlist-show/playlist-show.component";
-import {PlaylistDetailComponent} from "./playlist/playlist-detail/playlist-detail.component";
+import {DetailComponent} from "./detail/detail.component";
 import {PlaylistCreateComponent} from "./playlist/playlist-create/playlist-create.component";
 import {PlaylistDeleteComponent} from "./playlist/playlist-delete/playlist-delete.component";
 import {PlaylistEditComponent} from "./playlist/playlist-edit/playlist-edit.component";
@@ -17,9 +17,13 @@ import {CreateSingerSongComponent} from "./singerSong/create-singer-song/create-
 import {CheckPasswordComponent} from "./account/check-password/check-password.component";
 import {ChangePasswordComponent} from "./account/change-password/change-password.component";
 import {TopMostListensComponent} from "./play-music/playMusic/top-most-listens/top-most-listens.component";
+import {ProfileComponent} from "./account/profile/profile.component";
 import {SongUploadedComponent} from "./song/song-uploaded/song-uploaded.component";
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {ShowDetailSong2Component} from "./song/show-detail-song2/show-detail-song2.component";
+import {ShowSongComponent} from "./song/show-song/show-song.component";
+import {DemoComponent} from "./play-music/Demo/demo.component";
+
 
 const routes: Routes = [
   {path: '', component: HomeIndexComponent},
@@ -32,16 +36,22 @@ const routes: Routes = [
   {path: 'showSinger', component: ShowSingerComponent},
   {path: 'createSong', component: CreateSong2Component},
   {path:'createSingerSong/:id',component: CreateSingerSongComponent},
-  {path: 'playlists', component: PlaylistShowComponent},
-  {path: 'playlistDetail/:id', component: PlaylistDetailComponent},
+  {path: 'playlists/:id', component: PlaylistShowComponent},
+  {path: 'detail/:id', component: DetailComponent},
   {path: 'playlistCreate', component: PlaylistCreateComponent},
   {path: 'playlistDelete/:id', component: PlaylistDeleteComponent},
   {path: 'playlistEdit/:id', component: PlaylistEditComponent},
   {path: 'checkPassword', component: CheckPasswordComponent},
   {path: 'changePassword', component: ChangePasswordComponent},
+  {path: 'profile', component: ProfileComponent},
   {path: 'songUploaded', component: SongUploadedComponent},
   {path: 'editSong/:id', component: EditSongComponent},
   {path: 'showDetailSong/:id', component: ShowDetailSong2Component},
+  {path: 'showSong', component: ShowSongComponent},
+//  Hoành test Demo
+  {path: 'demo', component: DemoComponent},
+
+
 ];
 
 @NgModule({

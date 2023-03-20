@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PlaylistService} from "../../service/playlist/playlist.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-playlist-show',
@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class PlaylistShowComponent implements OnInit{
 
-  constructor(private playlistService : PlaylistService, private router: Router) {
+  constructor(private playlistService : PlaylistService, private router: Router, private route : ActivatedRoute) {
   }
 
   account!: any
@@ -17,15 +17,27 @@ export class PlaylistShowComponent implements OnInit{
   playlists: any
   songs: any
 
+  change: string | null = null
+
   ngOnInit(): void {
-    // @ts-ignore
-    this.account = JSON.parse(localStorage.getItem("accountToken"))
-    this.account_id = this.account.id
-    this.playlistService.showPlaylist(this.account_id).subscribe(data => {
-      this.playlists = data
-      this.songs = this.playlists.songs
-      console.log(this.playlists)
-    })
+
+    let type = this.route.snapshot.queryParamMap.get('type')
+    console.log(type)
+
+    if (type === 'playlistsSystem') {
+      this.playlistService.findAllPlaylistActive().subscribe(data => {
+        this.playlists = data
+        this.change = type
+      })
+    } else if (type === 'playlistsUser') {
+      // @ts-ignore
+      this.account = JSON.parse(localStorage.getItem("accountToken"))
+      this.account_id = this.account.id
+      this.playlistService.showPlaylist(this.account_id).subscribe(data => {
+        this.playlists = data
+        this.change = type
+      })
+    }
   }
 
   deleteSongInPlaylist(song_id: number, playlist_id: number) {

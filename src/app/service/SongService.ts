@@ -53,14 +53,34 @@ export class SongService {
   }
 
 
+
+  // Hoành thêm lưu lượt like mới
+
+  saveLikes(likes: number, id: number) : Observable<any> {
+    // Khởi tạo dữ liệu theo cùng phần thân của Request gửi đi
+    let newLikes = {
+      likes : likes,
+      id: id
+    }
+    return this.http.post<any>('http://localhost:8080/songs/save/newLikes', newLikes)
+  }
+
+
   // Hoành thêm
   findTop10Song(page:number) :Observable<Song[]>{
     return this.http.get<Song[]>("http://localhost:8080/songs/findTop10Song"+'?page=' + page);
   }
 
   // Hoành thêm
-  findTopLikeSong(page:number) :Observable<Song[]>{
-    return this.http.get<Song[]>("http://localhost:8080/songs/findTopLikeSong"+'?page=' + page);
+  findTop5Listens() :Observable<Song[]>{
+    return this.http.get<Song[]>("http://localhost:8080/songs/findTop5Song");
+  }
+
+
+
+  // Hoành thêm
+  findTopLikeSong() :Observable<Song[]>{
+    return this.http.get<Song[]>("http://localhost:8080/songs/findTopLikeSong");
   }
 
 //  Hùng thêm

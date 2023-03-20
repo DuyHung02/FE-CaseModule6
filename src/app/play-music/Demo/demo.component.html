@@ -1,0 +1,220 @@
+<h1>demo works!</h1>
+
+<body>
+<div id="wrapper">
+
+  <app-nav></app-nav>
+
+  <app-header-user></app-header-user>
+
+
+  <main id="page_content" style="background-color: #00dee3">
+
+    <div class="hero" style="background-image: url(assets/demo/images/banner/song.jpg);"></div>
+
+    <div class="under-hero container">
+
+      <div class="section">
+        <div class="section__head"><h3 class="mb-0"> {{songs.length}} Songs</h3></div>
+        <div class="list list--order">
+          <div class="row">
+            <div class="col-xl-8">
+
+              <!--              begin item left          -->
+
+              <div
+                *ngFor="let song of songs | paginate: { itemsPerPage: 5, currentPage: p, totalItems: total }; index as i"
+                class="list__item" data-song-id="1" data-song-name="I love you mummy" data-song-artist="Arebica Luna"
+                data-song-album="Mummy" data-song-url="audio/ringtone-1.mp3"
+                data-song-cover="assets/demo/images/cover/small/1.jpg">
+
+                <div class="list__cover"><img (click)="changeAudio(i)" [src]="song.song_avatar" alt="I love you mummy">
+                  <i class="ri-play-fill icon-play"></i>
+                  <i class="ri-pause-fill icon-pause"></i>
+
+                </div>
+
+
+                <div class="list__content"><a href="song-details.html"
+                                              class="list__title text-truncate">{{song.song_name}}</a>
+                  <p class="list__subtitle text-truncate"><a href="artist-details.html">{{song.album}}</a></p></div>
+                <ul class="list__option">
+                  <li>{{song.likes}}
+
+                    <i class="ri-heart-line heart-fill"></i>
+                  </li>
+                  <li>{{song.listens}}
+                    <i class="ri-headphone-fill heart-fill"></i>
+                  </li>
+
+
+
+                  <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);" role="button"
+                                                         data-bs-toggle="dropdown" aria-label="Cover options"
+                                                         aria-expanded="false"><i class="ri-more-fill"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-sm">
+                      <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="1">Add to
+                        playlist</a></li>
+                      <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-queue-id="1">Add to
+                        queue</a></li>
+                      <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-next-id="1">Next to
+                        play</a></li>
+                      <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                      <li class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-play-id="1">Play</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+
+              <!--              end item left            -->
+              <pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="text-center mb-4"><a href="mailto:info@listenapp.com" class="display-5 email">info@listenapp.com</a>
+        </div>
+        <div class="app-btn-group pt-2"><a href="#" class="btn btn-lg btn-primary">
+          <div class="btn__wrap"><i class="ri-google-play-fill"></i> <span class="ms-2">Google Play</span></div>
+        </a><a href="#" class="btn btn-lg btn-primary">
+          <div class="btn__wrap"><i class="ri-app-store-fill"></i> <span class="ms-2">App Store</span></div>
+        </a></div>
+      </div>
+    </footer>
+
+
+  </main>
+</div>
+<div id="player" style="background-color: green">
+  <div class="container">
+    <div class="player-container" style="background-color: #7551d8">
+
+      <!--      Tiến độ bài hát-->
+      <div class="player-progress">
+        <!--        <progress class="amplitude-buffered-progress player-progress__bar" value="0"></progress>-->
+        <!--        <progress class="amplitude-song-played-progress player-progress__bar"></progress>-->
+
+
+
+
+        <!--        Thanh tiến độ-->
+        <input (input)="onRangeChange($event)" type="range" min="0" max="{{audio.duration}}" step="1" value="{{audio.currentTime}}" class="range" aria-label="Progress slider"></div>
+
+
+
+
+
+
+      <div class="cover d-flex align-items-center">
+        <div class="cover__image"><img data-amplitude-song-info="cover_art_url"
+                                       [src]="imgSong" alt="">
+        </div>
+        <div class="cover__content ps-3 d-none d-sm-block">{{nameSong}}</div>
+      </div>
+
+      <!--      Hộp điều khiển nhạc-->
+      <div style="background-color: yellow"  class="player-control">
+        <!--        <button type="button" class="amplitude-repeat btn btn-icon me-4 d-none d-md-block" aria-label="Repeat">-->
+        <!--          <i (click)="loopSong()" class="ri-repeat-2-fill fs-5"></i></button>-->
+        <!--        <button type="button" class="amplitude-prev btn btn-icon" aria-label="Backward">-->
+        <!--          <i (click)="previousSong()" class="ri-skip-back-mini-fill"></i></button>-->
+
+        <i (click)="loopSong()" class="ri-repeat-2-fill  play-infinite" ></i>
+
+        <i (click)="previousSong()" class="ri-skip-back-mini-fill "></i>
+
+        <!--        Nút bật tắt nhạc-->
+
+        <div (click)="playAndPauseAudio()" class="player-inner">
+          <i class="ri-play-fill icon-play"></i>
+          <!--          <i class="ri-pause-fill icon-pause"></i>-->
+        </div>
+
+        <i (click)="nextSong()" class="ri-skip-forward-mini-fill"></i>
+
+
+
+        <!--        <button type="button" class="amplitude-next btn btn-icon" aria-label="Forward">-->
+        <!--          <i (click)="nextSong()" class="ri-skip-forward-mini-fill"></i></button>-->
+
+        <i  class="ri-shuffle-fill "></i>
+      </div>
+
+
+      <div class="player-info">
+        <div style="background-color: #5fe39c" class="me-4 d-none d-xl-block">
+
+          <span class="amplitude-duration-seconds">{{remaining}}</span>
+
+          /
+          <span class="amplitude-current-minutes">{{duration}}</span>
+
+        </div>
+
+        <div style="background-color: yellow">
+
+          <div class="volume-mute" id="volume"  (click)="onAndOffVolume()">
+            <i class="ri-volume-up-fill "></i>
+
+          </div>
+          <div>
+            <input style=" width: 70%" (change)="controlVolume($event)" type="range" class="volume-range" min="0" max="1" step="0.01"
+                   [(ngModel)]="volume">
+          </div>
+
+
+
+          <!--          <button class="btn btn-icon" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-label="Volume"-->
+          <!--                  aria-expanded="false"><i class="ri-volume-mute-fill fs-5 d-none"></i> <i-->
+          <!--            class="ri-volume-down-fill fs-5"></i> <i class="ri-volume-up-fill fs-5 d-none"></i></button>-->
+          <!--          <div class="dropdown-menu prevent-click"><input type="range" class="amplitude-volume-slider" value="50"-->
+          <!--                                                          min="0" max="100" aria-label="Volume slider"></div>-->
+
+
+        </div>
+
+
+        <div style="background-color: red" class="dropstart d-none d-md-block">
+          <button class="btn btn-icon" data-bs-toggle="dropdown" aria-label="Song options" aria-expanded="false"><i
+            class="ri-more-2-fill fs-5"></i></button>
+          <ul class="dropdown-menu dropdown-menu-sm" id="player_options">
+            <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="1">Favorite</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="1">Add to
+              playlist</a></li>
+            <li><a class="dropdown-item" href="audio/ringtone-1.mp3" download>Download</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+            <li class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="song-details.html">View details</a></li>
+          </ul>
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+</div>
+
+
+<div id="backdrop"></div>
+
+</body>
+

@@ -11,6 +11,10 @@ export class PlaylistService {
 
   constructor(private http: HttpClient) { }
 
+  findAllPlaylistActive(): Observable<Playlist> {
+    return this.http.get<Playlist>('http://localhost:8080/playlist/showActive/1' )
+  }
+
   addSongToPlaylist(playlist_id: number, song_id: number): Observable<PlaylistSong> {
     let playlistSongId = {
       playlist_id: playlist_id,

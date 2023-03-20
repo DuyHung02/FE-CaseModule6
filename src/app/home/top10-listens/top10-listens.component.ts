@@ -1,14 +1,18 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {SongService} from "../../../service/SongService";
+import {Song} from "../../models/Song";
+import {SongService} from "../../service/SongService";
 import {ActivatedRoute} from "@angular/router";
-import {Song} from "../../../models/Song";
+import {AccountToken} from "../../models/AccountToken";
 
 @Component({
-  selector: 'app-top-most-listens',
-  templateUrl: './top-most-listens.component.html',
-  styleUrls: ['./top-most-listens.component.css']
+  selector: 'app-top10-listens',
+  templateUrl: './top10-listens.component.html',
+  styleUrls: ['./top10-listens.component.css']
 })
-export class TopMostListensComponent implements OnInit,OnDestroy{
+
+
+
+export class Top10ListensComponent implements OnInit,OnDestroy{
 
   id: any
   songs: Song [] = [];
@@ -20,11 +24,7 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
   duration: any = "0:00";
   private playBtn: any;
   private loopBtn: any;
-  private randomBtn: any;
-  private muteBtn: any;
-  // Hiệu ứng quay ảnh
-  private musicThumbnail: any;
-  private musicName: any;
+
   currentSongIndex: number = 0;
   audio: HTMLAudioElement = new Audio();
   newListens: number = 0
@@ -38,7 +38,7 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
   ngOnInit(): void {
 
     // Gọi hàm tìm 10 bài nghe nhiều nhất
-    this.findTop10Song();
+    this.findTop5Song();
     // Tải tài nguyên cho trình phát nhạc
     this.loadAudioResources();
     this.audio.addEventListener('ended', () => {
@@ -50,12 +50,8 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
   }
 
   constructor(private songService :SongService, private route: ActivatedRoute) {
-    // Thực hện hành động lấy id trên đường dẫn
-    this.route.params.subscribe((data) => {
-      this.id = +data["id"];
-    })
-    // Gọi hàm tìm 10 bài hát được nghe nhiều nhất
-    this.findTop10Song();
+
+    this.findTop5Song();
 
 
   }
@@ -71,17 +67,16 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
   }
 
-  findTop10Song() {
-    this.songService.findTop10Song(this.p).subscribe((data) => {
+
+
+
+  findTop5Song() {
+    this.songService.findTop5Listens().subscribe((data) => {
       this.songs = data;
       this.total = data.length;
     })
   }
 
-  pageChangeEvent(event: number) {
-    this.p = event;
-    this.findTop10Song();
-  }
 
 
 
@@ -91,10 +86,10 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
     this.newListens = this.songs[this.currentSongIndex].listens + 1
     let id : number = this.songs[this.currentSongIndex].id
     this.songService.saveListens(this.newListens, id).subscribe((data) => {
-      this.findTop10Song();
+      this.findTop5Song();
     })
 
-    // this.nextSong();
+
 
   }
 
@@ -115,7 +110,6 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
     this.nameSong = this.songs[this.currentSongIndex].song_name
 
     this.playBtn = document.querySelector(".player-inner");
-    // this.musicThumbnail = document.querySelector(".music-thumb");
 
     this.remaining = this.formatTime(this.audio.currentTime)
     this.duration = this.formatTime(this.audio.duration)
@@ -127,8 +121,8 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
       this.audio.addEventListener('loadedmetadata', () => {
         this.duration = this.audio.duration;
-      });
 
+      });
       setInterval(() => {
         this.remaining = this.formatTime(this.audio.currentTime)
         this.duration = this.formatTime(this.audio.duration)
@@ -217,35 +211,8 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
   }
 
-  // isRandom: boolean = false;
-  //
-  // randomSong() {
-  //
-  //   this.loopBtn = document.querySelector(".play-random");
-  //
-  //   if (this.isRandom) {
-  //     this.isRandom = false;
-  //     this.randomBtn.removeAttribute("style");
-  //     this.audio.loop = false
-  //
-  //   } else {
-  //     this.isRandom = true;
-  //     this.randomBtn.style.color = "#0056fe";
-  //     this.audio.loop = true
-  //   }
-  // }
 
-  onAndOffVolume() {
-    this.muteBtn = document.querySelector(".volume-mute");
-    if (this.audio.muted) {
-      this.muteBtn.innerHTML = '<i class="ri-volume-up-fill ">'
-      this.audio.muted = false
-    } else {
-      this.muteBtn.innerHTML = '<i class="ri-volume-mute-fill "></i>'
 
-      this.audio.muted = true
-    }
-  }
 
   volume: number = 1;
 
@@ -266,6 +233,33 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
     this.audio.currentTime = target.valueAsNumber;
   }
 
+  account: AccountToken | undefined
+
+  checkAccountLike(){
+    // @ts-ignore
+    this.account = JSON.parse(localStorage.getItem("accountToken"))
+
+  }
+
+
+  //  Hàm tự động thêm lượt like
+  updateLikes() {
+    this.newListens = this.songs[this.currentSongIndex].listens + 1
+    let id : number = this.songs[this.currentSongIndex].id
+    this.songService.saveListens(this.newListens, id).subscribe((data) => {
+      this.findTop5Song();
+    })
+
+
+
+  }
+
+
+
+
+
+
+
 
 
 
@@ -277,3 +271,7 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
 
 }
+
+
+
+

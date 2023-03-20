@@ -15,7 +15,7 @@ export class CreateSingerComponent implements OnInit {
   singer: Singer | undefined;
   formCreateSinger !: FormGroup;
   selectedSinger: any = null;
-  url_avatar = '';
+  url_avatar = 'https://i.pinimg.com/564x/c5/23/fb/c523fb40f6fed78b783b83475c8588e8.jpg';
   openMessage:Boolean=false;
 
   @ViewChild('singer_avatar', {static: true}) public avatarDom: ElementRef | undefined;
@@ -81,7 +81,7 @@ export class CreateSingerComponent implements OnInit {
 
   back() {
     this.openMessage = false
-    this.router.navigate(["/showSinger"]);
+    location.replace('/showSinger')
   }
 
 

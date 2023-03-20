@@ -19,7 +19,7 @@ import {AfterRegisterComponent} from "./account/after-register/after-register.co
 import {LoginComponent} from "./account/login/login.component";
 import {HomeComponent} from "./home/home.component";
 import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
-import { PlaylistDetailComponent } from './playlist/playlist-detail/playlist-detail.component';
+import { DetailComponent } from './detail/detail.component';
 import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
 import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
@@ -32,9 +32,16 @@ import { ChangePasswordComponent } from './account/change-password/change-passwo
 import { TopMostListensComponent } from './play-music/playMusic/top-most-listens/top-most-listens.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
+import { ProfileComponent } from './account/profile/profile.component';
 import { SongUploadedComponent } from './song/song-uploaded/song-uploaded.component';
 import { EditSongComponent } from './song/edit-song/edit-song.component';
 import { ShowDetailSong2Component } from './song/show-detail-song2/show-detail-song2.component';
+import { ShowSongComponent } from './song/show-song/show-song.component';
+import {DemoComponent} from "./play-music/Demo/demo.component";
+import { TopChartsComponent } from './home/top-charts/top-charts.component';
+import { Top10ListensComponent } from './home/top10-listens/top10-listens.component';
+import { ArtistsComponent } from './home/artists/artists.component';
+import { BestPlayListComponent } from './home/best-play-list/best-play-list.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +59,7 @@ import { ShowDetailSong2Component } from './song/show-detail-song2/show-detail-s
     ShowSingerComponent,
     NavComponent,
     PlaylistShowComponent,
-    PlaylistDetailComponent,
+    DetailComponent,
     PlaylistCreateComponent,
     PlaylistDeleteComponent,
     PlaylistEditComponent,
@@ -61,12 +68,23 @@ import { ShowDetailSong2Component } from './song/show-detail-song2/show-detail-s
     NavComponent,
     TopMostListensComponent,
     HeaderUserComponent,
+    ProfileComponent,
     ShowSingerComponent,
     CreateSong2Component,
     CreateSingerSongComponent,
     SongUploadedComponent,
     EditSongComponent,
-    ShowDetailSong2Component
+    ShowDetailSong2Component,
+    ShowSongComponent,
+    HeaderUserComponent,
+
+    //Hoành thêm
+    DemoComponent,
+      TopChartsComponent,
+      Top10ListensComponent,
+      ArtistsComponent,
+      BestPlayListComponent
+
   ],
     imports: [
         BrowserModule,

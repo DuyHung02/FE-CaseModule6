@@ -1,0 +1,307 @@
+<body>
+<div id="wrapper">
+
+  <app-nav></app-nav>
+
+  <app-header-user></app-header-user>
+
+
+  <main id="page_content">
+    <div class="hero" [style.background-image]="'url(assets/demo/images/banner/song.jpg)'"></div>
+
+    <div *ngIf="change == 'playlist'">
+      <div class="under-hero container">
+        <div class="section">
+          <div class="row align-items-center">
+            <div class="col-xl-3 col-md-4">
+              <div class="cover cover--round">
+                <div class="cover__image"><img src="{{playlist.avatarPlaylist}}"
+                                               style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px">
+                </div>
+              </div>
+            </div>
+            <div class="col-1 d-none d-xl-block"></div>
+            <div class="col-md-8 mt-5 mt-md-0">
+              <div class="d-flex flex-wrap mb-2">
+                <div class="dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                role="button" data-bs-toggle="dropdown"
+                                                                aria-label="Cover options" aria-expanded="false"><i
+                  class="ri-more-fill"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-sm">
+                    <li><a class="dropdown-item" href="javascript:void(0);" role="button">Edit</a></li>
+                    <li><a class="dropdown-item" routerLink="/playlistDelete/{{playlist.id}}" role="button">Delete</a>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="javascript:void(0);" role="button"
+                           data-collection-play-id="1">Play</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap mb-2"><span class="text-dark fs-4 fw-semi-bold pe-2">{{playlist.name}}</span>
+                <div class="dropstart d-inline-flex ms-auto"><a class="dropdown-link" href="javascript:void(0);"
+                                                                role="button" data-bs-toggle="dropdown"
+                                                                aria-label="Cover options" aria-expanded="false"></a>
+                </div>
+              </div>
+              <!--            <ul class="info-list info-list&#45;&#45;dotted mb-3">-->
+              <!--              <li>Album</li>-->
+              <!--              <li>10 Songs</li>-->
+              <!--              <li>01:21:41</li>-->
+              <!--              <li>Apr 14, 2019</li>-->
+              <!--              <li>Travers Music Company</li>-->
+              <!--            </ul>-->
+              <p class="mb-5">By: <a class="text-dark fw-medium">{{account?.full_name}}</a>, <a
+                class="text-dark fw-medium">{{account?.gmail}}</a></p>
+              <ul class="info-list">
+                <li>
+                  <div class="d-flex align-items-center">
+                    <button type="button" id="play_all1" class="btn btn-icon btn-primary rounded-pill"
+                            data-collection-play-id="1"><i class="ri-play-fill icon-play"></i> <i
+                      class="ri-pause-fill icon-pause"></i></button>
+                    <label class="ps-2 fw-semi-bold text-primary mb-0" style="cursor: pointer;">Play
+                      all</label></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="list">
+            <div class="row" data-collection-song-id="1">
+              <div class="col-xl-6">
+
+                <div class="list__item" data-song-id="1" data-song-name="I love you mummy"
+                     data-song-artist="Arebica Luna"
+                     data-song-album="Mummy" data-song-url="audio/ringtone-1.mp3"
+                     data-song-cover="assets/demo/images/cover/small/1.jpg">
+                  <div class="list__cover"><img src="../../assets/demo/images/cover/small/1.jpg" alt="I love you mummy">
+                    <a
+                      href="javascript:void(0);" class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
+                      data-play-id="1" aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i
+                      class="ri-pause-fill icon-pause"></i></a></div>
+                  <div class="list__content"><a href="song-details.html" class="list__title text-truncate">I love you
+                    mummy</a>
+                    <p class="list__subtitle text-truncate"><a href="artist-details.html">Arebica Luna</a></p></div>
+                  <ul class="list__option">
+                    <li><a href="javascript:void(0);" role="button" class="d-inline-flex" aria-label="Favorite"
+                           data-favorite-id="1"><i class="ri-heart-line heart-empty"></i> <i
+                      class="ri-heart-fill heart-fill"></i></a></li>
+                    <li>01:14</li>
+                    <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);"
+                                                           role="button"
+                                                           data-bs-toggle="dropdown" aria-label="Cover options"
+                                                           aria-expanded="false"><i class="ri-more-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="1">Add
+                          to
+                          playlist</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-queue-id="1">Add to
+                          queue</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-next-id="1">Next to
+                          play</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-play-id="1">Play</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <div class="col-xl-6">
+
+                <div class="list__item" data-song-id="6" data-song-name="Hey not me" data-song-artist="Rasomi Pelina"
+                     data-song-album="Find soul" data-song-url="audio/ringtone-6.mp3"
+                     data-song-cover="assets/demo/images/cover/small/6.jpg">
+                  <div class="list__cover"><img src="../../assets/demo/images/cover/small/6.jpg" alt="Hey not me"> <a
+                    href="javascript:void(0);" class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
+                    data-play-id="6" aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i
+                    class="ri-pause-fill icon-pause"></i></a></div>
+                  <div class="list__content"><a href="song-details.html" class="list__title text-truncate">Hey not
+                    me</a>
+                    <p class="list__subtitle text-truncate"><a href="artist-details.html">Rasomi Pelina</a></p></div>
+                  <ul class="list__option">
+                    <li><a href="javascript:void(0);" role="button" class="d-inline-flex" aria-label="Favorite"
+                           data-favorite-id="6"><i class="ri-heart-line heart-empty"></i> <i
+                      class="ri-heart-fill heart-fill"></i></a></li>
+                    <li>03:47</li>
+                    <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);"
+                                                           role="button"
+                                                           data-bs-toggle="dropdown" aria-label="Cover options"
+                                                           aria-expanded="false"><i class="ri-more-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="6">Add
+                          to
+                          playlist</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-queue-id="6">Add to
+                          queue</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-next-id="6">Next to
+                          play</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-play-id="6">Play</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="change == 'singer'">
+      <div class="under-hero container">
+        <div class="section">
+          <div class="row align-items-center">
+            <div class="col-xl-3 col-md-4">
+              <div class="cover cover--round">
+                <div class="cover__image"><img src="{{singer.singer_avatar}}"
+                                               style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px">
+                </div>
+              </div>
+            </div>
+            <div class="col-1 d-none d-xl-block"></div>
+            <div class="col-md-8 mt-5 mt-md-0">
+              <div class="d-flex flex-wrap mb-2">
+                <div class="dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                role="button" data-bs-toggle="dropdown"
+                                                                aria-label="Cover options" aria-expanded="false"><i
+                  class="ri-more-fill"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-sm">
+                    <li><a class="dropdown-item" href="#" role="button">Option1</a></li>
+                    <li><a class="dropdown-item" routerLink="#" role="button">Option2</a>
+                    </li>
+                    <li class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#"
+                           data-collection-play-id="1">Play</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="d-flex flex-wrap mb-2"><span class="text-dark fs-4 fw-semi-bold pe-2">{{singer.singer_name}}</span>
+                <div class="dropstart d-inline-flex ms-auto"><a class="dropdown-link" href="javascript:void(0);"
+                                                                role="button" data-bs-toggle="dropdown"
+                                                                aria-label="Cover options" aria-expanded="false"></a>
+                </div>
+              </div>
+                          <ul class="info-list info-list--dotted mb-3">
+                            <li>{{singer.band}}</li>
+                            <li>{{singer.music_genre}}</li>
+                            <li>{{singer.hot_music}}</li>
+                            <li>{{singer.story}}</li>
+                          </ul>
+              <p class="mb-5">Info: <a class="text-dark fw-medium">{{singer.birthday}}</a>, <a
+                class="text-dark fw-medium">{{singer.singer_gender}}</a></p>
+              <ul class="info-list">
+                <li>
+                  <div class="d-flex align-items-center">
+                    <button type="button" id="play_all2" class="btn btn-icon btn-primary rounded-pill"
+                            data-collection-play-id="1"><i class="ri-play-fill icon-play"></i> <i
+                      class="ri-pause-fill icon-pause"></i></button>
+                    <label class="ps-2 fw-semi-bold text-primary mb-0" style="cursor: pointer;">Play
+                      all</label></div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="section">
+          <div class="list">
+            <div class="row" data-collection-song-id="1">
+              <div class="col-xl-6">
+
+                <div class="list__item" data-song-id="1" data-song-name="I love you mummy"
+                     data-song-artist="Arebica Luna"
+                     data-song-album="Mummy" data-song-url="audio/ringtone-1.mp3"
+                     data-song-cover="assets/demo/images/cover/small/1.jpg">
+                  <div class="list__cover"><img src="../../assets/demo/images/cover/small/1.jpg" alt="I love you mummy">
+                    <a
+                      href="javascript:void(0);" class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
+                      data-play-id="1" aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i
+                      class="ri-pause-fill icon-pause"></i></a></div>
+                  <div class="list__content"><a href="song-details.html" class="list__title text-truncate">I love you
+                    mummy</a>
+                    <p class="list__subtitle text-truncate"><a href="artist-details.html">Arebica Luna</a></p></div>
+                  <ul class="list__option">
+                    <li><a href="javascript:void(0);" role="button" class="d-inline-flex" aria-label="Favorite"
+                           data-favorite-id="1"><i class="ri-heart-line heart-empty"></i> <i
+                      class="ri-heart-fill heart-fill"></i></a></li>
+                    <li>01:14</li>
+                    <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);"
+                                                           role="button"
+                                                           data-bs-toggle="dropdown" aria-label="Cover options"
+                                                           aria-expanded="false"><i class="ri-more-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="1">Add
+                          to
+                          playlist</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-queue-id="1">Add to
+                          queue</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-next-id="1">Next to
+                          play</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-play-id="1">Play</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+              <div class="col-xl-6">
+
+                <div class="list__item" data-song-id="6" data-song-name="Hey not me" data-song-artist="Rasomi Pelina"
+                     data-song-album="Find soul" data-song-url="audio/ringtone-6.mp3"
+                     data-song-cover="assets/demo/images/cover/small/6.jpg">
+                  <div class="list__cover"><img src="../../assets/demo/images/cover/small/6.jpg" alt="Hey not me"> <a
+                    href="javascript:void(0);" class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
+                    data-play-id="6" aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i
+                    class="ri-pause-fill icon-pause"></i></a></div>
+                  <div class="list__content"><a href="song-details.html" class="list__title text-truncate">Hey not
+                    me</a>
+                    <p class="list__subtitle text-truncate"><a href="artist-details.html">Rasomi Pelina</a></p></div>
+                  <ul class="list__option">
+                    <li><a href="javascript:void(0);" role="button" class="d-inline-flex" aria-label="Favorite"
+                           data-favorite-id="6"><i class="ri-heart-line heart-empty"></i> <i
+                      class="ri-heart-fill heart-fill"></i></a></li>
+                    <li>03:47</li>
+                    <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);"
+                                                           role="button"
+                                                           data-bs-toggle="dropdown" aria-label="Cover options"
+                                                           aria-expanded="false"><i class="ri-more-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="6">Add
+                          to
+                          playlist</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-queue-id="6">Add to
+                          queue</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-next-id="6">Next to
+                          play</a></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-play-id="6">Play</a>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+</div>
+
+</body>
