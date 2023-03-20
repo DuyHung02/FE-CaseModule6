@@ -3,7 +3,7 @@ import {Song} from "../../models/Song";
 import {SingerSongId} from "../../models/dto/SingerSongId";
 import {FormControl, FormGroup} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import { SongService } from 'src/app/service/SongService';
+import {SongService} from 'src/app/service/SongService';
 
 @Component({
   selector: 'app-edit-song',
@@ -24,7 +24,7 @@ export class EditSongComponent implements OnInit {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.id != null) {
       this.songService.findById(+this.id).subscribe((data) => {
-        this.song=data;
+        this.song = data;
         this.formEditSong = new FormGroup({
           id: new FormControl(this.song?.id),
           song_name: new FormControl(this.song?.song_name),

@@ -25,10 +25,6 @@
                   <input formControlName="account_id" hidden><br>
                   <div class="col-12 mb-4"><input type="text" class="form-control" placeholder="Song name"
                                                   formControlName="song_name"></div>
-<!--                  <div class="col-12 mb-4"><label class="form-label">Avatar</label>-->
-<!--                    <input type="file" class="form-control" #song_avatar (change)="upLoadFileImg()"></div>-->
-<!--                  <div class="col-12 mb-4"><label class="form-label">File mp3</label>-->
-<!--                    <input type="file" class="form-control" #file_mp3 (change)="upLoadFileMp3()"></div>-->
                   <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Music genre" formControlName="song_music_genre"></div>
                   <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Author" formControlName="author"></div>
                   <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Album" formControlName="album"></div>
@@ -37,14 +33,17 @@
                     <textarea name="lyrics" id="album_lyrics" cols="30" rows="4"
                               class="form-control" placeholder="Lyrics" formControlName="description"></textarea>
                   </div>
+                  <div class="col-12 mb-4">
+                    <label for="active" class="form-label">Active</label>
+                    <select id="active" class="form-select" aria-label="Select category"
+                            formControlName="actives">
+                      <option value="0">Block</option>
+                      <option value="1">Active</option>
+                    </select></div>
                   <div class="card-footer text-center">
                     <button class="btn btn-primary" style="min-width: 140px;">Save</button>
                   </div>
                 </form>
-                <!--                <div class="alert alert-success alert-dismissible">-->
-                <!--                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>-->
-                <!--                  <strong>Success!</strong> Song has been created successfully.-->
-                <!--                </div>-->
               </div>
             </div>
           </div>
