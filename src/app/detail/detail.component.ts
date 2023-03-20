@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {PlaylistService} from "../../service/playlist/playlist.service";
+import {PlaylistService} from "../service/playlist/playlist.service";
 import {ActivatedRoute, Router} from "@angular/router";
-import {AccountToken} from "../../models/AccountToken";
-import {Playlist} from "../../models/Playlist";
-import {AccountService} from "../../service/account/account.service";
+import {AccountToken} from "../models/AccountToken";
+import {Playlist} from "../models/Playlist";
+import {AccountService} from "../service/account/account.service";
 
 @Component({
   selector: 'app-playlist-detail',
-  templateUrl: './playlist-detail.component.html',
-  styleUrls: ['./playlist-detail.component.css']
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.css']
 })
-export class PlaylistDetailComponent implements OnInit{
+export class DetailComponent implements OnInit{
 
   constructor(private playlistService : PlaylistService, private route : ActivatedRoute, private router: Router,
               private accountService : AccountService) {

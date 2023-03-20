@@ -6,7 +6,7 @@ import {LoginComponent} from "./account/login/login.component";
 import {AfterRegisterComponent} from "./account/after-register/after-register.component";
 import {RegisterComponent} from "./account/register/register.component";
 import {PlaylistShowComponent} from "./playlist/playlist-show/playlist-show.component";
-import {PlaylistDetailComponent} from "./playlist/playlist-detail/playlist-detail.component";
+import {DetailComponent} from "./detail/detail.component";
 import {PlaylistCreateComponent} from "./playlist/playlist-create/playlist-create.component";
 import {PlaylistDeleteComponent} from "./playlist/playlist-delete/playlist-delete.component";
 import {PlaylistEditComponent} from "./playlist/playlist-edit/playlist-edit.component";
@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'createSinger', component: CreateSingerComponent},
   {path: 'showSinger', component: ShowSingerComponent},
   {path: 'playlists', component: PlaylistShowComponent},
-  {path: 'playlistDetail/:id', component: PlaylistDetailComponent},
+  {path: 'playlistDetail/:id', component: DetailComponent},
   {path: 'playlistCreate', component: PlaylistCreateComponent},
   {path: 'playlistDelete/:id', component: PlaylistDeleteComponent},
   {path: 'playlistEdit/:id', component: PlaylistEditComponent},

@@ -126,8 +126,8 @@ export class TopMostListensComponent implements OnInit,OnDestroy{
 
       this.audio.addEventListener('loadedmetadata', () => {
         this.duration = this.audio.duration;
-
       });
+
       setInterval(() => {
         this.remaining = this.formatTime(this.audio.currentTime)
         this.duration = this.formatTime(this.audio.duration)

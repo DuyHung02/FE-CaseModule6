@@ -1094,8 +1094,8 @@ a, button, input {
 }
 
 .list.list--order .list__item:before {
-  counter-increment: list-order;
-  content: counter(list-order);
+  /*counter-increment: list-order;*/
+  /*content: counter(list-order);*/
   font-size: 1rem;
   font-weight: 600;
   width: 2.5rem;
