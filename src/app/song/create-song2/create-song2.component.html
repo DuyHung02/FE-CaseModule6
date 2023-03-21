@@ -12,7 +12,7 @@
           <div class="card">
             <div class="card-body">
               <div id="song_pane" role="tabpanel" aria-labelledby="song" tabindex="0">
-                <form [formGroup]="formCreateSong"  (ngSubmit)="create()" class="row">
+                <form [formGroup]="formCreateSong" (ngSubmit)="create()" class="row">
                   <div class="col-12 mb-4">
                     <div style="text-align: center">
                       <img style="width: 200px ; height: 200px ; object-fit: cover ; border-radius: 10px"
@@ -20,17 +20,24 @@
                     </div>
                   </div>
                   <input formControlName="account_id" hidden><br>
-                  <div class="col-12 mb-4"><input type="text" class="form-control" placeholder="Song name"
-                                                  formControlName="song_name"></div>
+                  <div class="col-12 mb-4">Name
+                    <input type="text" class="form-control" placeholder="Song name" formControlName="song_name" (input)="checkName()">
+                    <span id="checkSongName" style="color: red ; opacity: 0.5"></span>
+                  </div>
+                  <div class="col-12 mb-4"><label class="form-label">File mp3</label>
+                    <input type="file" class="form-control" #file_mp3 (change)="upLoadFileMp3()" >
+                    <span id="checkFileMp3" style="color: red ; opacity: 0.5"></span></div>
                   <div class="col-12 mb-4"><label class="form-label">Avatar</label>
                     <input type="file" class="form-control" #song_avatar (change)="upLoadFileImg()"></div>
-                  <div class="col-12 mb-4"><label class="form-label">File mp3</label>
-                    <input type="file" class="form-control" #file_mp3 (change)="upLoadFileMp3()"></div>
-                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Music genre" formControlName="song_music_genre"></div>
-                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Author" formControlName="author"></div>
-                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Album" formControlName="album"></div>
-                  <div class="col-sm-6 mb-4"><input type="text" class="form-control" placeholder="Posted" formControlName="posted"></div>
-                  <div class="col-12 mb-4">
+                  <div class="col-sm-6 mb-4">Music genre<input type="text" class="form-control" placeholder="Music genre"
+                                                    formControlName="song_music_genre"></div>
+                  <div class="col-sm-6 mb-4">Author<input type="text" class="form-control" placeholder="Author"
+                                                    formControlName="author"></div>
+                  <div class="col-sm-6 mb-4">Album<input type="text" class="form-control" placeholder="Album"
+                                                    formControlName="album"></div>
+                  <div class="col-sm-6 mb-4">Posted<input type="text" class="form-control" placeholder="Posted"
+                                                    formControlName="posted"></div>
+                  <div class="col-12 mb-4">Lyrics
                     <textarea name="lyrics" id="album_lyrics" cols="30" rows="4"
                               class="form-control" placeholder="Lyrics" formControlName="description"></textarea>
                   </div>
@@ -38,10 +45,10 @@
                     <button class="btn btn-primary" style="min-width: 140px;">Add Song</button>
                   </div>
                 </form>
-<!--                <div class="alert alert-success alert-dismissible">-->
-<!--                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>-->
-<!--                  <strong>Success!</strong> Song has been created successfully.-->
-<!--                </div>-->
+                <!--                <div class="alert alert-success alert-dismissible">-->
+                <!--                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>-->
+                <!--                  <strong>Success!</strong> Song has been created successfully.-->
+                <!--                </div>-->
               </div>
             </div>
           </div>
