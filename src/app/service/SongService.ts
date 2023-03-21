@@ -31,6 +31,11 @@ export class SongService {
     return this.http.get<Song>(`http://localhost:8080/songs/${id}`);
   }
 
+  findSongBySongName(song_name:String) :Observable<Song>{
+  return this.http.get<Song>(`http://localhost:8080/songs/find/${song_name}`);
+}
+
+
   editSong(song: Song): Observable<Song> {
     return this.http.post<Song>("http://localhost:8080/songs/edit", song);
   }
