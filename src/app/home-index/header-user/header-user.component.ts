@@ -17,7 +17,8 @@ export class HeaderUserComponent implements OnInit {
   singer: Singer | undefined;
   song: Song | undefined;
   singerSongs: SingerSong[] = [];
-  account: any
+  account: any;
+  openMessage:Boolean=false;
 
   constructor(private singerSongService: SingerSongService, private songService: SongService, private singerService: SingerService, private router: Router) {
   }
@@ -42,7 +43,7 @@ export class HeaderUserComponent implements OnInit {
       if (data != null) {
         location.replace("/detail/" + this.singer.id + "?type=singer")
       } else {
-        alert("Không tìm thấy ca sĩ");
+        this.openMessage=true;
       }
     })
   }
@@ -52,7 +53,6 @@ export class HeaderUserComponent implements OnInit {
     const songValue = inputSong.value;
     this.songService.findSongBySongName(songValue).subscribe((data) => {
       this.song = data;
-
       this.singerSongService.findSingerSongBySong_id(+this.id).subscribe(data => {
         this.singerSongs = data;
       })
@@ -60,10 +60,13 @@ export class HeaderUserComponent implements OnInit {
       if (data != null) {
         location.replace("/showDetailSong/"+this.song.id)
       } else {
-        alert("Không tìm thấy bài hát");
+        this.openMessage=true;
       }
     })
+  }
 
+  changeStatus() {
+    this.openMessage = false
   }
 
 

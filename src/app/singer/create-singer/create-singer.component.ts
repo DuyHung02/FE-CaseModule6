@@ -5,6 +5,7 @@ import {SingerService} from "../../service/SingerService";
 import { Router } from '@angular/router';
 import {finalize} from "rxjs";
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+declare var $: any;
 
 @Component({
   selector: 'app-create-singer',
@@ -61,18 +62,18 @@ export class CreateSingerComponent implements OnInit {
   }
 
   create() {
-
     console.log(this.url_avatar);
     this.formCreateSinger.patchValue({
       singer_avatar: this.url_avatar,
     })
+
+    if (this.formCreateSinger.value.singer_name!=null&&this.formCreateSinger.value.singer_name!=""){
     console.log(this.formCreateSinger.value);
     this.singerService.createSinger(this.formCreateSinger.value).subscribe((data) => {
       this.openMessage=true;
-
-
       this.formCreateSinger.reset();
     })
+      }else {$("#checkSingerName").text("Enter name")}
   }
 
   changeStatus() {
@@ -84,5 +85,12 @@ export class CreateSingerComponent implements OnInit {
     location.replace('/showSinger')
   }
 
+  checkName() {
+    if (this.formCreateSinger.value.singer_name!=null&&this.formCreateSinger.value.singer_name!="") {
+      $("#checkSingerName").text("")
+    } else {
+      $("#checkSingerName").text("Enter name")
+    }
+  }
 
 }
