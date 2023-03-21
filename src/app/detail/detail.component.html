@@ -70,38 +70,27 @@
             <div class="row" data-collection-song-id="1">
               <div class="col-xl-6">
 
-                <div class="list__item" data-song-id="1" data-song-name="I love you mummy"
-                     data-song-artist="Arebica Luna"
-                     data-song-album="Mummy" data-song-url="audio/ringtone-1.mp3"
-                     data-song-cover="assets/demo/images/cover/small/1.jpg">
-                  <div class="list__cover"><img src="../../assets/demo/images/cover/small/1.jpg" alt="I love you mummy">
-                    <a
-                      href="javascript:void(0);" class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
-                      data-play-id="1" aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i
-                      class="ri-pause-fill icon-pause"></i></a></div>
-                  <div class="list__content"><a href="song-details.html" class="list__title text-truncate">I love you
-                    mummy</a>
-                    <p class="list__subtitle text-truncate"><a href="artist-details.html">Arebica Luna</a></p></div>
+                <div class="list__item" *ngFor="let s of songs">
+                  <div class="list__cover"><img src="{{s.song_avatar}}">
+                    <a href="" class="btn btn-play btn-sm btn-default btn-icon rounded-pill">
+                      <i class="ri-play-fill icon-play"></i>
+                      <i class="ri-pause-fill icon-pause"></i>
+                    </a>
+                  </div>
+                  <div class="list__content">
+                    <a href="" class="list__title text-truncate">{{s.song_name}}</a>
+                    <p class="list__subtitle text-truncate"><a href="">{{s.author}}</a></p>
+                  </div>
                   <ul class="list__option">
-                    <li><a href="javascript:void(0);" role="button" class="d-inline-flex" aria-label="Favorite"
-                           data-favorite-id="1"><i class="ri-heart-line heart-empty"></i> <i
-                      class="ri-heart-fill heart-fill"></i></a></li>
-                    <li>01:14</li>
                     <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);"
                                                            role="button"
                                                            data-bs-toggle="dropdown" aria-label="Cover options"
                                                            aria-expanded="false"><i class="ri-more-fill"></i></a>
                       <ul class="dropdown-menu dropdown-menu-sm">
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="1">Add
-                          to
-                          playlist</a></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-queue-id="1">Add to
-                          queue</a></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-next-id="1">Next to
-                          play</a></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
+                        <li><a class="dropdown-item" href="" (click)="deleteSongInPlaylist(s.id, playlist_id)">Remove from playlist</a></li>
+                        <li><a class="dropdown-item" routerLink="showDetailSong/{{s.id}}">Show detail</a></li>
                         <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-play-id="1">Play</a>
+                        <li><a class="dropdown-item" href="">Play</a>
                         </li>
                       </ul>
                     </li>
@@ -110,45 +99,6 @@
 
               </div>
 
-              <div class="col-xl-6">
-
-                <div class="list__item" data-song-id="6" data-song-name="Hey not me" data-song-artist="Rasomi Pelina"
-                     data-song-album="Find soul" data-song-url="audio/ringtone-6.mp3"
-                     data-song-cover="assets/demo/images/cover/small/6.jpg">
-                  <div class="list__cover"><img src="../../assets/demo/images/cover/small/6.jpg" alt="Hey not me"> <a
-                    href="javascript:void(0);" class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
-                    data-play-id="6" aria-label="Play pause"><i class="ri-play-fill icon-play"></i> <i
-                    class="ri-pause-fill icon-pause"></i></a></div>
-                  <div class="list__content"><a href="song-details.html" class="list__title text-truncate">Hey not
-                    me</a>
-                    <p class="list__subtitle text-truncate"><a href="artist-details.html">Rasomi Pelina</a></p></div>
-                  <ul class="list__option">
-                    <li><a href="javascript:void(0);" role="button" class="d-inline-flex" aria-label="Favorite"
-                           data-favorite-id="6"><i class="ri-heart-line heart-empty"></i> <i
-                      class="ri-heart-fill heart-fill"></i></a></li>
-                    <li>03:47</li>
-                    <li class="dropstart d-inline-flex"><a class="dropdown-link" href="javascript:void(0);"
-                                                           role="button"
-                                                           data-bs-toggle="dropdown" aria-label="Cover options"
-                                                           aria-expanded="false"><i class="ri-more-fill"></i></a>
-                      <ul class="dropdown-menu dropdown-menu-sm">
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="6">Add
-                          to
-                          playlist</a></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-queue-id="6">Add to
-                          queue</a></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-next-id="6">Next to
-                          play</a></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>
-                        <li class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-play-id="6">Play</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
             </div>
           </div>
         </div>

@@ -29,7 +29,6 @@ import { CreateSong2Component } from './song/create-song2/create-song2.component
 import { CreateSingerSongComponent } from './singerSong/create-singer-song/create-singer-song.component';
 import { CheckPasswordComponent } from './account/check-password/check-password.component';
 import { ChangePasswordComponent } from './account/change-password/change-password.component';
-import { TopMostListensComponent } from './play-music/playMusic/top-most-listens/top-most-listens.component';
 import {NgxPaginationModule} from "ngx-pagination";
 import {HeaderUserComponent} from "./home-index/header-user/header-user.component";
 import { ProfileComponent } from './account/profile/profile.component';
@@ -37,11 +36,11 @@ import { SongUploadedComponent } from './song/song-uploaded/song-uploaded.compon
 import { EditSongComponent } from './song/edit-song/edit-song.component';
 import { ShowDetailSong2Component } from './song/show-detail-song2/show-detail-song2.component';
 import { ShowSongComponent } from './song/show-song/show-song.component';
-import {DemoComponent} from "./play-music/Demo/demo.component";
 import { TopChartsComponent } from './home/top-charts/top-charts.component';
 import { Top10ListensComponent } from './home/top10-listens/top10-listens.component';
 import { ArtistsComponent } from './home/artists/artists.component';
 import { BestPlayListComponent } from './home/best-play-list/best-play-list.component';
+import { BoxMusicComponent } from './box-music/box-music.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +65,6 @@ import { BestPlayListComponent } from './home/best-play-list/best-play-list.comp
     CheckPasswordComponent,
     ChangePasswordComponent,
     NavComponent,
-    TopMostListensComponent,
     HeaderUserComponent,
     ProfileComponent,
     ShowSingerComponent,
@@ -79,11 +77,11 @@ import { BestPlayListComponent } from './home/best-play-list/best-play-list.comp
     HeaderUserComponent,
 
     //Hoành thêm
-    DemoComponent,
       TopChartsComponent,
       Top10ListensComponent,
       ArtistsComponent,
-      BestPlayListComponent
+      BestPlayListComponent,
+      BoxMusicComponent,
 
   ],
     imports: [

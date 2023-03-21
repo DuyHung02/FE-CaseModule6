@@ -10,10 +10,7 @@
         <!--        Bắt đầu 1 item-->
 
         <div class="swiper-slide" *ngFor="let song of songs; index as i  ">
-          <div class="cover cover--round" data-song-id="1" data-song-name="I love you mummy"
-               data-song-artist="Arebica Luna" data-song-album="Mummy"
-               data-song-url="assets/demo/audio/ringtone-1.mp3"
-               data-song-cover="assets/demo/images/cover/small/1.jpg">
+          <div class="cover cover--round">
             <div class="cover__head">
               <ul class="cover__label d-flex">
                 <li>{{song.likes}}<span class="badge rounded-pill bg-danger"><i class="ri-heart-fill"></i></span>
@@ -45,14 +42,14 @@
               <button type="button" class="btn btn-play btn-default btn-icon rounded-pill"
                       data-play-id="1">
 
-                <i class="ri-play-fill icon-play" (click)="changeAudio(i)"></i>
+                <i class="ri-play-fill icon-play" (click)="findSongAndIndex(i)"></i>
 
 
               </button>
             </div>
-            <div class="cover__foot"><a href="song-details.html"
+            <div class="cover__foot"><a href="#"
                                         class="cover__title text-truncate">{{song.song_name}}</a>
-              <p class="cover__subtitle text-truncate"><a href="artist-details.html">{{song.author}}
+              <p class="cover__subtitle text-truncate"><a href="#">{{song.author}}
               </a></p></div>
           </div>
         </div>
@@ -67,87 +64,4 @@
   </div>
 </div>
 
-<!--<div id="player">-->
-<!--  <div class="container">-->
-<!--    <div class="player-container">-->
-
-<!--      &lt;!&ndash;      Tiến độ bài hát&ndash;&gt;-->
-<!--      <div class="player-progress">-->
-
-<!--        &lt;!&ndash;        Thanh tiến độ&ndash;&gt;-->
-<!--        <input (input)="onRangeChange($event)" type="range" min="0" max="{{audio.duration}}" step="1"-->
-<!--               value="{{audio.currentTime}}" class="range" aria-label="Progress slider"></div>-->
-
-
-<!--      <div class="cover d-flex align-items-center">-->
-<!--        <div class="cover__image"><img data-amplitude-song-info="cover_art_url"-->
-<!--                                       [src]="imgSong"-->
-<!--                                       style="width: 200px; height: 70px; object-fit: cover; border-radius: 10px; margin-left: 10px">-->
-<!--        </div>-->
-<!--        <div class="cover__content ps-3 d-none d-sm-block">{{nameSong}}</div>-->
-<!--      </div>-->
-
-<!--      &lt;!&ndash;      Hộp điều khiển nhạc&ndash;&gt;-->
-<!--      <div class="player-control">-->
-
-<!--        <i (click)="loopSong()" class="me-4 ri-repeat-2-fill fs-5 play-infinite"></i>-->
-
-<!--        <button (click)="previousSong()" type="button" class="amplitude-prev btn btn-icon" aria-label="Backward"><i-->
-<!--          class="ri-skip-back-mini-fill"></i></button>-->
-
-<!--        &lt;!&ndash;        Nút bật tắt nhạc&ndash;&gt;-->
-<!--        <button (click)="playAndPauseAudio()" class="player-inner btn btn-icon btn-default rounded-pill">-->
-<!--          <i class="ri-play-fill icon-play"></i>-->
-<!--          &lt;!&ndash;          <i class="ri-pause-fill icon-pause"></i>&ndash;&gt;-->
-<!--        </button>-->
-
-<!--        &lt;!&ndash;        <i (click)="nextSong()" class="ri-skip-forward-mini-fill"></i>&ndash;&gt;-->
-
-<!--        <button (click)="nextSong()" type="button" class="amplitude-next btn btn-icon" aria-label="Forward"><i-->
-<!--          class="ri-skip-forward-mini-fill"></i></button>-->
-
-
-<!--        <div class="player-info">-->
-
-
-<!--          <div class="player-volume dropdown d-none d-md-block">-->
-
-
-<!--            <div>-->
-<!--              <input style=" width: 70%" (input)="controlVolume($event)" type="range" class="volume-range" min="0"-->
-<!--                     max="1" step="0.01"-->
-<!--                     [(ngModel)]="volume">-->
-<!--            </div>-->
-
-<!--          </div>-->
-
-<!--          &lt;!&ndash;        end range audio&ndash;&gt;-->
-
-
-<!--          &lt;!&ndash;        add option&ndash;&gt;-->
-<!--          <div class="dropstart d-none d-md-block">-->
-<!--            <button class="btn btn-icon" data-bs-toggle="dropdown" aria-label="Song options" aria-expanded="false"><i-->
-<!--              class="ri-more-2-fill fs-5"></i></button>-->
-<!--            <ul class="dropdown-menu dropdown-menu-sm" id="player_options">-->
-<!--              <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-favorite-id="1">Favorite</a>-->
-<!--              </li>-->
-<!--              <li><a class="dropdown-item" href="javascript:void(0);" role="button" data-playlist-id="1">Add to-->
-<!--                playlist</a></li>-->
-<!--              <li><a class="dropdown-item" href="audio/ringtone-1.mp3" download>Download</a></li>-->
-<!--              <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a></li>-->
-<!--              <li class="dropdown-divider"></li>-->
-<!--              <li><a class="dropdown-item" href="song-details.html">View details</a></li>-->
-<!--            </ul>-->
-<!--          </div>-->
-<!--          &lt;!&ndash;        end option&ndash;&gt;-->
-
-
-<!--        </div>-->
-<!--      </div>-->
-
-
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-
+<!--<app-box-music #boxMusic [songs]="songs"></app-box-music>-->

@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./song-uploaded.component.css']
 })
 export class SongUploadedComponent implements OnInit {
-  songs: Song[] = [];
+  songs: any;
   account: any;
   account_id: any;
   playlists: any

@@ -62,7 +62,7 @@ export class PlaylistCreateComponent implements OnInit{
     if (active != null) {
       this.playlistService.savePlaylist(this.account_id, name, active, avatarPlaylist).subscribe(data => {
         if (this.id == null) {
-          location.replace('/playlists')
+          location.replace('/playlists/0?type=playlistsUser')
         } else {
           this.router.navigate(['/songs'])
         }

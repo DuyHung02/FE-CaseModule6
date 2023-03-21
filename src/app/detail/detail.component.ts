@@ -6,6 +6,7 @@ import {Playlist} from "../models/Playlist";
 import {AccountService} from "../service/account/account.service";
 import {Singer} from "../models/Singer";
 import {SingerService} from "../service/SingerService";
+import {Song} from "../models/Song";
 
 @Component({
   selector: 'app-playlist-detail',
@@ -20,7 +21,7 @@ export class DetailComponent implements OnInit{
 
   playlist!: Playlist
   playlist_id: any
-  songs: any
+  songs: Song[] = []
   account!: AccountToken
   singer!: Singer
   singer_id: any
@@ -30,7 +31,6 @@ export class DetailComponent implements OnInit{
   ngOnInit(): void {
     // @ts-ignore
     this.account = JSON.parse(localStorage.getItem("accountToken"))
-
 
     let type = this.route.snapshot.queryParamMap.get('type')
 
@@ -55,7 +55,7 @@ export class DetailComponent implements OnInit{
   deleteSongInPlaylist(song_id: number, playlist_id: number) {
     console.log(song_id, playlist_id)
     this.playlistService.deleteSongInPlaylist(song_id, playlist_id).subscribe(data => {
-      this.router.navigate(['/playlists'])
+      location.reload()
     })
   }
 

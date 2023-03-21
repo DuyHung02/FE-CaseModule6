@@ -9,10 +9,8 @@
     <div class="hero" style="background-image: url(assets/demo/images/banner/home.jpg);"></div>
     <div class="under-hero container">
 
-
-      <app-top-charts></app-top-charts>
-
-      <app-top10-listens></app-top10-listens>
+      <app-top-charts (songIndex)="addIndex($event)" (listSongs)="addSong($event)"></app-top-charts>
+      <app-top10-listens (top10SongIndex)="addIndex($event)" (top10Songs)="addSong($event)"></app-top10-listens>
       <app-artists></app-artists>
       <app-best-play-list></app-best-play-list>
 
@@ -31,7 +29,9 @@
     </footer>
   </main>
 </div>
-<div id="backdrop"></div>
-<script src="assets/demo/js/plugins.bundle.js"></script>
-<script src="assets/demo/js/scripts.bundle.js"></script>
+
+<div *ngIf="musicOn == true">
+  <app-box-music #boxMusic [songs]="songs" [songIndex]="index"></app-box-music>
+</div>
+
 </body>

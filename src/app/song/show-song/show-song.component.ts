@@ -31,6 +31,11 @@ export class ShowSongComponent implements OnInit {
   account_id: any
   playlists: any
   checkSong!: boolean
+  song_id!: number
+
+  getIdSong(id: number) {
+    this.song_id = id
+  }
 
   addSongToPlaylist(id_song: number, id_playlist: number) {
     console.log("alo?")

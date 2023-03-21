@@ -19,7 +19,6 @@ export class BestPlayListComponent implements OnInit{
   ngOnInit(): void {
     this.playlistService.findAllPlaylistActive().subscribe(data => {
       this.playlists = data
-      console.log(data)
     })
   }
 }
