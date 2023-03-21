@@ -50,6 +50,9 @@ export class DetailComponent implements OnInit{
         this.singer = data
       })
     }
+
+
+
   }
 
   deleteSongInPlaylist(song_id: number, playlist_id: number) {

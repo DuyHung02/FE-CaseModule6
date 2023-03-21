@@ -10,13 +10,13 @@
                                                        placeholder="Type anything to get result..."
                                                        id="search_input"
                                                        class="form-control form-control-sm"></form>
+<!--        <div  id="search_form" class="me-3"></div>-->
         <div id="search_results" class="search pb-3">
           <div class="search__head">
             <div class="search__head__filter">
-              <button type="button" class="btn btn-sm btn-light-primary active">Trending</button>
-              <button type="button" class="btn btn-sm btn-light-primary">Artists</button>
-              <button type="button" class="btn btn-sm btn-light-primary">Songs</button>
-              <button type="button" class="btn btn-sm btn-light-primary">Albums</button>
+              <button type="button" class="btn btn-sm btn-light-primary active" (click)="findSong()">Song</button>
+              <button type="button" class="btn btn-sm btn-light-primary" (click)="findSinger()">Singer</button>
+
             </div>
           </div>
           <div class="search__body" data-scroll="true">
