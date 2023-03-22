@@ -1,5 +1,8 @@
 import {Component, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Song} from "../models/Song";
+import {SongService} from "../service/SongService";
+import {Router} from "@angular/router";
+import {PlaylistService} from "../service/playlist/playlist.service";
 
 
 @Component({
@@ -10,7 +13,7 @@ import {Song} from "../models/Song";
 export class BoxMusicComponent implements OnInit, OnChanges, OnDestroy{
   // thuộc tính song
   @Input() songIndex: number = -1
-  songId!: number | undefined
+  songId: any = 0
   songImage: String | undefined = 'https://i.pinimg.com/564x/a2/4a/f1/a24af1a25179acac93d7f2bd507b0985.jpg'
   songName: String | undefined = 'unknown'
   songSinger: String | undefined = 'unknown'
@@ -32,10 +35,10 @@ export class BoxMusicComponent implements OnInit, OnChanges, OnDestroy{
 
 
   ngOnInit(): void {
-    this.loadAudio()
-    this.audio.addEventListener('ended', ev => {
-    })
-    this.changeAudio(this.songIndex)
+      this.loadAudio()
+      this.audio.addEventListener('ended', ev => {
+      })
+      this.changeAudio(this.songIndex)
   }
 
   ngOnChanges(changes: SimpleChanges): void {

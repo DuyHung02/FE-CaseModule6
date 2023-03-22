@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class PlaylistSystemComponent implements OnInit{
 
-  constructor(private playlistService : PlaylistService, private router: Router, private route : ActivatedRoute) {
+  constructor(private playlistService : PlaylistService) {
   }
 
   account!: any

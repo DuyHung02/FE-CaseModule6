@@ -1,0 +1,104 @@
+<body>
+<div id="wrapper">
+  <app-nav></app-nav>
+
+  <app-header-user></app-header-user>
+
+  <main id="page_content">
+    <div class="hero" [style.background-image]="'url(assets/demo/images/banner/song.jpg)'"></div>
+
+    <div class="under-hero container">
+      <div class="section">
+        <div class="row align-items-center">
+          <div class="col-xl-3 col-md-4">
+            <div class="cover cover--round">
+              <div class="cover__image"><img src="{{playlist.avatarPlaylist}}"
+                                             style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px">
+              </div>
+            </div>
+          </div>
+          <div class="col-1 d-none d-xl-block"></div>
+          <div class="col-md-8 mt-5 mt-md-0">
+            <div class="d-flex flex-wrap mb-2">
+              <div class="dropstart d-inline-flex ms-auto"><a class="dropdown-link" data-bs-toggle="dropdown">
+                <i class="ri-more-fill"></i></a>
+                <ul class="dropdown-menu dropdown-menu-sm">
+                  <li><a class="dropdown-item" routerLink="/playlistEdit/{{playlist_id}}">Edit</a></li>
+                  <li><a class="dropdown-item" routerLink="/playlistDelete/{{playlist_id}}">Delete</a>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="" (click)="playOn(0)">Play</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap mb-2"><span class="text-dark fs-4 fw-semi-bold pe-2">{{playlist.name}}</span>
+              <div class="dropstart d-inline-flex ms-auto"><a class="dropdown-link" href=""
+                                                              data-bs-toggle="dropdown"></a>
+              </div>
+            </div>
+            <!--            <ul class="info-list info-list&#45;&#45;dotted mb-3">-->
+            <!--              <li>Album</li>-->
+            <!--              <li>10 Songs</li>-->
+            <!--              <li>01:21:41</li>-->
+            <!--              <li>Apr 14, 2019</li>-->
+            <!--              <li>Travers Music Company</li>-->
+            <!--            </ul>-->
+            <p class="mb-5">By: <a class="text-dark fw-medium">{{account?.full_name}}</a>, <a
+              class="text-dark fw-medium">{{account?.gmail}}</a></p>
+            <ul class="info-list">
+              <li>
+                <div class="d-flex align-items-center">
+                  <button type="button" class="btn btn-icon btn-primary rounded-pill play-inner"
+                          (click)="playOn(0)">
+                    <i class="ri-play-fill icon-play"></i>
+                  </button>
+                  <label class="ps-2 fw-semi-bold text-primary mb-0" style="cursor: pointer;">Play
+                    all</label></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="list">
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="list__item" *ngFor="let s of songs; index as i">
+                <div class="list__cover" (click)="playOn(i)"><img src="{{s.song_avatar}}">
+                  <a href="" class="btn btn-play btn-sm btn-default btn-icon rounded-pill play-inner">
+                    <i class="ri-play-fill icon-play"></i>
+                  </a>
+                </div>
+                <div class="list__content">
+                  <a href="" class="list__title text-truncate">{{s.song_name}}</a>
+                  <p class="list__subtitle text-truncate"><a href="">{{s.author}}</a></p>
+                </div>
+                <ul class="list__option">
+                  <li class="dropstart d-inline-flex"><a class="dropdown-link" href="" data-bs-toggle="dropdown">
+                    <i class="ri-more-fill"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-sm">
+                      <li><a class="dropdown-item" href="" (click)="deleteSongInPlaylist(s.id, playlist_id)">Remove from
+                        playlist</a></li>
+                      <li><a class="dropdown-item" routerLink="/showDetailSong/{{s.id}}">Show detail</a></li>
+                      <li class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="" (click)="playOn(i)">Play</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div *ngIf="musicOn == true">
+  <app-box-music [songIndex]="index" [songs]="songs"></app-box-music>
+</div>
+
+
+</body>
+

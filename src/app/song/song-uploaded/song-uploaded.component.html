@@ -21,6 +21,15 @@
               <div class="swiper-slide" *ngFor="let s of songs">
                 <div class="cover cover--round">
                   <div class="cover__head">
+                    <div>
+                      <div *ngIf="!s.actives">
+                        <li><span class="badge rounded-pill bg-danger">Block</span></li>
+                      </div>
+                      <div *ngIf="s.actives">
+                        <li><span class="badge rounded-pill bg-primary">Active</span></li>
+                      </div>
+
+                    </div>
                     <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
                                                                                    role="button"
                                                                                    data-bs-toggle="dropdown"
@@ -30,12 +39,13 @@
                       <ul class="dropdown-menu dropdown-menu-sm">
                         <li><a class="dropdown-item" routerLink="/showDetailSong/{{s.id}}">View</a></li>
                         <li><a class="dropdown-item" routerLink="/editSong/{{s.id}}">Edit</a></li>
+                        <li><a class="dropdown-item" href="{{s.file_mp3}}" target="_blank">Download</a></li>
                       </ul>
                     </div>
                   </div>
-                  <img src="{{s.song_avatar}}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px">
-                  <div class="cover__foot"><a href="assets/demo/album-details.html"
-                                              class="cover__title text-truncate">{{s.song_name}}</a>
+                  <img src="{{s.song_avatar}}"
+                       style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px">
+                  <div class="cover__foot">{{s.song_name}}
                   </div>
                 </div>
 

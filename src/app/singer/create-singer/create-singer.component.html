@@ -20,10 +20,11 @@
                     </div>
                   </div>
                   <div class="col-12 mb-4"><input type="text" class="form-control" placeholder="Singer name"
-                                                  formControlName="singer_name"></div>
+                                                  formControlName="singer_name" (input)="checkName()">
+                    <span id="checkSingerName" style="color: red ; opacity: 0.5"></span></div>
                   <div class="col-12 mb-4">
                     <label for="gender" class="form-label">Gender</label>
-                    <select id="gender" class="form-select" aria-label="Select category"
+                    <select  id="gender" class="form-select" aria-label="Select category"
                             formControlName="singer_gender">
                       <option value="Male">Male</option>
                       <option value="Female">Female</option>

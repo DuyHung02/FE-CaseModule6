@@ -27,9 +27,7 @@ export class ShowDetailSong2Component implements OnInit {
 
         this.singerSongService.findSingerSongBySong_id(+this.id).subscribe(data => {
           this.singerSongs = data;
-
-          console.log(this.singerSongs);
-          console.log(this.singerSongs[0].singer.singer_name);
+          console.log(data)
 
         })
 

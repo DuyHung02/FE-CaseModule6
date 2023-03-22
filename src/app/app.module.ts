@@ -40,7 +40,7 @@ import { Top10ListensComponent } from './home/top10-listens/top10-listens.compon
 import { ArtistsComponent } from './home/artists/artists.component';
 import { BestPlayListComponent } from './home/best-play-list/best-play-list.component';
 import { BoxMusicComponent } from './box-music/box-music.component';
-import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.component';
+import { PlaylistDetailComponent } from './playlist/playlist-detail/playlist-detail.component';
 import { DetailSingerComponent } from './singer/detail-singer/detail-singer.component';
 import { PlaylistSystemComponent } from './playlist/playlist-system/playlist-system.component';
 

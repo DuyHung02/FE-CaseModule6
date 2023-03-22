@@ -1,45 +1,61 @@
-<div class="under-hero container">
-  <div class="section">
-    <div class="section__head"><h3 class="mb-0">System <span class="text-primary">Playlist</span></h3>
-    </div>
+<body>
+<div id="wrapper">
 
-    <hr>
+  <app-nav></app-nav>
 
-    <div class="swiper-carousel swiper-carousel-button">
-      <div class="swiper" data-swiper-slides="5" data-swiper-autoplay="true">
+  <app-header-user></app-header-user>
 
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" *ngFor="let p of playlists">
-            <div class="cover cover--round">
-              <div class="cover__head">
-                <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
-                                                                               role="button"
-                                                                               data-bs-toggle="dropdown"
-                                                                               aria-label="Cover options"
-                                                                               aria-expanded="false"><i
-                  class="ri-more-2-fill"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-sm">
-                    <li><a class="dropdown-item" routerLink="/playlistEdit/{{p.id}}" role="button">Edit</a></li>
-                    <li><a class="dropdown-item" routerLink="/playlistDelete/{{p.id}}" role="button">Delete</a>
-                    </li>
-                    <li class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" routerLink="/playlistDetail/{{p.id}}">View details</a></li>
-                  </ul>
+  <main id="page_content">
+    <div class="hero" [style.background-image]="'url(assets/demo/images/banner/song.jpg)'"></div>
+
+    <div class="under-hero container">
+      <div class="section">
+        <div class="section__head"><h3 class="mb-0">System <span class="text-primary">Playlist</span></h3>
+        </div>
+
+        <hr>
+
+        <div class="swiper-carousel swiper-carousel-button">
+          <div class="swiper" data-swiper-slides="5" data-swiper-autoplay="true">
+
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" *ngFor="let p of playlists">
+                <div class="cover cover--round">
+                  <div class="cover__head">
+                    <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                   data-bs-toggle="dropdown"><i
+                      class="ri-more-2-fill"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-sm">
+                        <li><a class="dropdown-item" routerLink="/playlistEdit/{{p.id}}">Edit</a></li>
+                        <li><a class="dropdown-item" routerLink="/playlistDelete/{{p.id}}">Delete</a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" routerLink="/playlistDetail/{{p.id}}">View details</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <a routerLink="/playlistDetail/{{p.id}}" class="cover__image"><img
+                    src="{{p.avatarPlaylist}}"
+                    style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px"></a>
+                  <div class="cover__foot"><a href=""
+                                              class="cover__title text-truncate">{{p.name}}</a>
+                  </div>
                 </div>
-              </div>
-              <a routerLink="/playlistDetail/{{p.id}}" class="cover__image"><img
-                src="{{p.avatarPlaylist}}"
-                style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px"></a>
-              <div class="cover__foot"><a href=""
-                                          class="cover__title text-truncate">{{p.name}}</a>
+
               </div>
             </div>
-
+            <div class="swiper-button-prev btn-default rounded-pill"></div>
+            <div class="swiper-button-next btn-default rounded-pill"></div>
           </div>
         </div>
-        <div class="swiper-button-prev btn-default rounded-pill"></div>
-        <div class="swiper-button-next btn-default rounded-pill"></div>
       </div>
     </div>
-  </div>
+
+
+    <footer id="footer">
+    </footer>
+
+  </main>
+
 </div>
+</body>

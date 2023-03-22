@@ -16,15 +16,16 @@ export class ShowSongComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.songService.getAll().subscribe(data => {
+    this.songService.showActiveSong(1).subscribe(data => {
       this.songs = data;
+      // @ts-ignore
+      this.account = JSON.parse(localStorage.getItem("accountToken"))
+      this.account_id = this.account.id
+      this.playlistService.showPlaylist(this.account_id).subscribe(data => {
+        this.playlists = data
+      })
     })
-    // @ts-ignore
-    this.account = JSON.parse(localStorage.getItem("accountToken"))
-    this.account_id = this.account.id
-    this.playlistService.showPlaylist(this.account_id).subscribe(data => {
-      this.playlists = data
-    })
+
   }
 
   account: any

@@ -19,6 +19,10 @@ export class SongService {
     return this.http.get<Song[]>("http://localhost:8080/songs");
   }
 
+  showActiveSong(active:number) :Observable<Song[]>{
+    return this.http.get<Song[]>(`http://localhost:8080/songs/show/${active}`);
+  }
+
   delete(id:number) :Observable<void>{
     return this.http.delete<void>(`http://localhost:8080/songs/${id}`);
   }
@@ -26,6 +30,11 @@ export class SongService {
   findById(id:number) :Observable<Song>{
     return this.http.get<Song>(`http://localhost:8080/songs/${id}`);
   }
+
+  findSongBySongName(song_name:String) :Observable<Song>{
+  return this.http.get<Song>(`http://localhost:8080/songs/find/${song_name}`);
+}
+
 
   editSong(song: Song): Observable<Song> {
     return this.http.post<Song>("http://localhost:8080/songs/edit", song);

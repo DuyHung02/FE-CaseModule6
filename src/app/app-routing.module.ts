@@ -20,8 +20,9 @@ import {SongUploadedComponent} from "./song/song-uploaded/song-uploaded.componen
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {ShowDetailSong2Component} from "./song/show-detail-song2/show-detail-song2.component";
 import {ShowSongComponent} from "./song/show-song/show-song.component";
-import {PlaylistDetailComponent} from "./playlist-detail/playlist-detail.component";
+import {PlaylistDetailComponent} from "./playlist/playlist-detail/playlist-detail.component";
 import {DetailSingerComponent} from "./singer/detail-singer/detail-singer.component";
+import {PlaylistSystemComponent} from "./playlist/playlist-system/playlist-system.component";
 
 
 const routes: Routes = [
@@ -34,9 +35,10 @@ const routes: Routes = [
   {path: 'showSinger', component: ShowSingerComponent},
   {path: 'createSong', component: CreateSong2Component},
   {path: 'createSingerSong/:id',component: CreateSingerSongComponent},
-  {path: 'playlists/:id', component: PlaylistShowComponent},
+  {path: 'playlists', component: PlaylistShowComponent},
+  {path: 'playlistsSystem', component: PlaylistSystemComponent},
   {path: 'playlistDetail/:id', component: PlaylistDetailComponent},
-  {path: 'singerDetail', component: DetailSingerComponent},
+  {path: 'singerDetail/:id', component: DetailSingerComponent},
   {path: 'playlistCreate', component: PlaylistCreateComponent},
   {path: 'playlistDelete/:id', component: PlaylistDeleteComponent},
   {path: 'playlistEdit/:id', component: PlaylistEditComponent},

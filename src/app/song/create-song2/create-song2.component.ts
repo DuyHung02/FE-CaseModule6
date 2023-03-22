@@ -1,11 +1,13 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import { SongService } from 'src/app/service/SongService';
+import {SongService} from 'src/app/service/SongService';
 import {Router} from "@angular/router";
 import {Song} from "../../models/Song";
 import {FormControl, FormGroup} from "@angular/forms";
 import {SingerSongId} from "../../models/dto/SingerSongId";
 import {finalize} from "rxjs";
 import {AngularFireStorage} from "@angular/fire/compat/storage";
+
+declare var $: any;
 
 @Component({
   selector: 'app-create-song2',
@@ -18,7 +20,7 @@ export class CreateSong2Component implements OnInit {
 
   @ViewChild('file_mp3', {static: true}) public mp3Dom: ElementRef | undefined;
 
-  constructor( private songService: SongService, private router: Router, private storage: AngularFireStorage) {
+  constructor(private songService: SongService, private router: Router, private storage: AngularFireStorage) {
   }
 
   selectedImage: any = null;
@@ -50,6 +52,8 @@ export class CreateSong2Component implements OnInit {
       album: new FormControl(),
       song_music_genre: new FormControl(),
       actives: new FormControl(),
+      listens: new FormControl(),
+      likes: new FormControl(),
     })
   }
 
@@ -58,11 +62,22 @@ export class CreateSong2Component implements OnInit {
       song_avatar: this.url_avatar,
       file_mp3: this.url_mp3,
       actives: 1,
+      listens: 0,
+      likes: 0,
     })
-    this.songService.createSong(this.formCreateSong.value).subscribe((data) => {
-      this.song = data;
-      this.router.navigate(["createSingerSong/" + this.song?.id]);
-    })
+    if (this.formCreateSong.value.song_name != null && this.formCreateSong.value.song_name != '') {
+      if (this.formCreateSong.value.file_mp3 != '' && this.formCreateSong.value.file_mp3 != null) {
+        console.log(this.formCreateSong.value);
+        this.songService.createSong(this.formCreateSong.value).subscribe((data) => {
+          this.song = data;
+          this.router.navigate(["createSingerSong/" + this.song?.id]);
+        })
+      } else {
+        $("#checkFileMp3").text("Choose file mp3 ")
+      }
+    } else {
+      $("#checkSongName").text("Enter name")
+    }
   }
 
   upLoadFileImg() {
@@ -96,8 +111,19 @@ export class CreateSong2Component implements OnInit {
         finalize(() => (fileRefMp3.getDownloadURL().subscribe(url => {
           this.url_mp3 = url;
           console.log(this.url_mp3)
+          $("#checkFileMp3").text("")
         })))
       ).subscribe();
     }
   }
+
+  checkName() {
+    if (this.formCreateSong.value.song_name != null && this.formCreateSong.value.song_name != "") {
+      $("#checkSongName").text("")
+    } else {
+      $("#checkSongName").text("Enter name")
+    }
+  }
+
+
 }

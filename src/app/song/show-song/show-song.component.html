@@ -25,7 +25,6 @@
             <strong>Info!</strong> {{myMessenger}}
           </div>
         </div>
-
         <div *ngIf="myMessenger =='Music already in playlist'">
           <div class="alert alert-warning alert-dismissible">
             <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
@@ -47,10 +46,11 @@
                   <li class="dropstart d-inline-flex"><a class="dropdown-link" href="" data-bs-toggle="dropdown">
                     <i class="ri-more-fill"></i></a>
                     <ul class="dropdown-menu dropdown-menu-sm">
-                      <li><a class="dropdown-item" href="">Show detail</a></li>
+                      <li><a class="dropdown-item" routerLink="/showDetailSong/{{s.id}}">Show detail</a></li>
                       <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target=".myModal"
                              (click)="getIdSong(s.id)"
-                      >Add to playlist</a></li>
+                      >Add to playlist</a>
+                      </li>
                       <li class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="" (click)="boxMusic.changeAudio(i)">Play</a>
                       </li>
@@ -81,9 +81,16 @@
           <div class="section__head"><h3 class="mb-0"><span class="text-primary"></span></h3>
           </div>
           <br><br>
-          <button class="btn btn-outline-primary" routerLink="/playlistCreate" data-bs-dismiss="modal">
+          <div *ngIf="account == null">
+          <button class="btn btn-outline-primary" routerLink="/login" data-bs-dismiss="modal">
             <i class="ri-add-line">Playlist</i>
           </button>
+          </div>
+          <div *ngIf="account != null">
+            <button class="btn btn-outline-primary" routerLink="/playlistCreate" data-bs-dismiss="modal">
+              <i class="ri-add-line">Playlist</i>
+            </button>
+          </div>
           <hr>
 
           <div class="swiper-carousel swiper-carousel-button">

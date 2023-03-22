@@ -1,3 +1,5 @@
+
+
 <div class="section"  >
   <div class="section__head">
     <div class="flex-grow-1">
@@ -10,9 +12,9 @@
 <!--        Bắt đầu item-->
         <div *ngFor="let singer of singers" class="swiper-slide">
           <div class="avatar avatar--xxl d-block text-center">
-            <div class="avatar__image"><a href="artist-details.html"><img
+            <div class="avatar__image"><a routerLink="/singerDetail/{{singer.id}}"><img
               src="{{singer.singer_avatar}}" alt="Arebica Luna"></a></div>
-            <a href="artist-details.html" class="avatar__title mt-3">{{singer.singer_name}}</a></div>
+            <a routerLink="/singerDetail/{{singer.id}}" class="avatar__title mt-3">{{singer.singer_name}}</a></div>
         </div>
 <!--        Kết thúc item-->
 
