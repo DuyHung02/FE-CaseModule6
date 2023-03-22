@@ -6,7 +6,6 @@ import {LoginComponent} from "./account/login/login.component";
 import {AfterRegisterComponent} from "./account/after-register/after-register.component";
 import {RegisterComponent} from "./account/register/register.component";
 import {PlaylistShowComponent} from "./playlist/playlist-show/playlist-show.component";
-import {DetailComponent} from "./detail/detail.component";
 import {PlaylistCreateComponent} from "./playlist/playlist-create/playlist-create.component";
 import {PlaylistDeleteComponent} from "./playlist/playlist-delete/playlist-delete.component";
 import {PlaylistEditComponent} from "./playlist/playlist-edit/playlist-edit.component";
@@ -21,6 +20,8 @@ import {SongUploadedComponent} from "./song/song-uploaded/song-uploaded.componen
 import {EditSongComponent} from "./song/edit-song/edit-song.component";
 import {ShowDetailSong2Component} from "./song/show-detail-song2/show-detail-song2.component";
 import {ShowSongComponent} from "./song/show-song/show-song.component";
+import {PlaylistDetailComponent} from "./playlist-detail/playlist-detail.component";
+import {DetailSingerComponent} from "./singer/detail-singer/detail-singer.component";
 
 
 const routes: Routes = [
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'createSong', component: CreateSong2Component},
   {path: 'createSingerSong/:id',component: CreateSingerSongComponent},
   {path: 'playlists/:id', component: PlaylistShowComponent},
-  {path: 'detail/:id', component: DetailComponent},
+  {path: 'playlistDetail/:id', component: PlaylistDetailComponent},
+  {path: 'singerDetail', component: DetailSingerComponent},
   {path: 'playlistCreate', component: PlaylistCreateComponent},
   {path: 'playlistDelete/:id', component: PlaylistDeleteComponent},
   {path: 'playlistEdit/:id', component: PlaylistEditComponent},
@@ -45,6 +47,7 @@ const routes: Routes = [
   {path: 'editSong/:id', component: EditSongComponent},
   {path: 'showDetailSong/:id', component: ShowDetailSong2Component},
   {path: 'showSong', component: ShowSongComponent},
+
 
 
 ];

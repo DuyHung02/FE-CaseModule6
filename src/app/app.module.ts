@@ -19,7 +19,6 @@ import {AfterRegisterComponent} from "./account/after-register/after-register.co
 import {LoginComponent} from "./account/login/login.component";
 import {HomeComponent} from "./home/home.component";
 import { PlaylistShowComponent } from './playlist/playlist-show/playlist-show.component';
-import { DetailComponent } from './detail/detail.component';
 import { PlaylistCreateComponent } from './playlist/playlist-create/playlist-create.component';
 import { PlaylistDeleteComponent } from './playlist/playlist-delete/playlist-delete.component';
 import { PlaylistEditComponent } from './playlist/playlist-edit/playlist-edit.component';
@@ -41,6 +40,9 @@ import { Top10ListensComponent } from './home/top10-listens/top10-listens.compon
 import { ArtistsComponent } from './home/artists/artists.component';
 import { BestPlayListComponent } from './home/best-play-list/best-play-list.component';
 import { BoxMusicComponent } from './box-music/box-music.component';
+import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.component';
+import { DetailSingerComponent } from './singer/detail-singer/detail-singer.component';
+import { PlaylistSystemComponent } from './playlist/playlist-system/playlist-system.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,6 @@ import { BoxMusicComponent } from './box-music/box-music.component';
     ShowSingerComponent,
     NavComponent,
     PlaylistShowComponent,
-    DetailComponent,
     PlaylistCreateComponent,
     PlaylistDeleteComponent,
     PlaylistEditComponent,
@@ -82,6 +83,9 @@ import { BoxMusicComponent } from './box-music/box-music.component';
       ArtistsComponent,
       BestPlayListComponent,
       BoxMusicComponent,
+      PlaylistDetailComponent,
+      DetailSingerComponent,
+      PlaylistSystemComponent,
 
   ],
     imports: [

@@ -32,6 +32,7 @@ export class ShowSongComponent implements OnInit {
   playlists: any
   checkSong!: boolean
   song_id!: number
+  myMessenger: String = ''
 
   getIdSong(id: number) {
     this.song_id = id
@@ -44,11 +45,15 @@ export class ShowSongComponent implements OnInit {
       this.checkSong = data
       if (this.checkSong) {
         this.playlistService.addSongToPlaylist(id_playlist, id_song).subscribe(data => {
-          alert("them thanh cong")
+          this.myMessenger = "Add success"
         })
       } else {
-        alert("bai hat da co trong playlist")
+        this.myMessenger = "Music already in playlist"
       }
     })
+  }
+
+  closeMessenger() {
+    this.myMessenger = ''
   }
 }

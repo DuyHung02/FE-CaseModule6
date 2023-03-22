@@ -2,26 +2,41 @@
 <div id="wrapper">
 
   <app-nav></app-nav>
+
   <app-header-user></app-header-user>
 
   <main id="page_content">
     <div class="hero" style="background-image: url(assets/demo/images/banner/song.jpg);"></div>
     <div class="under-hero container">
       <div class="section">
-        <div class="section__head align-items-center"><span class="d-block pe-3 fs-6 fw-semi-bold">{{songs.length}} Songs in the list</span>
-          <div><select class="form-select" aria-label="Filter song">
-            <option value="Popular">Popular</option>
-            <option value="Most played">Most played</option>
-            <option value="A to Z">A to Z</option>
-            <option value="Z to A">Z to A</option>
-          </select></div>
+        <div class="section__head align-items-center"><span class="d-block pe-3 fs-6 fw-semi-bold">{{songs.length}}
+          Songs in the list</span>
+          <!--          <div><select class="form-select" aria-label="Filter song">-->
+          <!--            <option value="Popular">Popular</option>-->
+          <!--            <option value="Most played">Most played</option>-->
+          <!--            <option value="A to Z">A to Z</option>-->
+          <!--            <option value="Z to A">Z to A</option>-->
+          <!--          </select></div>-->
         </div>
 
+        <div *ngIf="myMessenger =='Add success'">
+          <div class="alert alert-info alert-dismissible">
+            <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
+            <strong>Info!</strong> {{myMessenger}}
+          </div>
+        </div>
+
+        <div *ngIf="myMessenger =='Music already in playlist'">
+          <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
+            <strong>Info!</strong> {{myMessenger}}
+          </div>
+        </div>
 
         <div class="list">
           <div class="row">
             <div class="col-xl-6" *ngFor="let s of songs; index as i">
-              <div class="list__item" >
+              <div class="list__item">
                 <div class="list__cover" (click)="boxMusic.changeAudio(i)"><img src="{{s.song_avatar}}"> <a
                   href="" class="btn btn-play btn-sm btn-default btn-icon rounded-pill">
                   <i class="ri-play-fill icon-play"></i></a>
@@ -37,7 +52,7 @@
                              (click)="getIdSong(s.id)"
                       >Add to playlist</a></li>
                       <li class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#" role="button" data-play-id="1">Play</a>
+                      <li><a class="dropdown-item" href="" (click)="boxMusic.changeAudio(i)">Play</a>
                       </li>
                     </ul>
                   </li>
@@ -64,7 +79,8 @@
       <div class="under-hero container">
         <div class="section">
           <div class="section__head"><h3 class="mb-0"><span class="text-primary"></span></h3>
-          </div><br><br>
+          </div>
+          <br><br>
           <button class="btn btn-outline-primary" routerLink="/playlistCreate" data-bs-dismiss="modal">
             <i class="ri-add-line">Playlist</i>
           </button>
@@ -114,6 +130,6 @@
   </div>
 </div>
 
-<app-box-music #boxMusic [songs]="songs" ></app-box-music>
+<app-box-music #boxMusic [songs]="songs"></app-box-music>
 
 </body>

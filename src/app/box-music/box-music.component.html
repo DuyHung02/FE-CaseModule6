@@ -10,12 +10,11 @@
       <div class="cover d-flex align-items-center">
         <div class="cover__image"><img src="{{songImage}}"
                                        style="width: 100%; height: 72px; object-fit: cover"></div>
-        <div class="cover__content ps-3 d-none d-sm-block"><a href="showDetailSong/{{songId}}"
-                                                              class="cover__title text-truncate">{{songName}}</a> <a
-          href="artist-details.html" class="cover__subtitle text-truncate">{{songSinger}}</a></div>
+        <div class="cover__content ps-2 d-none d-sm-block"><a class="cover__title text-truncate">{{songName}}</a> <a
+          href="" class="cover__subtitle text-truncate">{{songSinger}}</a></div>
       </div>
 
-      <div class="player-control" style="margin-left: -30%">
+      <div class="player-control" style="margin-left: -20%">
         <button type="button" (click)="loopSong()" class="loop-song btn btn-icon me-4 d-none d-md-block"
                 aria-label="Repeat">
           <i class="ri-repeat-2-fill fs-5"></i></button>
