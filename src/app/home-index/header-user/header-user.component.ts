@@ -17,6 +17,7 @@ export class HeaderUserComponent implements OnInit {
   singer: Singer | undefined;
   song: Song | undefined;
   singerSongs: SingerSong[] = [];
+  songs: Song[] = [];
   account: any;
   openMessage:Boolean=false;
 
@@ -24,6 +25,9 @@ export class HeaderUserComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.songService.find4NewSong().subscribe(data => {
+      this.songs = data;
+    })
     // @ts-ignore
     this.account = JSON.parse(localStorage.getItem("accountToken"))
     console.log(this.account)

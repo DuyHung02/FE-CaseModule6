@@ -44,6 +44,10 @@ export class SongService {
     return this.http.get<Song[]>(`http://localhost:8080/songs/saveSong/${id}`);
   }
 
+  find4NewSong() :Observable<Song[]>{
+    return this.http.get<Song[]>(`http://localhost:8080/songs/find4NewSong`);
+  }
+
   // Hoành thêm
   findSongBySinger(id: number,page:number): Observable<Song[]> {
     console.log("FAEGETSAHRT")
