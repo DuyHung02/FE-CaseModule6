@@ -169,20 +169,18 @@
                 <div class="py-2 px-3 avatar avatar--lg">
                   <div class="avatar__image"><img src="{{account?.avatar}}"></div>
                   <div class="avatar__content"><span class="avatar__title">{{account?.username}}</span>
-                    <span class="avatar__subtitle">Artist</span></div>
+                    <span class="avatar__subtitle">User</span></div>
                 </div>
               </li>
               <li class="dropdown-divider"></li>
 <!--              <li><a class="dropdown-item d-flex align-items-center" routerLink="/profile"><i-->
 <!--                class="ri-user-3-line fs-5"></i> <span class="ps-2">Profile</span></a></li>-->
-              <li><a class="dropdown-item d-flex align-items-center" href="#"><i
-                class="ri-heart-line fs-5"></i> <span class="ps-2">Favorites</span></a></li>
               <li><a class="dropdown-item d-flex align-items-center" routerLink="/profile"><i
                 class="ri-profile-line fs-5"></i> <span class="ps-2">Profile</span></a></li>
-              <li><a class="dropdown-item d-flex align-items-center" routerLink="/songUploaded"><i
-                class="ri-music-2-line fs-5"></i> <span class="ps-2">My songs</span></a></li>
-              <li><a class="dropdown-item d-flex align-items-center" routerLink="/playlists/0" [queryParams]="{type : 'playlistsUser'}"><i
-                class="ri-play-list-2-line fs-5"></i> <span class="ps-2">My playlist</span></a></li>
+              <li><a class="dropdown-item d-flex align-items-center" routerLink="/createSinger"><i
+                class="ri-mic-2-fill fs-5"></i> <span class="ps-2">Singer</span></a></li>
+              <li><a class="dropdown-item d-flex align-items-center" routerLink="/createSong"><i
+                class="ri-music-line fs-5"></i> <span class="ps-2">Song</span></a></li>
               <li><a class="dropdown-item d-flex align-items-center" routerLink="/checkPassword"><i
                 class="ri-lock-password-line fs-5"></i> <span class="ps-2">Change password</span></a></li>
 <!--              <li><a class="dropdown-item d-flex align-items-center" href="settings.html"><i-->
