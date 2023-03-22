@@ -39,6 +39,7 @@ export class BoxMusicComponent implements OnInit, OnChanges, OnDestroy{
       this.audio.addEventListener('ended', ev => {
       })
       this.changeAudio(this.songIndex)
+    console.log(this.songs)
   }
 
   ngOnChanges(changes: SimpleChanges): void {

@@ -39,6 +39,8 @@ export class PlaylistEditComponent implements OnInit{
     })
   }
 
+  isMessenger: String = ''
+
   upAvatarPlaylist() {
     this.selectImagePlaylist = this.avatarDom?.nativeElement.files[0];
     console.log(this.selectImagePlaylist)
@@ -70,8 +72,12 @@ export class PlaylistEditComponent implements OnInit{
         location.replace('/playlists')
       })
     } else {
-      alert("choice mode")
+      this.isMessenger = 'Choice mode'
     }
+  }
+
+  closeMessenger() {
+    this.isMessenger = ''
   }
 
 }

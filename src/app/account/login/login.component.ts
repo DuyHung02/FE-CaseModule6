@@ -26,7 +26,7 @@ export class LoginComponent {
       this.account = data
       localStorage.setItem("token", data.token + "")
       localStorage.setItem("accountToken", JSON.stringify(data))
-      window.location.replace('home')
+      window.location.replace('/home')
     }, error => {
       alert("login false")
     })

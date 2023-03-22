@@ -63,8 +63,6 @@ export class DetailSingerComponent implements OnInit{
   }
 
   addSongToPlaylist(id_song: number, id_playlist: number) {
-    console.log("alo?")
-    console.log("id song: " + id_song + "   id: playlist: " + id_playlist)
     this.playlistService.checkSongInPlaylist(id_song, id_playlist).subscribe(data => {
       this.checkSong = data
       if (this.checkSong) {

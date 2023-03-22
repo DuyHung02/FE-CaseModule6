@@ -36,7 +36,6 @@ export class PlaylistCreateComponent implements OnInit{
 
   upAvatarPlaylist() {
     this.selectImage = this.avatarDom?.nativeElement.files[0];
-    console.log(this.selectImage)
     this.avatarPlaylist()
   }
 
@@ -52,24 +51,28 @@ export class PlaylistCreateComponent implements OnInit{
     }
   }
 
+  isMessenger: String = ''
+
   savePlaylist() {
-    this.id = this.route.snapshot.paramMap.get('id')
+    // this.id = this.route.snapshot.paramMap.get('id')
     let name = this.formPlaylist.value.name
     let active = this.formPlaylist.value.active
     let avatarPlaylist = this.arrayPicture
 
-    console.log(avatarPlaylist)
     if (active != null) {
       this.playlistService.savePlaylist(this.account_id, name, active, avatarPlaylist).subscribe(data => {
-        if (this.id == null) {
-          location.replace('/playlists/0?type=playlistsUser')
-        } else {
-          this.router.navigate(['/songs'])
-        }
+        // if (this.id == null) {
+          location.replace('/playlists')
+        // } else {
+        //   this.router.navigate(['/songs'])
+        // }
       })
     } else {
-      alert("choice mode")
+      this.isMessenger = 'Choice mode'
     }
+  }
+  closeMessenger() {
+    this.isMessenger = ''
   }
 
 }

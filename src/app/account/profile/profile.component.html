@@ -12,13 +12,10 @@
           <div class="card plan__info overflow-hidden">
             <div class="card-body d-flex flex-column p-0">
               <div class="p-4"><h4 class="mb-3">My <span class="text-primary">Account</span></h4><br>
-                  <a style="color: #1d1e22" routerLink="/playlists/0" [queryParams]="{type : 'playlistsUser'}"><i
+                  <a style="color: #1d1e22" routerLink="/playlists"><i
                     class="ri-play-list-2-line fs-5"></i> <span class="ps-2">My playlist</span></a><br><br>
                   <a style="color: #1d1e22" routerLink="/checkPassword"><i
                     class="ri-lock-password-line fs-5"></i> <span class="ps-2">Change password</span></a><br><br>
-<!--                <a href="plan.html" class="d-inline-flex align-items-center"><span-->
-<!--                  class="fw-semi-bold pe-1">Choose plan</span>-->
-<!--                  <i class="ri-arrow-right-line fs-6"></i></a>-->
               </div>
               <div class="px-3 text-center mt-auto"><img src="assets/demo/images/misc/plan.png" class="img-fluid"
                                                          alt=""></div>
@@ -29,7 +26,7 @@
               <div class="px-4 pt-2 pe-xl-0 pt-sm-0 mt-4 mb-3 my-sm-0 w-100">
                 <div class="d-flex align-items-center mb-4">
                   <div class="avatar avatar--xl">
-                    <div class="avatar__image"><img [src]="arrayPicture" alt="user"></div>
+                    <div class="avatar__image"><img [src]="arrayPicture"></div>
                   </div>
                   <div class="ps-3"><input type="file" id="profile" class="d-none" #upLoadFile
                                            (change)="upLoadFileImg()"> <label for="profile"

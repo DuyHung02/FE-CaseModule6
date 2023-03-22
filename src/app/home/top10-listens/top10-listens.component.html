@@ -8,12 +8,25 @@
       <div class="swiper" data-swiper-slides="2" data-swiper-autoplay="true">
         <div class="swiper-wrapper">
 
+          <div *ngIf="myMessenger =='Add success'">
+            <div class="alert alert-info alert-dismissible">
+              <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
+              <strong>Info!</strong> {{myMessenger}}
+            </div>
+          </div>
+          <div *ngIf="myMessenger =='Music already in playlist'">
+            <div class="alert alert-warning alert-dismissible">
+              <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
+              <strong>Info!</strong> {{myMessenger}}
+            </div>
+          </div>
+
           <div *ngFor="let song of songs; index as i  " class="swiper-slide">
             <div class="cover cover--round"><img
               src="{{song.song_avatar}}" (click)="findSongAndIndex(i)"
-              style="width: 250px; height: 250px; object-fit: cover; border-radius: 10px; margin-left: 10px">
+              style="width: 250px; height: 250px; object-fit: cover; border-radius: 10px; margin-left: 10px; cursor: pointer">
               <div class="cover__foot mt-3 px-2"><p class="cover__subtitle d-flex mb-2">
-              </p><a href="#" class="cover__title fs-6 mb-3">{{song.song_name}}</a>
+              </p><a href="" class="cover__title fs-6 mb-3">{{song.song_name}}</a>
                 <div class="d-flex align-items-center ">
                   {{song.listens}}
                   <i class="ri-headphone-fill heart-fill"></i>
@@ -48,262 +61,98 @@
                 <i  class="ri-play-fill icon-play"></i>
               </a></div>
             <div class="list__content"><a class="list__title text-truncate">{{song.song_name}}</a>
-              <p class="list__subtitle text-truncate"><a href="#">{{song.author}}</a></p></div>
+              <p class="list__subtitle text-truncate"><a href="">{{song.author}}</a></p></div>
             <ul class="list__option">
               <li>{{song.listens}}<span class="badge rounded-pill bg-info">
                  <i class="ri-headphone-fill heart-fill"></i>
               </span></li>
-              <li> {{song.likes}}<a href="javascript:void(0);" role="button" class="d-inline-flex"
-                                    aria-label="Favorite" data-favorite-id="2"><i
+              <li> {{song.likes}}<a href="" class="d-inline-flex"><i
                 class="ri-heart-line heart-empty"></i> <i
                 class="ri-heart-fill heart-fill"></i></a></li>
 
               <li class="dropstart d-inline-flex"><a class="dropdown-link"
-                                                     href="javascript:void(0);" role="button"
-                                                     data-bs-toggle="dropdown"
-                                                     aria-label="Cover options"
-                                                     aria-expanded="false"><i
+                                                     href="" role="button"
+                                                     data-bs-toggle="dropdown"><i
                 class="ri-more-fill"></i></a>
                 <ul class="dropdown-menu dropdown-menu-sm">
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-playlist-id="2">Add to playlist</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-queue-id="2">Add to queue</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-next-id="2">Next to play</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a>
+                  <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target=".myModal"
+                         (click)="getIdSong(song.id)">Add to playlist</a></li>
+                  <li><a class="dropdown-item" routerLink="/showDetailSong/{{song.id}}">View detail</a>
                   </li>
                   <li class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-play-id="2">Play</a></li>
+                  <li><a class="dropdown-item" href="" (click)="findSongAndIndex(i)">Play</a></li>
                 </ul>
               </li>
             </ul>
           </div>
-
-
           <!--          Kết thúc 1 item-->
         </div>
       </div>
-      <div class="tab-pane fade" id="trending_pane" role="tabpanel" aria-labelledby="trending"
-           tabindex="0">
-        <div class="list">
-          <div class="list__item" data-song-id="2" data-song-name="Shack your butty"
-               data-song-artist="Gerrina Linda" data-song-album="Hot shot"
-               data-song-url="audio/ringtone-2.mp3" data-song-cover="assets/demo/images/cover/small/2.jpg">
-            <div class="list__cover"><img src="assets/demo/images/cover/small/2.jpg" alt="Shack your butty">
-              <a href="javascript:void(0);"
-                 class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
-                 data-play-id="2" aria-label="Play pause"><i
-                class="ri-play-fill icon-play"></i> <i
-                class="ri-pause-fill icon-pause"></i></a></div>
-            <div class="list__content"><a href="song-details.html"
-                                          class="list__title text-truncate">Shack your butty</a>
-              <p class="list__subtitle text-truncate"><a href="artist-details.html">Gerrina
-                Linda</a></p></div>
-            <ul class="list__option">
-              <li><span class="badge rounded-pill bg-info"><i
-                class="ri-vip-crown-fill"></i></span></li>
-              <li><a href="javascript:void(0);" role="button" class="d-inline-flex"
-                     aria-label="Favorite" data-favorite-id="2"><i
-                class="ri-heart-line heart-empty"></i> <i
-                class="ri-heart-fill heart-fill"></i></a></li>
-              <li>03:24</li>
-              <li class="dropstart d-inline-flex"><a class="dropdown-link"
-                                                     href="javascript:void(0);" role="button"
-                                                     data-bs-toggle="dropdown"
-                                                     aria-label="Cover options"
-                                                     aria-expanded="false"><i
-                class="ri-more-fill"></i></a>
-                <ul class="dropdown-menu dropdown-menu-sm">
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-playlist-id="2">Add to playlist</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-queue-id="2">Add to queue</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-next-id="2">Next to play</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a>
-                  </li>
-                  <li class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-play-id="2">Play</a></li>
-                </ul>
-              </li>
-            </ul>
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal myModal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <div class="under-hero container">
+        <div class="section">
+          <div class="section__head"><h3 class="mb-0"><span class="text-primary"></span></h3>
           </div>
-          <div class="list__item" data-song-id="4" data-song-name="Say yes"
-               data-song-artist="Johnny Marro" data-song-album="Say yes"
-               data-song-url="audio/ringtone-4.mp3" data-song-cover="assets/demo/images/cover/small/4.jpg">
-            <div class="list__cover"><img src="assets/demo/images/cover/small/4.jpg" alt="Say yes"> <a
-              href="javascript:void(0);"
-              class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
-              data-play-id="4" aria-label="Play pause"><i
-              class="ri-play-fill icon-play"></i> <i class="ri-pause-fill icon-pause"></i></a>
-            </div>
-            <div class="list__content"><a href="song-details.html"
-                                          class="list__title text-truncate">Say yes</a>
-              <p class="list__subtitle text-truncate"><a href="artist-details.html">Johnny
-                Marro</a></p></div>
-            <ul class="list__option">
-              <li><a href="javascript:void(0);" role="button" class="d-inline-flex"
-                     aria-label="Favorite" data-favorite-id="4"><i
-                class="ri-heart-line heart-empty"></i> <i
-                class="ri-heart-fill heart-fill"></i></a></li>
-              <li>04:20</li>
-              <li class="dropstart d-inline-flex"><a class="dropdown-link"
-                                                     href="javascript:void(0);" role="button"
-                                                     data-bs-toggle="dropdown"
-                                                     aria-label="Cover options"
-                                                     aria-expanded="false"><i
-                class="ri-more-fill"></i></a>
-                <ul class="dropdown-menu dropdown-menu-sm">
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-playlist-id="4">Add to playlist</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-queue-id="4">Add to queue</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-next-id="4">Next to play</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a>
-                  </li>
-                  <li class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-play-id="4">Play</a></li>
-                </ul>
-              </li>
-            </ul>
+          <br><br>
+          <div *ngIf="account == null">
+            <button class="btn btn-outline-primary" routerLink="/login" data-bs-dismiss="modal">
+              <i class="ri-add-line">Playlist</i>
+            </button>
           </div>
-          <div class="list__item" data-song-id="6" data-song-name="Hey not me"
-               data-song-artist="Rasomi Pelina" data-song-album="Find soul"
-               data-song-url="audio/ringtone-6.mp3" data-song-cover="assets/demo/images/cover/small/6.jpg">
-            <div class="list__cover"><img src="assets/demo/images/cover/small/6.jpg" alt="Hey not me"> <a
-              href="javascript:void(0);"
-              class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
-              data-play-id="6" aria-label="Play pause"><i
-              class="ri-play-fill icon-play"></i> <i class="ri-pause-fill icon-pause"></i></a>
-            </div>
-            <div class="list__content"><a href="song-details.html"
-                                          class="list__title text-truncate">Hey not me</a>
-              <p class="list__subtitle text-truncate"><a href="artist-details.html">Rasomi
-                Pelina</a></p></div>
-            <ul class="list__option">
-              <li><a href="javascript:void(0);" role="button" class="d-inline-flex"
-                     aria-label="Favorite" data-favorite-id="6"><i
-                class="ri-heart-line heart-empty"></i> <i
-                class="ri-heart-fill heart-fill"></i></a></li>
-              <li>01:12</li>
-              <li class="dropstart d-inline-flex"><a class="dropdown-link"
-                                                     href="javascript:void(0);" role="button"
-                                                     data-bs-toggle="dropdown"
-                                                     aria-label="Cover options"
-                                                     aria-expanded="false"><i
-                class="ri-more-fill"></i></a>
-                <ul class="dropdown-menu dropdown-menu-sm">
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-playlist-id="6">Add to playlist</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-queue-id="6">Add to queue</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-next-id="6">Next to play</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a>
-                  </li>
-                  <li class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-play-id="6">Play</a></li>
-                </ul>
-              </li>
-            </ul>
+          <div *ngIf="account != null">
+            <button class="btn btn-outline-primary" routerLink="/playlistCreate" data-bs-dismiss="modal">
+              <i class="ri-add-line">Playlist</i>
+            </button>
           </div>
-          <div class="list__item" data-song-id="8" data-song-name="Sadness inside"
-               data-song-artist="Karen Jennings" data-song-album="Sadness"
-               data-song-url="audio/ringtone-8.mp3" data-song-cover="assets/demo/images/cover/small/8.jpg">
-            <div class="list__cover"><img src="assets/demo/images/cover/small/8.jpg" alt="Hey not me"> <a
-              href="javascript:void(0);"
-              class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
-              data-play-id="8" aria-label="Play pause"><i
-              class="ri-play-fill icon-play"></i> <i class="ri-pause-fill icon-pause"></i></a>
+          <hr>
+
+          <div class="swiper-carousel swiper-carousel-button">
+            <div class="swiper" data-swiper-slides="5" data-swiper-autoplay="true">
+
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let p of playlists">
+                  <div class="cover cover--round">
+                    <div class="cover__head">
+                      <div class="cover__options dropstart d-inline-flex ms-auto"><a class="dropdown-link"
+                                                                                     role="button"
+                                                                                     data-bs-toggle="dropdown"
+                                                                                     aria-label="Cover options"
+                                                                                     aria-expanded="false"><i
+                        class="ri-more-2-fill"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-sm">
+                          <li><a class="dropdown-item" routerLink="/playlistEdit/{{p.id}}" role="button">Edit</a></li>
+                          <li><a class="dropdown-item" routerLink="/playlistDelete/{{p.id}}" role="button">Delete</a>
+                          </li>
+                          <li class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" routerLink="/playlistDetail/{{p.id}}">View details</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                    <a class="cover__image"><img src="{{p.avatarPlaylist}}"
+                                                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px"
+                                                 (click)="addSongToPlaylist(song_id, p.id)" data-bs-dismiss="modal">
+                    </a>
+                    <div class="cover__foot"><a href=""
+                                                class="cover__title text-truncate">{{p.name}}</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="swiper-button-prev btn-default rounded-pill"></div>
+              <div class="swiper-button-next btn-default rounded-pill"></div>
             </div>
-            <div class="list__content"><a href="song-details.html"
-                                          class="list__title text-truncate">Sadness inside</a>
-              <p class="list__subtitle text-truncate"><a href="artist-details.html">Karen
-                Jennings</a></p></div>
-            <ul class="list__option">
-              <li><span class="badge rounded-pill bg-info"><i
-                class="ri-vip-crown-fill"></i></span></li>
-              <li><a href="javascript:void(0);" role="button" class="d-inline-flex"
-                     aria-label="Favorite" data-favorite-id="8"><i
-                class="ri-heart-line heart-empty"></i> <i
-                class="ri-heart-fill heart-fill"></i></a></li>
-              <li>02:37</li>
-              <li class="dropstart d-inline-flex"><a class="dropdown-link"
-                                                     href="javascript:void(0);" role="button"
-                                                     data-bs-toggle="dropdown"
-                                                     aria-label="Cover options"
-                                                     aria-expanded="false"><i
-                class="ri-more-fill"></i></a>
-                <ul class="dropdown-menu dropdown-menu-sm">
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-playlist-id="8">Add to playlist</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-queue-id="8">Add to queue</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-next-id="8">Next to play</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a>
-                  </li>
-                  <li class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-play-id="8">Play</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="list__item" data-song-id="10" data-song-name="Nothing like your eyes"
-               data-song-artist="Nutty Nina" data-song-album="Lover soul"
-               data-song-url="audio/ringtone-2.mp3" data-song-cover="assets/demo/images/cover/small/10.jpg">
-            <div class="list__cover"><img src="assets/demo/images/cover/small/10.jpg"
-                                          alt="Nothing like your eyes"> <a
-              href="javascript:void(0);"
-              class="btn btn-play btn-sm btn-default btn-icon rounded-pill"
-              data-play-id="10" aria-label="Play pause"><i
-              class="ri-play-fill icon-play"></i> <i class="ri-pause-fill icon-pause"></i></a>
-            </div>
-            <div class="list__content"><a href="song-details.html"
-                                          class="list__title text-truncate">Nothing like your
-              eyes</a>
-              <p class="list__subtitle text-truncate"><a href="artist-details.html">Nutty
-                Nina</a></p></div>
-            <ul class="list__option">
-              <li><span class="badge rounded-pill bg-info"><i
-                class="ri-vip-crown-fill"></i></span></li>
-              <li><a href="javascript:void(0);" role="button" class="d-inline-flex"
-                     aria-label="Favorite" data-favorite-id="10"><i
-                class="ri-heart-line heart-empty"></i> <i
-                class="ri-heart-fill heart-fill"></i></a></li>
-              <li>03:54</li>
-              <li class="dropstart d-inline-flex"><a class="dropdown-link"
-                                                     href="javascript:void(0);" role="button"
-                                                     data-bs-toggle="dropdown"
-                                                     aria-label="Cover options"
-                                                     aria-expanded="false"><i
-                class="ri-more-fill"></i></a>
-                <ul class="dropdown-menu dropdown-menu-sm">
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-playlist-id="10">Add to playlist</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-queue-id="10">Add to queue</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-next-id="10">Next to play</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a>
-                  </li>
-                  <li class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-play-id="10">Play</a></li>
-                </ul>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

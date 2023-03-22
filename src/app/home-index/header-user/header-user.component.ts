@@ -45,7 +45,7 @@ export class HeaderUserComponent implements OnInit {
       this.singer = data;
       console.log(data);
       if (data != null) {
-        location.replace("/detail/" + this.singer.id + "?type=singer")
+        location.replace("/singerDetail/" + this.singer.id )
       } else {
         this.openMessage=true;
       }

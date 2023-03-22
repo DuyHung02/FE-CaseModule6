@@ -22,13 +22,13 @@
         <div *ngIf="myMessenger =='Add success'">
           <div class="alert alert-info alert-dismissible">
             <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
-            <strong>Info!</strong> {{myMessenger}}
+            <strong></strong> {{myMessenger}}
           </div>
         </div>
         <div *ngIf="myMessenger =='Music already in playlist'">
           <div class="alert alert-warning alert-dismissible">
             <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
-            <strong>Info!</strong> {{myMessenger}}
+            <strong></strong> {{myMessenger}}
           </div>
         </div>
 
@@ -61,9 +61,6 @@
             </div>
           </div>
         </div>
-        <div class="mt-5 text-center"><a href="" class="btn btn-primary">
-          <div class="btn__wrap"><i class="ri-loader-3-fill"></i> <span>Load more</span></div>
-        </a></div>
       </div>
     </div>
     <footer id="footer">
@@ -71,7 +68,7 @@
   </main>
 </div>
 
-<<<<<<< HEAD
+
 <!-- The Modal -->
 <div class="modal myModal">
   <div class="modal-dialog modal-lg">
@@ -140,6 +137,4 @@
 
 <app-box-music #boxMusic [songs]="songs"></app-box-music>
 
-=======
->>>>>>> a87afcfe01bd06f49df6b6e22f826b3902ef9f04
 </body>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import { Song } from 'src/app/models/Song';
 import {SingerSong} from "../../models/SingerSong";
 import {SingerSongService} from "../../service/SingerSongService";
@@ -16,6 +16,8 @@ export class ShowDetailSong2Component implements OnInit {
   singerSongs: SingerSong[] = [];
   singers!: any
 
+  songs: Song[] = []
+
   constructor(private singerSongService: SingerSongService, private activatedRoute: ActivatedRoute, private songService: SongService, private router: Router) {
   }
 
@@ -24,14 +26,20 @@ export class ShowDetailSong2Component implements OnInit {
     if (this.id != null) {
       this.songService.findById(+this.id).subscribe((data) => {
         this.song = data;
-
+        this.songs.push(this.song)
         this.singerSongService.findSingerSongBySong_id(+this.id).subscribe(data => {
           this.singerSongs = data;
-          console.log(data)
-
         })
-
       })
     }
   }
+
+  musicOn: boolean = false
+  @Output() index!: number
+
+  playOn(index: number) {
+    this.musicOn = true
+    this.index = index
+  }
+
 }

@@ -17,12 +17,9 @@ export class PlaylistDeleteComponent implements OnInit{
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')
-    console.log("ID: " + this.id)
     this.playlistService.findPlaylistById(this.id).subscribe(data => {
       this.playlist = data
       console.log(data)
-    }, error => {
-      alert("false")
     })
   }
 

@@ -25,6 +25,14 @@
                   <div class="col-12 mb-4"><input type="text" class="form-control" placeholder="Name playlist" formControlName="name"></div>
                   <div class="col-12 mb-4"><label for="song_file_1" class="form-label">Image playlist</label> <input
                     type="file" id="song_file_1" class="form-control" #upLoadFile (change)="upAvatarPlaylist()"></div>
+
+                  <div *ngIf="isMessenger =='Choice mode'">
+                    <div class="alert alert-info alert-dismissible">
+                      <button type="button" class="btn-close" (click)="closeMessenger()" data-bs-dismiss="alert"></button>
+                      <strong></strong> {{isMessenger}}
+                    </div>
+                  </div>
+
                   <div class="col-12 d-flex align-items-center mb-4">
                     <div class="form-check me-4"><input class="form-check-input" type="radio" name="active" value="0" formControlName="active"
                                                         checked="checked"> <label class="form-check-label">Private</label>

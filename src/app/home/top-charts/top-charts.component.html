@@ -17,39 +17,27 @@
                 </li>
               </ul>
               <div class="cover__options dropstart d-inline-flex ms-auto"><a
-                class="dropdown-link" href="javascript:void(0);" role="button"
-                data-bs-toggle="dropdown" aria-label="Cover options"
-                aria-expanded="false"><i class="ri-more-2-fill"></i></a>
+                class="dropdown-link" href="" data-bs-toggle="dropdown">
+                <i class="ri-more-2-fill"></i></a>
                 <ul class="dropdown-menu dropdown-menu-sm">
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-favorite-id="1">Favorite</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-playlist-id="1">Add to playlist</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-queue-id="1">Add to queue</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-next-id="1">Next to play</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button">Share</a>
+                  <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target=".myModal"
+                         (click)="getIdSong(song.id)">Add to playlist</a></li>
+                  <li><a class="dropdown-item" routerLink="/showDetailSong/{{song.id}}">View detail</a>
                   </li>
                   <li class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);" role="button"
-                         data-play-id="1">Play</a></li>
+                  <li><a class="dropdown-item" href="" (click)="findSongAndIndex(i)">Play</a></li>
                 </ul>
               </div>
             </div>
             <div class="cover__image"><img src="{{song.song_avatar}}"
-                                           style="width: 200px; height: 200px; object-fit: cover; border-radius: 10px; margin-left: 10px">
-              <button type="button" class="btn btn-play btn-default btn-icon rounded-pill"
-                      data-play-id="1">
-
+                                           style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px">
+              <button type="button" class="btn btn-play btn-default btn-icon rounded-pill">
                 <i class="ri-play-fill icon-play" (click)="findSongAndIndex(i)"></i>
-
-
               </button>
             </div>
-            <div class="cover__foot"><a href="#"
+            <div class="cover__foot"><a routerLink="/showDetailSong/{{song.id}}"
                                         class="cover__title text-truncate">{{song.song_name}}</a>
-              <p class="cover__subtitle text-truncate"><a href="#">{{song.author}}
+              <p class="cover__subtitle text-truncate"><a href="">{{song.author}}
               </a></p></div>
           </div>
         </div>
@@ -64,4 +52,3 @@
   </div>
 </div>
 
-<!--<app-box-music #boxMusic [songs]="songs"></app-box-music>-->
