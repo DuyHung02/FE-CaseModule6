@@ -9,7 +9,7 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./check-password.component.css']
 })
 export class CheckPasswordComponent implements OnInit{
-
+  openMessage:Boolean=false;
   constructor(private router : Router, private accountService : AccountService, private route : ActivatedRoute) {
   }
 
@@ -40,7 +40,12 @@ export class CheckPasswordComponent implements OnInit{
     if (this.password == this.password2) {
       this.router.navigate(['/changePassword'])
     } else {
-      alert("Wrong password")
+      this.openMessage = true;
     }
   }
+
+  changeStatus() {
+    this.openMessage = false;
+  }
+
 }

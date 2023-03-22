@@ -72,6 +72,8 @@ export class CreateSingerComponent implements OnInit {
     this.singerService.createSinger(this.formCreateSinger.value).subscribe((data) => {
       this.openMessage=true;
       this.formCreateSinger.reset();
+      location.replace('/showSinger')
+
     })
       }else {$("#checkSingerName").text("Enter name")}
   }

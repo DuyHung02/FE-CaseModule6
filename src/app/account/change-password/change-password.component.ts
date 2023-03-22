@@ -9,7 +9,7 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./change-password.component.css']
 })
 export class ChangePasswordComponent implements OnInit {
-
+  openMessage:Boolean=false;
   constructor(private router: Router, private accountService: AccountService) {
   }
 
@@ -48,14 +48,18 @@ export class ChangePasswordComponent implements OnInit {
         this.accountService.savePassword(this.password, this.id).subscribe(data => {
           this.router.navigate(['/home'])
         }, error => {
-          alert("false")
+          this.openMessage = true;
         })
       } else {
-        alert("sai password")
+        this.openMessage = true;
       }
     } else {
-      alert("mat khau trong")
+      this.openMessage = true;
     }
+  }
+
+  changeStatus() {
+    this.openMessage = false;
   }
 
 }
