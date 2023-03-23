@@ -34,6 +34,7 @@ export class BoxMusicComponent implements OnInit, OnChanges, OnDestroy{
   private sec: any
 
 
+
   ngOnInit(): void {
       this.loadAudio()
       this.audio.addEventListener('ended', ev => {

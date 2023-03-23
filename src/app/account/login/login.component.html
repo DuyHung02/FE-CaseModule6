@@ -1,4 +1,10 @@
 <body>
+<div class="alert alert-warning alert-dismissible" *ngIf="openMessage">
+  <div style="text-align: center">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="changeStatus()"></button>
+    <strong>Login failed</strong><br>
+  </div>
+</div>
 <div id="wrapper">
   <div class="auth py-5">
     <div class="container">

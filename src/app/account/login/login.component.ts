@@ -9,7 +9,7 @@ import {FormControl, FormGroup} from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
+  openMessage:Boolean=false;
   constructor(private accountService : AccountService, private router : Router) {
   }
 
@@ -28,8 +28,13 @@ export class LoginComponent {
       localStorage.setItem("accountToken", JSON.stringify(data))
       window.location.replace('/home')
     }, error => {
-      alert("login false")
+      this.openMessage = true;
     })
   }
+
+  changeStatus() {
+    this.openMessage = false
+  }
+
 
 }
