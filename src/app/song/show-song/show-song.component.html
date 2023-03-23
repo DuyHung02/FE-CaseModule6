@@ -47,6 +47,7 @@
                     <i class="ri-more-fill"></i></a>
                     <ul class="dropdown-menu dropdown-menu-sm">
                       <li><a class="dropdown-item" routerLink="/showDetailSong/{{s.id}}">Show detail</a></li>
+                      <li><a class="dropdown-item" href="{{s.file_mp3}}" target="_blank">Download</a></li>
                       <li><a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target=".myModal"
                              (click)="getIdSong(s.id)"
                       >Add to playlist</a>
