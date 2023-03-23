@@ -27,15 +27,4 @@ export class ShowSingerComponent implements OnInit{
     })
   }
 
-  find() {
-    this.singerService.findSingerBySinger_name(this.formFind.value.singer_name).subscribe((data) => {
-      this.singer = data;
-      if (data != null) {
-        location.replace("/detail/"+this.singer.id+"?type=singer")
-      } else {
-        alert("Không tìm thấy ca sĩ");
-      }
-    })
-  }
-
 }

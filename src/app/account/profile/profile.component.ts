@@ -10,7 +10,7 @@ import {finalize} from "rxjs";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
-
+  openMessage:Boolean=false;
   @ViewChild('upLoadFile', {static: true}) public avatarDom: ElementRef | undefined;
 
   constructor(private accountService: AccountService, private storage: AngularFireStorage) {
@@ -71,10 +71,9 @@ export class ProfileComponent implements OnInit{
         location.reload()
       }, error => {
         console.log(this.account)
-        alert("false")
       })
     } else {
-      alert("Gmail khong hop le")
+      this.openMessage = true;
     }
   }
 
@@ -100,10 +99,13 @@ export class ProfileComponent implements OnInit{
       $("#checkGmail").text("✅")
       this.checkGmail()
     } else {
-      $("#checkGmail").text("❌2")
+      $("#checkGmail").text("❌")
       this.check = false
     }
   }
 
+  changeStatus() {
+    this.openMessage = false;
+  }
 
 }

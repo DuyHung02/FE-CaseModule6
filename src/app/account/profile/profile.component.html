@@ -33,6 +33,14 @@
                                                                               class="btn btn-default rounded-pill">Change
                     avatar</label></div>
                 </div>
+
+                <div class="alert alert-warning alert-dismissible" *ngIf="openMessage">
+                  <div style="text-align: center" >
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" (click)="changeStatus()"></button>
+                    <strong>Invalid Gmail</strong><br>
+                  </div>
+                </div>
+
                 <div class="row g-4">
                   <div class="col-sm-6"><label for="f_name" class="form-label fw-medium">username</label> <input
                     type="text" id="f_name" class="form-control" formControlName="username" readonly></div>
