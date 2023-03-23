@@ -17,6 +17,7 @@ export class BoxMusicComponent implements OnInit, OnChanges, OnDestroy{
   songImage: String | undefined = 'https://i.pinimg.com/564x/a2/4a/f1/a24af1a25179acac93d7f2bd507b0985.jpg'
   songName: String | undefined = 'unknown'
   songSinger: String | undefined = 'unknown'
+  songMp3: String | undefined = 'unknown'
 
   // end thuộc tính song
 
@@ -32,8 +33,6 @@ export class BoxMusicComponent implements OnInit, OnChanges, OnDestroy{
   duration: any = "0:00";
   private min: any
   private sec: any
-
-
 
   ngOnInit(): void {
       this.loadAudio()
@@ -80,6 +79,7 @@ export class BoxMusicComponent implements OnInit, OnChanges, OnDestroy{
     this.songSinger = song?.author
     this.songName = song?.song_name
     this.songId = song?.id
+    this.songMp3 = song?.file_mp3
   }
 
   formatTime(seconds: any) {

@@ -61,6 +61,7 @@ export class ProfileComponent implements OnInit{
     }
   }
 
+
   edit() {
     this.account = this.formProfile.value
     if (this.check) {
@@ -100,7 +101,7 @@ export class ProfileComponent implements OnInit{
       $("#checkGmail").text("✅")
       this.checkGmail()
     } else {
-      $("#checkGmail").text("❌2")
+      $("#checkGmail").text("❌")
       this.check = false
     }
   }
